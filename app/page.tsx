@@ -95,8 +95,8 @@ export default function Home() {
           </h1>
           
           <p className="hero-p text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight mt-8">
-            Vom Handwerker zum modernen <span className="text-white">High-Performer.</span><br />
-            Die Transformation beginnt jetzt.
+            Fitnessorkun hat gezeigt, was möglich ist.<br />
+            <span className="text-white">LÖWENTRAFO zeigt, was tragfähig ist.</span>
           </p>
 
           <div className="hero-p pt-12 flex flex-col items-center gap-6">
@@ -116,21 +116,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-4">
-              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Das Manifest</h2>
+              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Die Evolution</h2>
               <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9]">
-                Die Ehre des<br /><span className="text-zinc-800">Handwerks</span>
+                Vom Sichtbaren<br /><span className="text-zinc-800">zum Tragfähigen</span>
               </h3>
             </div>
             <p className="text-zinc-400 leading-relaxed text-2xl font-bold tracking-tight italic border-l-4 border-yellow-500 pl-8 py-4">
-              &quot;Ich war jahrelang nur im Betrieb. 12 Stunden Schuften, wenig Energie, keine Struktur. Ich habe den Preis gezahlt, bis ich verstanden habe: Transformation ist kein Zufall, sondern ein System.&quot;
+              &quot;Motivation ist flüchtig. Disziplin ohne Struktur zerbricht. Ich habe Jahre damit verbracht zu zeigen, was möglich ist – jetzt baue ich das System, das diese Leistung dauerhaft trägt.&quot;
             </p>
             <div className="space-y-6 pt-4">
                <p className="text-zinc-500 text-lg leading-relaxed">
-                 Orkun (Der Löwenmonteur) hat das System aus der Praxis für die Praxis entwickelt. Keine abgehobenen Fitness-Apps, sondern ein Framework für Männer, die im wahren Leben stehen. Wir bauen keine Discopumper, sondern funktionale Athleten mit Meisterschafts-Mindset.
+                  Viele kennen Orkun als <strong>Fitnessorkun</strong>. Ein Gesicht, eine Reichweite, eine sichtbare Transformation. Doch wahre Ordnung entsteht nicht durch Sichtbarkeit, sondern durch Substanz. LÖWENTRAFO ist die Konsequenz aus Jahren an der Front: Weg vom Influencer-Dasein, hin zum Systembau für Männer mit Verantwortung.
                </p>
                <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-900 group">
                   <Quote className="w-8 h-8 text-yellow-500/20 group-hover:text-yellow-500 transition-colors" />
-                  <p className="text-sm font-black uppercase tracking-widest text-white italic">Vom Meister für Meister.</p>
+                  <p className="text-xs font-black uppercase tracking-widest text-white italic">Kein Influencer-Projekt. Ein operatives System.</p>
                </div>
             </div>
           </div>
@@ -145,13 +145,54 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-90" />
                 <div className="absolute bottom-12 left-12 right-12 space-y-2">
-                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">CEO & Leader</p>
-                  <p className="text-4xl font-black uppercase text-white tracking-tighter">Orkun K.</p>
+                   <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">Der Systembauer</p>
+                   <p className="text-4xl font-black uppercase text-white tracking-tighter">Orkun Arslanmekik</p>
                 </div>
              </div>
              {/* Decorative Elements */}
              <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-500/5 blur-[80px] rounded-full -z-10" />
           </div>
+        </div>
+      </section>
+
+      {/* Evolution Grid Section */}
+      <section className="py-24 px-6 bg-zinc-950/50">
+        <div className="max-w-7xl mx-auto border border-zinc-900 rounded-[3rem] p-12 lg:p-24 overflow-hidden relative">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-linear-to-b from-yellow-500/20 via-zinc-900 to-transparent hidden lg:block" />
+           
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10">
+              <div className="space-y-8">
+                 <div className="space-y-2">
+                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600">Vergangenheit</p>
+                    <h4 className="text-4xl font-black uppercase text-zinc-400 tracking-tighter">Fitnessorkun</h4>
+                 </div>
+                 <ul className="space-y-4">
+                    {["Reichweite & Sichtbarkeit", "Motivation als Treibstoff", "Ästhetik im Vordergrund", "Social Media Fokus"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-zinc-700 font-bold">
+                        <div className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+                        {item}
+                      </li>
+                    ))}
+                 </ul>
+                 <p className="text-zinc-600 text-sm italic">&quot;Gezeigt, was möglich ist.&quot;</p>
+              </div>
+
+              <div className="space-y-8">
+                 <div className="space-y-2">
+                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">Zukunft</p>
+                    <h4 className="text-4xl font-black uppercase text-white tracking-tighter shadow-yellow-500/10 shadow-2xl">LÖWENTRAFO</h4>
+                 </div>
+                 <ul className="space-y-4">
+                    {["Substanz & Tragfähigkeit", "Struktur als Fundament", "Haltung & Führung", "Alltagstaugliches System"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-zinc-300 font-bold">
+                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                        {item}
+                      </li>
+                    ))}
+                 </ul>
+                 <p className="text-yellow-500 text-sm font-black italic">&quot;Gebaut, was tragfähig bleibt.&quot;</p>
+              </div>
+           </div>
         </div>
       </section>
 
@@ -382,7 +423,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-16">
            <div className="space-y-4">
              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-600">Film & Dokumentation</h2>
-             <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">Das System <span className="text-zinc-800">wirkt</span></h3>
+             <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">Vom Sichtbaren <span className="text-zinc-800">zum Tragfähigen</span></h3>
            </div>
            
            <div className="aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110">
@@ -398,14 +439,14 @@ export default function Home() {
                     <Play className="w-10 h-10 text-white group-hover:text-black fill-current ml-1" />
                  </div>
                  <div className="space-y-1">
-                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white">Teaser ansehen</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white">Dokumentation ansehen</p>
                     <div className="h-px w-20 bg-yellow-500 mx-auto scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                  </div>
               </div>
            </div>
            
            <p className="text-zinc-500 text-lg max-w-2xl mx-auto font-bold tracking-tight">
-             Kein Glanz, kein Filter – nur die harte Realität der Transformation im SHK-Handwerk.
+             Die ungeschönte Geschichte der Evolution von Fitnessorkun zu LÖWENTRAFO – Einblick in den Systembau.
            </p>
         </div>
       </section>

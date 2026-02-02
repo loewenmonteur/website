@@ -10,7 +10,8 @@ export default function DashboardPage() {
     totalDays: 30,
     phase: "Fundament",
     streak: 12,
-    rank: "Welpling"
+    rank: "Welpling",
+    philosophy: "Vom Sichtbaren zum Tragfähigen."
   };
 
   const weekDays = [
@@ -34,13 +35,17 @@ export default function DashboardPage() {
               Willkommen, Löwe
             </h1>
             <p className="text-zinc-500 font-mono text-sm uppercase tracking-wider">
-              Tag {userData.day} von {userData.totalDays} • Aktive Phase: {userData.phase}
+              Tag {userData.day} von {userData.totalDays} • Status: {userData.philosophy}
             </p>
           </div>
-          <div className="flex items-center gap-4 bg-zinc-900/50 px-4 py-2 rounded-lg border border-zinc-900 border-b-yellow-500/50">
+          <div className="flex items-center gap-4 bg-zinc-900/50 px-4 py-2 rounded-lg border border-zinc-900 border-b-yellow-500/50 relative group">
              <div className="flex items-center gap-2">
                <Zap className="w-4 h-4 text-yellow-500" /> 
-               <span className="text-sm font-bold text-white">{userData.streak} Tage Streak</span>
+               <span className="text-sm font-bold text-white">{userData.streak} Tage Substanz</span>
+             </div>
+             {/* Micro-Onboarding Tooltip */}
+             <div className="absolute -bottom-12 right-0 w-64 p-3 bg-yellow-500 text-black text-[10px] font-black uppercase rounded shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+               Motivation ist flüchtig. Deine Streak ist der Beweis für dein System.
              </div>
           </div>
         </div>
