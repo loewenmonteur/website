@@ -157,7 +157,15 @@ export default function Home() {
 
       {/* Evolution Grid Section */}
       <section className="py-24 px-6 bg-zinc-950/50">
-        <div className="max-w-7xl mx-auto border border-zinc-900 rounded-[3rem] p-12 lg:p-24 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto border border-zinc-900 rounded-[3rem] p-12 lg:p-24 overflow-hidden relative group/grid">
+           <div className="absolute inset-0 opacity-5 group-hover/grid:opacity-10 transition-opacity duration-1000">
+             <Image 
+               src="/images/doku/evolution.jpg"
+               alt="Evolution Background"
+               fill
+               className="object-cover"
+             />
+           </div>
            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-linear-to-b from-yellow-500/20 via-zinc-900 to-transparent hidden lg:block" />
            
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10">
@@ -428,7 +436,7 @@ export default function Home() {
            
            <div className="aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
+                  src="/images/doku/main.jpg"
                   alt="Doku teaser background"
                   fill
                   className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-2000"

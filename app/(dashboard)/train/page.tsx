@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dumbbell, Play, CheckCircle2, Info, ChevronRight, Clock, Flame, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TrainPage() {
   // Mock Active Plan Data according to PRD (Active Plan Only)
@@ -53,9 +54,15 @@ export default function TrainPage() {
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-zinc-800/50">
                 {/* Visual Block (Video/Image Placeholder) */}
-                <div className="w-full md:w-32 aspect-video md:aspect-square bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
+                 <div className="w-full md:w-32 aspect-video md:aspect-square bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
+                   <Image 
+                     src="/images/doku/training.jpg"
+                     alt="Real training footage"
+                     fill
+                     className="object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"
+                   />
                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
-                   <Dumbbell className="w-6 h-6 text-zinc-700" />
+                   <Dumbbell className="w-6 h-6 text-yellow-500/50 relative z-10" />
                 </div>
 
                 {/* Details Block */}

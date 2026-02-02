@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Flame, CheckCircle2, ChevronRight, Apple, Beef, Leaf } from "lucide-react";
+import Image from "next/image";
 
 export default function EatPage() {
   const activePlan = {
@@ -23,14 +24,23 @@ export default function EatPage() {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       
       {/* 1. Module Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
+      <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 h-48 md:h-32">
+        <div className="flex flex-col justify-end">
           <h1 className="text-sm font-black uppercase tracking-[0.2em] text-yellow-500 mb-1">Modul EAT</h1>
           <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-2">{activePlan.title}</h2>
           <div className="flex items-center gap-4 text-xs font-mono text-zinc-500">
             <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5" /> {activePlan.style}</span>
             <span className="px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400">Aktiver Plan</span>
           </div>
+        </div>
+        <div className="flex-1 relative rounded-2xl overflow-hidden border border-zinc-900 group">
+           <Image 
+             src="/images/doku/details.jpg"
+             alt="System Nutrition Context"
+             fill
+             className="object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-50 transition-all duration-700"
+           />
+           <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-transparent to-transparent" />
         </div>
       </div>
 

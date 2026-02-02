@@ -91,6 +91,51 @@ export default function HandwerkExplorePage() {
         </div>
       </section>
 
+      {/* Documentary Gallery */}
+      <section className="py-24 px-6 relative">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 fade-up">
+            <div className="space-y-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">Backstage: Realität</p>
+              <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tighter">Einblick in<br/>die Dokumentation</h3>
+            </div>
+            <p className="text-zinc-500 max-w-sm text-sm">Echte Betriebe. Echte Probleme. Echte Systeme. LÖWENTRAFO entsteht direkt aus der Praxis der Duisburger Werkstätten.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px] md:h-[600px]">
+            <div className="md:col-span-8 relative rounded-3xl overflow-hidden group fade-up">
+              <Image 
+                src="/images/doku/workshop_01.jpg"
+                alt="Workshop Reality"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+            </div>
+            <div className="md:col-span-4 grid grid-rows-2 gap-6">
+               <div className="relative rounded-3xl overflow-hidden group fade-up">
+                 <Image 
+                   src="/images/doku/details.jpg"
+                   alt="System Details"
+                   fill
+                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                 />
+                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+               </div>
+               <div className="relative rounded-3xl overflow-hidden group fade-up">
+                  <Image 
+                    src="/images/doku/workshop_02.jpg"
+                    alt="Process"
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Partnership Section */}
       <section className="py-24 px-6 bg-zinc-900/20 border-y border-zinc-900">
         <div className="max-w-4xl mx-auto text-center space-y-12 fade-up">
