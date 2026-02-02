@@ -1,8 +1,24 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { Play, Users, Dumbbell, Utensils, ListTodo, GraduationCap, ShieldCheck, Zap } from "lucide-react";
+import { 
+  Play, Users, Dumbbell, Utensils, ListTodo, 
+  GraduationCap, ShieldCheck, Zap, ArrowRight,
+  Target, Rocket, Quote
+} from "lucide-react";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLDivElement>(null);
+
   const modules = [
     { name: "TRAIN", icon: Dumbbell, desc: "Kraft & Leistungsfähigkeit für den Alltag eines Meisters." },
     { name: "EAT", icon: Utensils, desc: "Fuel-Strategien, die im vollen Terminkalender funktionieren." },
@@ -11,14 +27,60 @@ export default function Home() {
     { name: "PROVE", icon: ShieldCheck, desc: "Beweise durch Taten – Challenges für echte Resultate." },
   ];
 
+  useEffect(() => {
+    // Hero Animations
+    const ctx = gsap.context(() => {
+      gsap.from(".hero-title span", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power4.out",
+      });
+
+      gsap.from(".hero-p", {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        delay: 0.8,
+        ease: "power3.out",
+      });
+
+      // Story Section Parallax
+      gsap.to(".story-image", {
+        y: -50,
+        scrollTrigger: {
+          trigger: ".story-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Pillar Cards stagger
+      gsap.from(".pillar-card", {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".pillars-section",
+          start: "top 80%",
+        },
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
+    <main ref={containerRef} className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals */}
-      <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,#27272a_0%,#09090b_50%)] -z-10" />
-      <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none -z-10" />
+      <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
+      <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
 
       {/* 1. Impact Hero */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 animate-in fade-in zoom-in duration-1000 relative">
+      <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 relative">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2532&auto=format&fit=crop')] bg-cover bg-center opacity-10 grayscale mix-blend-luminosity" />
         <div className="absolute inset-0 bg-linear-to-b from-zinc-950/0 via-zinc-950/80 to-zinc-950" />
         
@@ -28,195 +90,322 @@ export default function Home() {
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Pre-Order Phase Aktiv</span>
           </div>
           
-          <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-[0.85] text-white">
-            Löwen<br />trafo
+          <h1 className="hero-title text-7xl md:text-[12rem] font-black tracking-tighter uppercase leading-[0.8] text-white">
+            <span className="block">Löwen</span>
+            <span className="block text-zinc-800">trafo</span>
           </h1>
           
-          <p className="text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight">
+          <p className="hero-p text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight mt-8">
             Vom Handwerker zum modernen <span className="text-white">High-Performer.</span><br />
             Die Transformation beginnt jetzt.
           </p>
 
-          <div className="pt-12 flex flex-col items-center gap-6">
-            <PreOrderButton className="h-20 px-16 text-xl shadow-[0_0_30px_rgba(250,204,21,0.2)]" />
+          <div className="hero-p pt-12 flex flex-col items-center gap-6">
+            <PreOrderButton className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl" />
             <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Inklusive Zugang zur Alpha-Phase</p>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+          <div className="w-px h-12 bg-zinc-500" />
+        </div>
+      </section>
+
+      {/* 2. Wer ist der Löwenmonteur? (Emotional Core) */}
+      <section className="story-section py-48 px-6 bg-zinc-950 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="space-y-10 order-2 lg:order-1">
+            <div className="space-y-4">
+              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Das Manifest</h2>
+              <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9]">
+                Die Ehre des<br /><span className="text-zinc-800">Handwerks</span>
+              </h3>
+            </div>
+            <p className="text-zinc-400 leading-relaxed text-2xl font-bold tracking-tight italic border-l-4 border-yellow-500 pl-8 py-4">
+              &quot;Ich war jahrelang nur im Betrieb. 12 Stunden Schuften, wenig Energie, keine Struktur. Ich habe den Preis gezahlt, bis ich verstanden habe: Transformation ist kein Zufall, sondern ein System.&quot;
+            </p>
+            <div className="space-y-6 pt-4">
+               <p className="text-zinc-500 text-lg leading-relaxed">
+                 Orkun (Der Löwenmonteur) hat das System aus der Praxis für die Praxis entwickelt. Keine abgehobenen Fitness-Apps, sondern ein Framework für Männer, die im wahren Leben stehen. Wir bauen keine Discopumper, sondern funktionale Athleten mit Meisterschafts-Mindset.
+               </p>
+               <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-900 group">
+                  <Quote className="w-8 h-8 text-yellow-500/20 group-hover:text-yellow-500 transition-colors" />
+                  <p className="text-sm font-black uppercase tracking-widest text-white italic">Vom Meister für Meister.</p>
+               </div>
+            </div>
+          </div>
+          
+          <div className="relative order-1 lg:order-2 group">
+             <div className="story-image aspect-[4/5] bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
+                <Image 
+                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/orkun_blaumann_portrait_1770068839138.png"
+                  alt="Orkun portrait in Blaumann"
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-90" />
+                <div className="absolute bottom-12 left-12 right-12 space-y-2">
+                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">CEO & Leader</p>
+                  <p className="text-4xl font-black uppercase text-white tracking-tighter">Orkun K.</p>
+                </div>
+             </div>
+             {/* Decorative Elements */}
+             <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-500/5 blur-[80px] rounded-full -z-10" />
           </div>
         </div>
       </section>
 
-      {/* 2. Wer ist der Löwenmonteur? */}
-      <section className="py-32 px-6 bg-zinc-950 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-8">
-            <h2 className="text-sm font-black uppercase tracking-[0.3em] text-yellow-500">Die Story</h2>
-            <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-none">
-              Wer ist der<br /><span className="text-zinc-700">Löwenmonteur?</span>
-            </h3>
-            <p className="text-zinc-400 leading-relaxed text-lg italic border-l-2 border-zinc-800 pl-6">
-              &quot;Ich war jahrelang nur im Betrieb. 12 Stunden Schuften, wenig Energie, keine Struktur. Ich habe den Preis gezahlt, bis ich verstanden habe: Transformation ist kein Zufall, sondern ein System.&quot;
-            </p>
-            <div className="space-y-4 pt-4">
-               <p className="text-zinc-500 text-sm">
-                 Orkun (Der Löwenmonteur) hat das System aus der Praxis für die Praxis entwickelt. Keine abgehobenen Fitness-Apps, sondern ein Framework für Männer, die im wahren Leben stehen.
-               </p>
-            </div>
+      {/* 3. The Triple Pillar Universe */}
+      <section className="pillars-section py-48 px-6 bg-zinc-950 border-t border-zinc-900/30">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="text-center space-y-6">
+            <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Das Universum</h2>
+            <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">Die 3 Welten</h3>
           </div>
-          <div className="relative group">
-             <div className="aspect-square bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                <div className="absolute inset-0 bg-linear-to-tr from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <Users className="w-32 h-32 text-zinc-950 opacity-10" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            
+            {/* Pillar 1: Handwerk */}
+            <Link href="/explore/handwerk" className="pillar-card group cursor-pointer">
+              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+                <Image 
+                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
+                  alt="Handwerk Mastery"
+                  fill
+                  className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+                <div className="relative z-10 space-y-6">
+                  <div className="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar I</h4>
+                    <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Handwerk &<br />Betriebe</h5>
+                  </div>
+                  <p className="text-zinc-500 text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors">
+                    Wir bringen Disziplin, Stolz und Systematik zurück in den Betrieb. Gegen den Fachkräftemangel, für die Meisterschaft.
+                  </p>
+                  <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                    Mehr erfahren <ArrowRight className="w-3 h-3" />
+                  </div>
                 </div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-yellow-500 mb-2">CEO & Founder</p>
-                  <p className="text-3xl font-black uppercase text-white tracking-tighter">Orkun K.</p>
+              </div>
+            </Link>
+
+            {/* Pillar 2: Bodybuilding */}
+            <Link href="/explore/bodybuilding" className="pillar-card group cursor-pointer md:mt-12">
+              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+                <Image 
+                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/training_iron_gym_1770068881023.png"
+                  alt="Training Iron Gym"
+                  fill
+                  className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+                <div className="relative z-10 space-y-6">
+                  <div className="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
+                    <Dumbbell className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar II</h4>
+                    <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Eisen &<br />Ästhetik</h5>
+                  </div>
+                  <p className="text-zinc-500 text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors">
+                    Das Training als Labor der Transformation. Wir lehren die Liebe zum harten Training und die physische Dominanz.
+                  </p>
+                  <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                    Mehr erfahren <ArrowRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Pillar 3: Die Trafo */}
+            <Link href="/explore/trafo" className="pillar-card group cursor-pointer">
+              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-yellow-500/30 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale group-hover:scale-110 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
+                <div className="relative z-10 space-y-6">
+                  <div className="w-12 h-12 rounded-xl bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar III</h4>
+                    <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Sport, Arbeit<br />& Leben</h5>
+                  </div>
+                  <p className="text-zinc-500 text-sm leading-relaxed font-black group-hover:text-zinc-300 transition-colors">
+                    Die ultimative Synergie. Ein operatives System für den modernen High-Performer im Handwerk.
+                  </p>
+                  <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                    Mehr erfahren <ArrowRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Sneak Peak Section: Products & Insights */}
+      <section className="py-48 px-6 bg-[radial-gradient(circle_at_50%_0%,#1a1a1e_0%,#09090b_100%)]">
+        <div className="max-w-7xl mx-auto space-y-32">
+          <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
+             <div className="space-y-6 max-w-2xl">
+                <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Sneak Peak</h2>
+                <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white leading-none">Digitale<br /><span className="text-zinc-800">Meisterschaft</span></h3>
+             </div>
+             <p className="text-zinc-500 text-lg font-bold max-w-sm border-l-2 border-zinc-900 pl-6">
+                Exklusive Einblicke in die App-Inhalte, Trainingspläne und das Löwen-Kochbuch.
+             </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+             {/* Content 1: Training */}
+             <div className="group relative">
+                <div className="aspect-[16/10] bg-zinc-900 rounded-[2rem] border border-zinc-800 overflow-hidden relative shadow-2xl">
+                   <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541534741688-6078c65b5a33?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-all duration-1000" />
+                   <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
+                   <div className="absolute top-8 left-8 p-3 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-zinc-800">
+                      <Target className="w-5 h-5 text-yellow-500" />
+                   </div>
+                   <div className="absolute bottom-10 left-10 right-10">
+                      <h4 className="text-2xl font-black uppercase text-white tracking-tighter mb-2">Train-Pedia</h4>
+                      <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest leading-relaxed">Video-Anleitungen für maximale Effizienz im Gym.</p>
+                   </div>
+                </div>
+             </div>
+             
+             {/* Content 2: Nutrition */}
+             <div className="group relative mt-12 md:mt-24">
+                <div className="aspect-[16/10] bg-zinc-900 rounded-[2rem] border border-zinc-800 overflow-hidden relative shadow-2xl">
+                   <Image 
+                      src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
+                      alt="Performance Fueling"
+                      fill
+                      className="object-cover opacity-40 group-hover:scale-105 transition-all duration-1000"
+                   />
+                   <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
+                   <div className="absolute top-8 left-8 p-3 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-zinc-800">
+                      <Utensils className="w-5 h-5 text-emerald-500" />
+                   </div>
+                   <div className="absolute bottom-10 left-10 right-10">
+                      <h4 className="text-2xl font-black uppercase text-white tracking-tighter mb-2">Löwen-Küche</h4>
+                      <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest leading-relaxed">Das Kochbuch für Männer, die keine Zeit zu verlieren haben.</p>
+                   </div>
                 </div>
              </div>
           </div>
         </div>
       </section>
 
-      {/* 2.5 Die 3 Säulen der Transformation */}
-      <section className="py-32 px-6 bg-zinc-950 border-t border-zinc-900/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            
-            {/* Pillar 1: Handwerk */}
-            <div className="space-y-6 group">
-              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-zinc-800 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-                <div className="relative z-10 space-y-4">
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar I</h4>
-                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Handwerk &<br />Betriebe</h5>
-                  <p className="text-zinc-500 text-sm leading-relaxed">
-                    Vom Azubi bis zur Innung. Wir bringen Disziplin, Stolz und Systematik zurück in den Betrieb. Gegen den Fachkräftemangel, für die Meisterschaft.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Pillar 2: Bodybuilding */}
-            <div className="space-y-6 group">
-              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-zinc-800 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-                <div className="relative z-10 space-y-4">
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar II</h4>
-                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Eisen &<br />Ästhetik</h5>
-                  <p className="text-zinc-500 text-sm leading-relaxed">
-                    Bodybuilding als Therapie. Wir lehren die Liebe zum harten Training, physische Dominanz und die ästhetische Transformation deines Körpers.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Pillar 3: Die Trafo */}
-            <div className="space-y-6 group">
-              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-yellow-500/20 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-                <div className="relative z-10 space-y-4">
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar III</h4>
-                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Sport, Arbeit<br />& Leben</h5>
-                  <p className="text-zinc-500 text-sm leading-relaxed font-bold">
-                    Die Synergie. Wir vereinen das Beste aus allen Welten zu einem operativen System für den modernen High-Performer.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Doku Teaser: Einblicke ins wahre Leben */}
-      <section className="py-32 px-6 border-y border-zinc-900 bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_100%)]">
-        <div className="max-w-4xl mx-auto text-center space-y-12">
+      {/* 5. Doku Feature */}
+      <section className="py-48 px-6 bg-zinc-950 border-y border-zinc-900/50">
+        <div className="max-w-4xl mx-auto text-center space-y-16">
            <div className="space-y-4">
-             <h2 className="text-sm font-black uppercase tracking-[0.3em] text-zinc-500">Dokumentation</h2>
-             <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Einblicke ins <span className="text-zinc-700">wahre Leben</span></h3>
+             <h2 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-600">Film & Dokumentation</h2>
+             <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">Das System <span className="text-zinc-800">wirkt</span></h3>
            </div>
            
-           <div className="aspect-video bg-zinc-900 rounded-2xl border-4 border-zinc-800 shadow-2xl relative overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                 <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl flex items-center justify-center border border-white/20 group-hover:scale-110 transition-all duration-500">
-                    <Play className="w-8 h-8 text-white fill-white ml-1" />
+           <div className="aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110">
+                <Image 
+                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
+                  alt="Doku teaser background"
+                  fill
+                  className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-[2000ms]"
+                />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
+                 <div className="w-28 h-28 rounded-full bg-white/5 backdrop-blur-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:bg-yellow-500 transition-all duration-700">
+                    <Play className="w-10 h-10 text-white group-hover:text-black fill-current ml-1" />
                  </div>
-                 <p className="text-xs font-black uppercase tracking-widest text-white/50">Teaser ansehen</p>
-              </div>
-              <div className="absolute top-6 left-6 px-3 py-1 bg-yellow-500 text-black text-[10px] font-black uppercase tracking-widest rounded-sm">
-                Coming Soon
+                 <div className="space-y-1">
+                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white">Teaser ansehen</p>
+                    <div className="h-px w-20 bg-yellow-500 mx-auto scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                 </div>
               </div>
            </div>
            
-           <p className="text-zinc-500 text-sm max-w-2xl mx-auto">
-             Die Dokumentation begleitet die ersten Löwen auf ihrem Weg. Kein Glanz, kein Filter – nur die harte Realität der Transformation im SHK-Handwerk.
+           <p className="text-zinc-500 text-lg max-w-2xl mx-auto font-bold tracking-tight">
+             Kein Glanz, kein Filter – nur die harte Realität der Transformation im SHK-Handwerk.
            </p>
         </div>
       </section>
 
-      {/* 4. Das System Explorer */}
-      <section className="py-32 px-6 bg-zinc-950">
-        <div className="max-w-6xl mx-auto space-y-20">
-          <div className="text-center space-y-6">
-            <h2 className="text-sm font-black uppercase tracking-[0.3em] text-yellow-500">Das System</h2>
-            <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Die 5 Säulen der <span className="text-zinc-700">Macht</span></h3>
+      {/* 6. Das System Module & Final CTA */}
+      <section className="py-48 px-6 bg-zinc-950">
+        <div className="max-w-7xl mx-auto space-y-32">
+          <div className="text-center space-y-8">
+            <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Das Framework</h2>
+            <h3 className="text-5xl md:text-9xl font-black uppercase tracking-tighter text-white leading-none">Full Access</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {modules.map((m, i) => (
-              <Card key={i} className="bg-zinc-900/20 border-zinc-900 p-8 hover:border-yellow-500/30 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-6 text-zinc-600 group-hover:text-yellow-400 transition-colors">
-                  <m.icon className="w-6 h-6" />
+              <div key={i} className="bg-zinc-900 p-10 rounded-[2rem] border border-zinc-800 hover:border-yellow-500/30 transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/5 blur-[40px] rounded-full group-hover:bg-yellow-500/10 transition-all" />
+                <div className="w-16 h-16 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 text-zinc-700 group-hover:text-yellow-500 transition-colors duration-500">
+                  <m.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-xl font-black uppercase text-white mb-3 tracking-tighter">{m.name}</h4>
-                <p className="text-zinc-500 text-sm leading-relaxed">{m.desc}</p>
-              </Card>
+                <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter leading-none">{m.name}</h4>
+                <p className="text-zinc-500 text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors">{m.desc}</p>
+              </div>
             ))}
             
-            <div className="lg:col-span-1 bg-linear-to-br from-yellow-500 to-yellow-600 rounded-xl p-8 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-2xl">
-               <Zap className="absolute -bottom-4 -right-4 w-32 h-32 text-black/10 -rotate-12" />
-               <div className="relative z-10">
-                 <h4 className="text-3xl font-black uppercase text-black tracking-tighter leading-none mb-4">Werde Teil der Alpha</h4>
-                 <p className="text-black/70 text-sm font-bold">Die Plätze für die erste Runde sind limitiert.</p>
+            <div className="lg:col-span-1 bg-yellow-500 rounded-[2rem] p-12 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-[0_0_100px_rgba(234,179,8,0.15)] transition-transform duration-500 hover:scale-[1.02]">
+               <Zap className="absolute -bottom-10 -right-10 w-48 h-48 text-black/10 -rotate-12 group-hover:scale-110 transition-transform duration-1000" />
+               <div className="relative z-10 space-y-4">
+                 <h4 className="text-4xl md:text-5xl font-black uppercase text-black tracking-tighter leading-[0.85] mb-4 group-hover:translate-y-[-5px] transition-transform">Werde Teil<br />der Alpha</h4>
+                 <p className="text-black/60 text-sm font-black uppercase tracking-widest">Begrenzte Plätze verfügbar.</p>
                </div>
-               <div className="relative z-10 pt-8">
-                 <PreOrderButton className="w-full bg-black text-white border-none hover:bg-zinc-900 h-14" />
+               <div className="relative z-10 pt-12">
+                 <PreOrderButton className="w-full bg-black text-white border-none hover:bg-zinc-900 h-20 text-lg rounded-xl shadow-2xl" />
                </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Final Sales Funnel section */}
+      <section className="py-48 px-6 bg-[radial-gradient(circle_at_50%_100%,#1a1a1e_0%,#09090b_80%)] border-t border-zinc-900">
+         <div className="max-w-4xl mx-auto text-center space-y-16">
+            <div className="space-y-4">
+               <h3 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-500">Ready to Ship</h3>
+               <h2 className="text-6xl md:text-9xl font-black uppercase text-white tracking-widest leading-none">2026</h2>
+            </div>
+            <div className="flex flex-col items-center gap-10">
+               <div className="flex items-center gap-8 text-zinc-600 font-black uppercase tracking-[0.3em] text-[10px]">
+                  <span>Work</span>
+                  <div className="w-10 h-px bg-zinc-800" />
+                  <span>Sport</span>
+                  <div className="w-10 h-px bg-zinc-800" />
+                  <span>Life</span>
+               </div>
+               <PreOrderButton className="h-24 px-24 text-2xl shadow-2xl rounded-2xl" />
+            </div>
+         </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-20 px-6 bg-zinc-950 border-t border-zinc-900 text-center">
-         <div className="max-w-6xl mx-auto flex flex-col items-center gap-12">
-            <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-400">
-              Löwenmonteur <span className="text-zinc-800">Transformations</span>
+         <div className="max-w-6xl mx-auto flex flex-col items-center gap-16">
+            <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-800 hover:text-zinc-600 transition-colors cursor-default">
+              Löwenmonteur <span className="text-zinc-900">Framework</span>
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-widest text-zinc-600">
-               <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>
-               <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
-               <Link href="/agb" className="hover:text-white transition-colors">AGB</Link>
+            <div className="flex flex-wrap justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-700">
+               <Link href="/impressum" className="hover:text-yellow-500 transition-colors">Impressum</Link>
+               <Link href="/datenschutz" className="hover:text-yellow-500 transition-colors">Datenschutz</Link>
+               <Link href="/agb" className="hover:text-yellow-500 transition-colors">AGB</Link>
             </div>
             
-            <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-widest">
-              Built for Lions. Crafted in Master Craftsmanship. © 2026
+            <p className="text-[9px] font-mono text-zinc-900 uppercase tracking-widest">
+              Löwenmonteur © 2026. Dominance in Craftsmanship.
             </p>
          </div>
       </footer>
     </main>
   );
-}
-
-// Simple Shadow Card Component internal to page for speed/cleanliness
-function Card({ children, className }: { children: React.ReactNode, className?: string }) {
-  return (
-    <div className={`rounded-2xl shadow-2-xl transition-all duration-300 ${className}`}>
-      {children}
-    </div>
-  )
 }

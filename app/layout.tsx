@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "Ein System für Körper, Arbeit und Verantwortung.",
 };
 
+import { SmoothScroll } from "@/components/SmoothScroll";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
