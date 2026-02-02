@@ -5,7 +5,7 @@ import { PreOrderButton } from "@/components/PreOrderButton";
 import { 
   Play, Users, Dumbbell, Utensils, ListTodo, 
   GraduationCap, ShieldCheck, Zap, ArrowRight,
-  Target, Quote
+  Target, Quote, Sparkles, Bot
 } from "lucide-react";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -261,7 +261,7 @@ export default function Home() {
              </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
              {/* Content 1: Training */}
              <div className="group relative">
                 <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
@@ -278,7 +278,7 @@ export default function Home() {
              </div>
              
              {/* Content 2: Nutrition */}
-             <div className="group relative mt-12 md:mt-24">
+             <div className="group relative md:mt-12">
                 <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
                    <Image 
                       src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
@@ -296,6 +296,26 @@ export default function Home() {
                    </div>
                 </div>
              </div>
+
+             {/* Content 3: Lion-AI */}
+             <Link href="/ai-coach" className="group relative md:mt-24">
+                <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-yellow-500/20 overflow-hidden relative shadow-2xl transition-all duration-500 hover:border-yellow-500/50">
+                   <div className="absolute inset-0 bg-linear-to-br from-yellow-500/10 via-zinc-950 to-zinc-950 group-hover:bg-yellow-500/20 transition-all duration-500" />
+                   <div className="absolute inset-0 flex items-center justify-center">
+                      <Sparkles className="w-20 h-20 text-yellow-500/10 group-hover:scale-110 transition-transform duration-1000" />
+                   </div>
+                   <div className="absolute top-8 left-8 p-3 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-zinc-800">
+                      <Bot className="w-5 h-5 text-yellow-500" />
+                   </div>
+                   <div className="absolute bottom-10 left-10 right-10">
+                      <div className="inline-flex items-center gap-2 mb-2">
+                        <h4 className="text-2xl font-black uppercase text-white tracking-tighter">Lion-Coach</h4>
+                        <span className="px-1.5 py-0.5 rounded bg-yellow-500 text-[8px] text-black font-black uppercase">Alpha</span>
+                      </div>
+                      <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest leading-relaxed">Der digitale Mentor für den Meister-Alltag.</p>
+                   </div>
+                </div>
+             </Link>
           </div>
         </div>
       </section>
