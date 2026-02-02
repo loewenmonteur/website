@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { 
   Trophy, 
   Dumbbell, 
@@ -29,12 +28,13 @@ export default async function DashboardLayout({
   }
 
   const navItems = [
-    { name: "Cockpit", icon: LayoutDashboard, href: "/dashboard" },
+    { name: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
     { name: "TRAIN", icon: Dumbbell, href: "/train" },
     { name: "EAT", icon: Utensils, href: "/eat" },
     { name: "MOVE", icon: ListTodo, href: "/move" },
     { name: "LEAD", icon: GraduationCap, href: "/lead" },
     { name: "PROVE", icon: Trophy, href: "/prove" },
+    { name: "Profil", icon: Settings, href: "/profile" },
   ];
 
   return (
@@ -61,12 +61,6 @@ export default async function DashboardLayout({
         </nav>
 
         <div className="p-4 border-t border-zinc-900/50 space-y-2">
-          <Button variant="ghost" className="w-full justify-start text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900" asChild>
-            <Link href="/settings">
-              <Settings className="mr-2 h-4 w-4" />
-              Einstellungen
-            </Link>
-          </Button>
           <form action="/auth/signout" method="post">
              <button className="flex w-full items-center px-4 py-2 text-sm font-medium text-zinc-500 hover:text-red-400 transition-colors rounded-lg hover:bg-red-950/10">
                 <LogOut className="mr-2 h-4 w-4" />
@@ -83,19 +77,17 @@ export default async function DashboardLayout({
         </div>
       </main>
 
-      {/* Mobile Bottom Nav */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-zinc-950/90 backdrop-blur-xl border-t border-zinc-900 z-50 flex items-center justify-around px-2">
-        {navItems.slice(0, 5).map((item) => ( // Show first 5 items on mobile for space
+        {navItems.map((item) => ( 
           <Link
             key={item.href}
             href={item.href}
-            className="flex flex-col items-center justify-center p-2 text-zinc-500 hover:text-yellow-500 transition-colors"
+            className="flex flex-col items-center justify-center p-2 text-zinc-400 hover:text-yellow-500 transition-colors"
           >
             <item.icon className="w-5 h-5 mb-1" />
-            <span className="text-[10px] font-bold uppercase tracking-wider">{item.name}</span>
+            <span className="text-[9px] font-bold uppercase tracking-tighter">{item.name}</span>
           </Link>
         ))}
-        {/* PROVE is accessible via Dashboard or a 'More' menu if needed, sticking to 5 icons is safer for mobile */}
       </nav>
     </div>
   );
