@@ -39,10 +39,10 @@ export function AIFloatingButton() {
               <X className="w-3 h-3" />
             </button>
             <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-2 flex items-center gap-2">
-              <Sparkles className="w-3 h-3 text-yellow-500" /> Lion-AI
+              <Sparkles className="w-3 h-3 text-yellow-500" /> Der Mentor
             </p>
             <p className="text-xs text-white font-bold leading-tight">
-              Hast du Fragen zum System? Frag den Mentor.
+              Instinkt-Check. Frag den Mentor des Rudels.
             </p>
             <Link 
               href="/ai-coach"

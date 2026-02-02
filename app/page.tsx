@@ -309,10 +309,10 @@ export default function Home() {
                    </div>
                    <div className="absolute bottom-10 left-10 right-10">
                       <div className="inline-flex items-center gap-2 mb-2">
-                        <h4 className="text-2xl font-black uppercase text-white tracking-tighter">Lion-Coach</h4>
-                        <span className="px-1.5 py-0.5 rounded bg-yellow-500 text-[8px] text-black font-black uppercase">Alpha</span>
+                        <h4 className="text-2xl font-black uppercase text-white tracking-tighter">Der Mentor</h4>
+                        <span className="px-1.5 py-0.5 rounded bg-yellow-500 text-[8px] text-black font-black uppercase">Pionier</span>
                       </div>
-                      <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest leading-relaxed">Der digitale Mentor für den Meister-Alltag.</p>
+                      <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest leading-relaxed">Der digitale Instinkt für den Meister-Alltag.</p>
                    </div>
                 </div>
              </Link>

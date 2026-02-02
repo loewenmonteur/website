@@ -77,9 +77,9 @@ export default function AICoachPage() {
            <div className="flex flex-col items-center gap-1">
               <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
                  <Sparkles className="w-3 h-3 text-yellow-500" />
-                 <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Alpha Preview: LION-AI</span>
+                 <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Pionier-Einblick: LÖWEN-WISSEN</span>
               </div>
-              <h1 className="text-2xl font-black uppercase tracking-tighter text-white">Digitaler Mentor</h1>
+              <h1 className="text-2xl font-black uppercase tracking-tighter text-white">Der Mentor</h1>
            </div>
            <div className="w-11" /> {/* Spacer */}
         </div>
@@ -184,7 +184,7 @@ export default function AICoachPage() {
         {/* Footer info */}
         <div className="mt-12 text-center">
            <p className="text-[8px] font-mono text-zinc-900 uppercase tracking-[0.5em]">
-             LÖWENTRAFO ARTIFICIAL INTELLIGENCE CORE v1.0
+             LÖWENTRAFO INSTINKT-KODEX v1.0
            </p>
         </div>
       </div>

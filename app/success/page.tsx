@@ -26,9 +26,9 @@ export default function SuccessPage() {
 
         <div className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-900 space-y-4">
            <Zap className="w-8 h-8 text-yellow-500 mx-auto animate-pulse" />
-           <p className="text-sm font-black uppercase tracking-widest text-zinc-500">
-             Dein Alpha-Zugang wird bearbeitet. Check dein Postfach für die nächsten Schritte.
-           </p>
+            <p className="text-sm font-black uppercase tracking-widest text-zinc-500">
+              Dein Pionier-Status wird aktiviert. Check dein Postfach für die ersten Instruktionen.
+            </p>
         </div>
 
         <div className="flex flex-col items-center gap-6">
