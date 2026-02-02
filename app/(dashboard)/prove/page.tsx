@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, ShieldCheck, ArrowRight, Star, Award } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProvePage() {
   const activeChallenge = {
@@ -64,10 +65,18 @@ export default function ProvePage() {
                 </Button>
               </div>
 
-              <div className="w-full md:w-48 aspect-square rounded-2xl bg-zinc-950 border border-zinc-900 flex flex-col items-center justify-center p-6 text-center">
-                 <p className="text-xs font-mono text-zinc-600 uppercase mb-2">Preispool</p>
-                 <Award className="w-12 h-12 text-yellow-500 mb-2" />
-                 <p className="text-sm font-black text-white uppercase leading-tight">Master Coaching Session</p>
+              <div className="w-full md:w-48 aspect-square rounded-2xl bg-zinc-950 border border-zinc-900 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/reward">
+                 <Image 
+                   src="/images/championships/orkun_champion_medal.png"
+                   alt="Mastery Goal"
+                   fill
+                   className="object-cover opacity-20 group-hover/reward:opacity-50 transition-opacity duration-700"
+                 />
+                 <div className="relative z-10">
+                   <p className="text-xs font-mono text-zinc-600 uppercase mb-2">Preispool</p>
+                   <Award className="w-12 h-12 text-yellow-500 mx-auto mb-2" />
+                   <p className="text-sm font-black text-white uppercase leading-tight">Master Coaching Session</p>
+                 </div>
               </div>
             </div>
           </Card>

@@ -336,16 +336,44 @@ export default function Home() {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-yellow-500/10 blur-[120px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000" />
-              <div className="relative aspect-video lg:aspect-square bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden shadow-2xl">
-                <Image 
-                  src="/transformation-stage.webp"
-                  alt="Transformation Stage"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-[3s]"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-8 left-8 right-8 text-center">
-                   <p className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600">Real Life Performance Mode</p>
+              <div className="relative grid grid-cols-2 gap-4">
+                <div className="relative aspect-3/4 bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl group/img">
+                  <Image 
+                    src="/images/championships/orkun_champion_medal.png"
+                    alt="Orkun Arslanmekik - Champion Medal"
+                    fill
+                    className="object-cover group-hover/img:scale-110 transition-transform duration-[2s]"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Deutscher Meister</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="relative aspect-square bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl group/img">
+                    <Image 
+                      src="/images/championships/orkun_backstage_abs.png"
+                      alt="Orkun Backstage - System Evidence"
+                      fill
+                      className="object-cover grayscale group-hover/img:grayscale-0 group-hover/img:scale-110 transition-all duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+                    <div className="absolute bottom-4 left-4">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Backstage Fokus</p>
+                    </div>
+                  </div>
+                  <div className="relative aspect-square bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl group/img">
+                    <Image 
+                      src="/images/championships/nrw_champion_pose.png"
+                      alt="Orkun NRW Champion Pose"
+                      fill
+                      className="object-cover grayscale group-hover/img:grayscale-0 group-hover/img:scale-110 transition-all duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+                    <div className="absolute bottom-4 left-4">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">NRW Landesmeister</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

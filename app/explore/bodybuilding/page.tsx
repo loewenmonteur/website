@@ -72,14 +72,51 @@ export default function BodybuildingExplorePage() {
           <div className="relative order-1 lg:order-2 fade-up">
              <div className="aspect-square bg-zinc-900 rounded-[3rem] border border-zinc-800 overflow-hidden shadow-2xl relative group">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/training_iron_gym_1770068881023.png"
-                  alt="The Lion Den Gym"
+                  src="/images/championships/nrw_champion_pose.png"
+                  alt="Orkun on stage - NRW Landesmeister"
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
              </div>
              <Flame className="absolute -bottom-10 -right-10 w-40 h-40 text-yellow-500/10 -rotate-12 animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* Championship Proof Section */}
+      <section className="py-24 px-6 relative overflow-hidden bg-zinc-900/10">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-16">
+          <div className="space-y-4 fade-up">
+            <h2 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-500">Die ultimative Prüfung</h2>
+            <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Doppelsieg 2024/25</h3>
+            <p className="text-zinc-500 max-w-2xl mx-auto text-lg leading-relaxed">
+              Dieses System wurde auf der härtesten Bühne Deutschlands getestet. Orkun hat bewiesen, dass man im Handwerk Vollgas geben kann und trotzdem zum Champion wird.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+            {[
+              { img: "/images/championships/nrw_stage_overview.png", label: "NRW Meisterschaft", pos: "Gesamtsieg" },
+              { img: "/images/championships/orkun_champion_medal.png", label: "Deutsche Meisterschaft", pos: "1. Platz" },
+              { img: "/images/championships/german_champion_pose.png", label: "DBFV e.V. Posing", pos: "Dominanz" }
+            ].map((item, i) => (
+              <div key={i} className="group fade-up space-y-4">
+                <div className="aspect-4/5 bg-zinc-900 rounded-3xl border border-zinc-900 overflow-hidden relative shadow-2xl">
+                  <Image 
+                    src={item.img}
+                    alt={item.label}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-500 mb-1">{item.pos}</p>
+                    <p className="text-xl font-black uppercase text-white tracking-tighter">{item.label}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
