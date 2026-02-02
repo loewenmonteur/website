@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, ShieldCheck, ArrowRight, Star, Award } from "lucide-react";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export default function ProvePage() {
           <h1 className="text-sm font-black uppercase tracking-[0.2em] text-yellow-500 mb-1">Modul PROVE</h1>
           <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-2">Beweis & Challenge</h2>
           <p className="text-xs font-mono text-zinc-500">
-            Identität entsteht durch Beweise – nicht durch Worte.
+            Tragfähigkeit entsteht durch Beweise – nicht durch Worte.
           </p>
         </div>
       </div>
@@ -93,9 +93,9 @@ export default function ProvePage() {
            <div className="space-y-4">
              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Vergangene Beweise</h3>
              {[
-               "Alpha-Start Routine",
+               "Pionier-Fundament Routine",
                "30 Tage No-Bread",
-               "SHK Mastery Intro"
+               "Handwerk Mastery Intro"
              ].map((proof, i) => (
                <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-zinc-900 bg-zinc-900/20 group cursor-default">
                  <div className="w-10 h-10 rounded-full bg-zinc-950 flex items-center justify-center">

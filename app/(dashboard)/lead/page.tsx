@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Play, ArrowRight, Video, FileText, Quote } from "lucide-react";
+import { Play, ArrowRight, Video, FileText, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function LeadPage() {
@@ -20,7 +20,7 @@ export default function LeadPage() {
           <h1 className="text-sm font-black uppercase tracking-[0.2em] text-yellow-500 mb-1">Modul LEAD</h1>
           <h2 className="text-4xl font-black uppercase tracking-tight text-white mb-2">Haltung & Führung</h2>
           <p className="text-xs font-mono text-zinc-500">
-            Transformation beginnt im Kopf.
+            Vom Sichtbaren zum Tragfähigen.
           </p>
         </div>
       </div>
@@ -30,18 +30,18 @@ export default function LeadPage() {
         <div className="lg:col-span-8 space-y-6">
           <Card className="bg-zinc-950 border-zinc-900 overflow-hidden group">
             <div className="aspect-video bg-zinc-900 flex items-center justify-center relative">
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-60" />
                <Button size="icon" className="h-20 w-20 rounded-full bg-yellow-500 text-black hover:bg-yellow-400 hover:scale-105 transition-all z-20">
                  <Play className="w-8 h-8 fill-current ml-1" />
                </Button>
             </div>
             <CardContent className="p-8">
-               <div className="flex items-center gap-2 mb-4">
-                 <span className="text-[10px] font-black uppercase bg-zinc-900 border border-zinc-800 px-2 py-1 rounded text-zinc-400 flex items-center gap-1.5">
-                   <Video className="w-3 h-3" /> Video Impuls
-                 </span>
-                 <span className="text-[10px] font-mono text-zinc-600">{activeTopic.duration}</span>
-               </div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-[10px] font-black uppercase bg-zinc-900 border border-zinc-800 px-2 py-1 rounded text-zinc-400 flex items-center gap-1.5">
+                    <Video className="w-3 h-3" /> Systematischer Impuls
+                  </span>
+                  <span className="text-[10px] font-mono text-zinc-600">{activeTopic.duration}</span>
+                </div>
                <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-4">{activeTopic.title}</h3>
                <p className="text-zinc-500 text-sm leading-relaxed mb-8">
                  {activeTopic.description}
@@ -55,9 +55,9 @@ export default function LeadPage() {
           <Card className="bg-zinc-900/10 border-zinc-900 border-l-4 border-l-yellow-500/50">
             <CardContent className="p-8">
                <Quote className="w-8 h-8 text-yellow-500/20 mb-4" />
-               <p className="text-lg font-bold text-zinc-300 italic leading-relaxed">
-                 "{activeTopic.quote}"
-               </p>
+                <p className="text-lg font-bold text-zinc-300 italic leading-relaxed">
+                  &quot;{activeTopic.quote}&quot;
+                </p>
             </CardContent>
           </Card>
         </div>
@@ -83,8 +83,8 @@ export default function LeadPage() {
 
           <Card className="bg-yellow-500 text-black border-none">
             <CardContent className="p-6">
-              <h4 className="text-[10px] font-black uppercase tracking-widest mb-1 opacity-70">Transfer</h4>
-              <p className="font-bold text-sm mb-4">Setze diesen Impuls heute in deinem Betrieb um.</p>
+              <h4 className="text-[10px] font-black uppercase tracking-widest mb-1 opacity-70">Integration</h4>
+              <p className="font-bold text-sm mb-4">Integriere diesen Impuls systematisch in deinen Meister-Alltag.</p>
               <Button className="w-full bg-black text-white hover:bg-zinc-900 text-[10px] font-black uppercase tracking-widest h-10 border-none">
                 Bestätigen
               </Button>

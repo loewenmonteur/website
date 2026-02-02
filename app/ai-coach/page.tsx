@@ -25,7 +25,7 @@ export default function AICoachPage() {
     { 
       id: "1", 
       role: "assistant", 
-      content: "Willkommen im System, Löwe. Ich bin dein digitaler Mentor. Was blockiert dich heute? Arbeit, Training oder Mindset?" 
+      content: "Willkommen im System, Löwe. Ich bin dein Mentor. Lass uns über dein System sprechen. Was blockiert heute deine Tragfähigkeit? Struktur, Energie oder Führung?" 
     }
   ]);
   const [input, setInput] = useState("");
@@ -48,12 +48,12 @@ export default function AICoachPage() {
 
     // Simulated Orkun-Style Response Logic
     setTimeout(() => {
-      let response = "Das ist eine gute Frage. Im Handwerk zählt nur die Haltung. Wenn du hier nicht mit 100% dabei bist, verlierst du den Fokus. Was ist dein nächster Schritt?";
+      let response = "Haltung ist das Fundament, aber das System ist die Struktur. Wenn dein Tagesablauf nicht trägt, nützt dir die beste Haltung nichts. Wo genau bricht deine Ordnung weg?";
       
       if (input.toLowerCase().includes("azubi")) {
-        response = "Azubis führen heißt Vorbild sein. Wenn du willst, dass sie brennen, musst du selbst das Feuer sein. Hast du heute schon die Standards gesetzt?";
+        response = "Azubis führen heißt Vorbild sein. Wenn du willst, dass sie brennen, musst du selbst das Feuer sein. Hast du heute schon die Standards im System gesetzt?";
       } else if (input.toLowerCase().includes("müde") || input.toLowerCase().includes("keine lust")) {
-        response = "Müdigkeit ist ein Signal, kein Stoppschild. Löwen ziehen durch, wenn andere schlafen. Trink einen Kaffee, geh kalt duschen und dann ab ans Eisen oder in den Betrieb.";
+        response = "Lass uns nicht über Motivation reden, sondern über deinen Protokoll-Check. Müdigkeit ist oft ein Zeichen von fehlender Systematik bei Schlaf oder Nahrung. Was sagt dein MOVE-Modul?";
       }
 
       const assistantMsg: Message = { id: (Date.now() + 1).toString(), role: "assistant", content: response };

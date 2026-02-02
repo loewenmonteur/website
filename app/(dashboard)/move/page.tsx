@@ -91,7 +91,7 @@ export default function MovePage() {
               <span className="text-white font-bold uppercase tracking-widest text-[10px]">90/90/1 Regel</span>
             </div>
             <div className="mt-4 p-4 rounded-lg bg-zinc-950/50 border border-zinc-900 text-zinc-400 text-xs leading-relaxed italic">
-              "Wer den Morgen beherrscht, beherrscht den Tag. Wer den Tag beherrscht, beherrscht das Leben."
+              &quot;Wer den Morgen beherrscht, beherrscht den Tag. Wer den Tag beherrscht, beherrscht das Leben.&quot;
             </div>
             <Button variant="link" className="p-0 h-auto text-yellow-500 text-[10px] font-black uppercase tracking-widest mt-6 group" asChild>
               <Link href="/move/habits">

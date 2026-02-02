@@ -1,16 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Flame, CheckCircle2, ChevronRight, Apple, Beef, Leaf } from "lucide-react";
-import Link from "next/link";
 
 export default function EatPage() {
   const activePlan = {
-    title: "Performance Fueling",
-    style: "High Protein",
+    title: "System-Nahrung: Basis",
+    style: "Protein-Fokus",
     sessions: [
-      { name: "Power Breakfast", type: "Frühstück", time: "07:30", items: "Oatmeal mit Whey & Beeren", completed: true },
-      { name: "Pro-Fuel Lunch", type: "Mittagessen", time: "12:30", items: "Hähnchen mit Quinoa & Brokkoli", completed: false },
-      { name: "Steady Alpha Dinner", type: "Abendessen", time: "19:00", items: "Wildlachs mit Süßkartoffeln", completed: false },
+      { name: "Präzisions-Start", type: "Frühstück", time: "07:30", items: "Oatmeal mit Whey & Beeren", completed: true },
+      { name: "Meister-Mittag", type: "Mittagessen", time: "12:30", items: "Hähnchen mit Quinoa & Brokkoli", completed: false },
+      { name: "Abend-Struktur", type: "Abendessen", time: "19:00", items: "Wildlachs mit Süßkartoffeln", completed: false },
     ]
   };
 
@@ -37,7 +36,10 @@ export default function EatPage() {
 
       {/* 2. Today's Plan */}
       <div className="space-y-4">
-        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Heute</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Betriebsstoff-Zufuhr</h3>
+          <span className="text-[10px] font-black uppercase text-zinc-800">Tragfähigkeit durch Nährstoffe</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {activePlan.sessions.map((session, idx) => (
             <Card key={idx} className={`border-zinc-800 bg-zinc-900/20 ${session.completed ? 'opacity-50' : ''}`}>

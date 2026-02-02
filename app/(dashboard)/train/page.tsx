@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function TrainPage() {
   // Mock Active Plan Data according to PRD (Active Plan Only)
   const activePlan = {
-    title: "Lion Strength Phase I",
-    session: "Push Alpha",
+    title: "Instinkt-Entwicklung Phase I",
+    session: "Druck-Struktur A",
     exercises: [
       { name: "Bankdrücken (Langhantel)", sets: "3 x 10", weight: "85kg", tempo: "3-0-1-0", status: "completed" },
       { name: "Schulterdrücken (KH)", sets: "3 x 12", weight: "24kg", tempo: "2-1-1-0", status: "current" },
@@ -30,7 +30,7 @@ export default function TrainPage() {
           <div className="flex items-center gap-4 text-xs font-mono text-zinc-500">
             <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {activePlan.stats.duration}</span>
             <span className="flex items-center gap-1.5"><Flame className="w-3.5 h-3.5" /> {activePlan.stats.intensity}</span>
-            <span className="px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400">{activePlan.title}</span>
+            <span className="px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-800 text-yellow-500/50 uppercase tracking-tighter">{activePlan.title}</span>
           </div>
         </div>
         <Button className="bg-yellow-500 text-black hover:bg-yellow-400 font-black uppercase tracking-widest px-8">
@@ -40,7 +40,10 @@ export default function TrainPage() {
 
       {/* 2. Active Session Card (Exercise Execution) */}
       <div className="space-y-4">
-        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Übungsliste</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">Physische Rekrutierung</h3>
+          <span className="text-[10px] font-black uppercase text-zinc-800">Systematik vor Motivation</span>
+        </div>
         
         {activePlan.exercises.map((ex, idx) => (
           <Card key={idx} className={`border-zinc-800 bg-zinc-900/20 transition-all ${
@@ -51,7 +54,7 @@ export default function TrainPage() {
               <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-zinc-800/50">
                 {/* Visual Block (Video/Image Placeholder) */}
                 <div className="w-full md:w-32 aspect-video md:aspect-square bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                   <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                    <Dumbbell className="w-6 h-6 text-zinc-700" />
                 </div>
 
