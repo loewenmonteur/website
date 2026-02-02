@@ -263,10 +263,20 @@ export default function Home() {
               
               <div className="space-y-8">
                 <p className="text-zinc-400 text-xl md:text-2xl font-bold leading-relaxed tracking-tight italic border-l-4 border-yellow-500 pl-8">
-                  &quot;In einer Welt voller Filter und Schein-Leistung zählt am Ende nur eins: Die Haltung auf der echten Bühne des Lebens.&quot;
+                  &quot;Früher war es Social Media Druck – heute ist es die Bühne meines Lebens. Wer NRW-Landesmeister und Deutscher Meister im Bodybuilding wird, während er Firma, Familie und Handwerk führt, hat kein Geheimnis. Er hat ein System.&quot;
                 </p>
+                <div className="grid grid-cols-2 gap-4">
+                   <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-yellow-500 mb-1">Erfolg I</p>
+                      <p className="text-sm text-white font-bold">NRW Landesmeister</p>
+                   </div>
+                   <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-yellow-500 mb-1">Erfolg II</p>
+                      <p className="text-sm text-white font-bold">Deutscher Meister</p>
+                   </div>
+                </div>
                 <p className="text-zinc-500 text-lg leading-relaxed font-bold">
-                  Wir befreien dich vom Druck der digitalen Bestätigung und führen dich zur physischen und mentalen Meisterschaft. Jeder kann es schaffen. Du auch?
+                  Orkun hat bewiesen: Man muss sich nicht entscheiden. Du kannst ein liebender Familienvater, ein erfolgreicher Unternehmer und ein Champion im Sport sein. LÖWENTRAFO ist der Beweis. Jeder kann es schaffen. Du auch?
                 </p>
               </div>
 
