@@ -1,6 +1,7 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket } from "lucide-react";
+import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket, Camera, Eye } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TrafoExplorePage() {
   const synergySteps = [
@@ -70,6 +71,63 @@ export default function TrafoExplorePage() {
              <div className="absolute -top-4 -left-4 p-6 bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl animate-bounce">
                 <Rocket className="w-6 h-6 text-yellow-500" />
              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Evidence Log: The sheer volume of reality */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Camera className="w-4 h-4 text-yellow-500" />
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500 text-left">Das Evidence Log</p>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Keine Fake-<br/><span className="text-zinc-800">Marketing</span> Welt</h2>
+            </div>
+            <p className="text-zinc-500 max-w-sm text-sm text-left">
+              Wir dokumentieren jeden Schritt. Über 40 Stunden Videomaterial und tausende Bilder beweisen: LÖWENTRAFO ist kein Produkt vom Reißbrett, sondern aus dem echten Leben.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4 auto-rows-[150px] md:auto-rows-[200px]">
+            {/* Masonry-like grid using various spans */}
+            {[
+              { src: "/images/doku/reality_01.jpg", span: "col-span-2 row-span-2" },
+              { src: "/images/doku/reality_02.jpg", span: "col-span-1 row-span-1" },
+              { src: "/images/doku/reality_03.jpg", span: "col-span-1 row-span-2" },
+              { src: "/images/doku/reality_04.jpg", span: "col-span-2 row-span-1" },
+              { src: "/images/doku/reality_05.jpg", span: "col-span-1 row-span-1" },
+              { src: "/images/doku/reality_06.jpg", span: "col-span-2 row-span-2" },
+              { src: "/images/doku/reality_07.jpg", span: "col-span-2 row-span-1" },
+              { src: "/images/doku/reality_08.jpg", span: "col-span-1 row-span-1" },
+              { src: "/images/doku/reality_09.jpg", span: "col-span-1 row-span-2" },
+              { src: "/images/doku/reality_10.jpg", span: "col-span-2 row-span-1" },
+              { src: "/images/championships/german_championship_stage.png", span: "col-span-2 row-span-2" },
+              { src: "/images/doku/main.jpg", span: "col-span-1 row-span-1" },
+              { src: "/images/doku/meister.jpg", span: "col-span-1 row-span-1" },
+            ].map((img, i) => (
+              <div key={i} className={`${img.span} relative rounded-xl md:rounded-3xl overflow-hidden border border-zinc-900 group`}>
+                <Image 
+                  src={img.src}
+                  alt={`Log evidence ${i}`}
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                  <div className="bg-zinc-950/80 backdrop-blur-sm p-1.5 md:p-2 rounded-lg border border-zinc-800">
+                    <Eye className="w-3 h-3 md:w-4 md:h-4 text-yellow-500" />
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="col-span-2 row-span-1 md:row-span-2 bg-zinc-900/20 border border-zinc-900 rounded-xl md:rounded-3xl flex flex-col items-center justify-center p-6 text-center group cursor-pointer hover:border-yellow-500/30 transition-all">
+               <Camera className="w-8 h-8 text-zinc-800 mb-4 group-hover:text-yellow-500 transition-colors" />
+               <p className="text-[10px] font-black uppercase tracking-widest text-zinc-600 mb-2">Gesamtes Archiv</p>
+               <p className="text-xs text-zinc-800 font-bold uppercase tracking-tighter">1.432 Assets verfügbar</p>
+            </div>
           </div>
         </div>
       </section>
