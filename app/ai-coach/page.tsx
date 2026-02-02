@@ -18,9 +18,14 @@ interface Message {
 export default function AICoachPage() {
   const [messages, setMessages] = useState<Message[]>([
     { 
+      id: "0", 
+      role: "assistant", 
+      content: "Hinweis: Ich bin eine KI, trainiert auf der Philosophie von Orkun K. Ich ersetze keinen professionellen medizinischen oder rechtlichen Rat. Nutze meine Impulse als Werkzeuge für deinen eigenen Weg." 
+    },
+    { 
       id: "1", 
       role: "assistant", 
-      content: "Willkommen im System, Löwe. Ich bin dein digitaler Mentor, trainiert auf Orkuns Code. Was blockiert dich heute? Arbeit, Training oder Mindset?" 
+      content: "Willkommen im System, Löwe. Ich bin dein digitaler Mentor. Was blockiert dich heute? Arbeit, Training oder Mindset?" 
     }
   ]);
   const [input, setInput] = useState("");
@@ -103,10 +108,12 @@ export default function AICoachPage() {
                   
                   <div className={`relative p-6 rounded-3xl ${
                     m.role === "assistant" 
-                    ? "bg-zinc-900/50 border border-zinc-900 text-zinc-300" 
+                    ? (m.id === "0" 
+                        ? "bg-zinc-900/20 border border-zinc-900/50 text-zinc-600 italic" 
+                        : "bg-zinc-900/50 border border-zinc-900 text-zinc-300")
                     : "bg-zinc-100 text-zinc-900 font-bold"
                   }`}>
-                    <p className="text-sm md:text-lg leading-relaxed">{m.content}</p>
+                    <p className={m.id === "0" ? "text-[10px]" : "text-sm md:text-lg leading-relaxed"}>{m.content}</p>
                     {m.role === "assistant" && (
                       <button 
                         aria-label="Sprachausgabe"

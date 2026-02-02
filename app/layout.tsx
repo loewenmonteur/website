@@ -9,12 +9,28 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "LÖWENTRAFO - Leistung im Leben",
-  description: "Ein System für Körper, Arbeit und Verantwortung.",
+  title: "LÖWENTRAFO - Dominance in Craftsmanship & Performance",
+  description: "Das ultimative System für Handwerk, Bodybuilding und die Trafo-Vision. Werde zum Meister deines Lebens.",
+  keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
+  authors: [{ name: "Orkun K." }],
+  openGraph: {
+    title: "LÖWENTRAFO - Leistung im Leben",
+    description: "Körper. Arbeit. Verantwortung. Das System für Transformation.",
+    url: "https://loewentrafo.de",
+    siteName: "LÖWENTRAFO",
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LÖWENTRAFO",
+    description: "Das System für echte Macher.",
+  },
 };
 
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CookieBanner } from "@/components/CookieBanner";
+import { AIFloatingButton } from "@/components/AIFloatingButton";
 
 export default function RootLayout({
   children,
@@ -30,6 +46,7 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
         <CookieBanner />
+        <AIFloatingButton />
       </body>
     </html>
   );
