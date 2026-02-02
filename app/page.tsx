@@ -248,7 +248,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Sneak Peak Section: Products & Insights */}
+      {/* 4. The Stage Narrative */}
+      <section className="py-48 px-6 bg-zinc-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            
+            <div className="space-y-12">
+              <div className="space-y-6">
+                 <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Die Transformation</h2>
+                 <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.85]">
+                   Vom Social Media <span className="text-zinc-800">Druck</span><br />Zur <span className="text-yellow-500">Bühne</span>
+                 </h3>
+              </div>
+              
+              <div className="space-y-8">
+                <p className="text-zinc-400 text-xl md:text-2xl font-bold leading-relaxed tracking-tight italic border-l-4 border-yellow-500 pl-8">
+                  &quot;In einer Welt voller Filter und Schein-Leistung zählt am Ende nur eins: Die Haltung auf der echten Bühne des Lebens.&quot;
+                </p>
+                <p className="text-zinc-500 text-lg leading-relaxed font-bold">
+                  Wir befreien dich vom Druck der digitalen Bestätigung und führen dich zur physischen und mentalen Meisterschaft. Jeder kann es schaffen. Du auch?
+                </p>
+              </div>
+
+              <div className="pt-8">
+                <PreOrderButton className="h-20 px-12 group" />
+              </div>
+            </div>
+
+            <div className="relative group">
+              <div className="absolute inset-0 bg-yellow-500/10 blur-[120px] rounded-full group-hover:bg-yellow-500/20 transition-all duration-1000" />
+              <div className="relative aspect-video lg:aspect-square bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden shadow-2xl">
+                <Image 
+                  src="/transformation-stage.webp"
+                  alt="Transformation Stage"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-[3s]"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-8 left-8 right-8 text-center">
+                   <p className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600">Real Life Performance Mode</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Sneak Peak Section: Products & Insights */}
       <section className="py-48 px-6 bg-[radial-gradient(circle_at_50%_0%,#1a1a1e_0%,#09090b_100%)]">
         <div className="max-w-7xl mx-auto space-y-32">
           <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
