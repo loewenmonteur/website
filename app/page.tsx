@@ -1,5 +1,5 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { CheckCircle2, Play, Trophy, Users, Star, Quote, ArrowRight, Dumbbell, Utensils, ListTodo, GraduationCap, ShieldCheck, Zap } from "lucide-react";
+import { Play, Users, Dumbbell, Utensils, ListTodo, GraduationCap, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -76,6 +76,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5 Die 3 Säulen der Transformation */}
+      <section className="py-32 px-6 bg-zinc-950 border-t border-zinc-900/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            {/* Pillar 1: Handwerk */}
+            <div className="space-y-6 group">
+              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-zinc-800 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
+                <div className="relative z-10 space-y-4">
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar I</h4>
+                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Handwerk &<br />Betriebe</h5>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Vom Azubi bis zur Innung. Wir bringen Disziplin, Stolz und Systematik zurück in den Betrieb. Gegen den Fachkräftemangel, für die Meisterschaft.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 2: Bodybuilding */}
+            <div className="space-y-6 group">
+              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-zinc-800 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
+                <div className="relative z-10 space-y-4">
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar II</h4>
+                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Eisen &<br />Ästhetik</h5>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Bodybuilding als Therapie. Wir lehren die Liebe zum harten Training, physische Dominanz und die ästhetische Transformation deines Körpers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 3: Die Trafo */}
+            <div className="space-y-6 group">
+              <div className="h-[400px] bg-zinc-900 rounded-2xl border border-yellow-500/20 p-8 flex flex-col justify-end relative overflow-hidden transition-all duration-500 hover:border-yellow-500/50 group-hover:shadow-[0_0_40px_rgba(250,204,21,0.05)]">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
+                <div className="relative z-10 space-y-4">
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar III</h4>
+                  <h5 className="text-3xl font-black uppercase text-white tracking-tighter">Sport, Arbeit<br />& Leben</h5>
+                  <p className="text-zinc-500 text-sm leading-relaxed font-bold">
+                    Die Synergie. Wir vereinen das Beste aus allen Welten zu einem operativen System für den modernen High-Performer.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 3. Doku Teaser: Einblicke ins wahre Leben */}
       <section className="py-32 px-6 border-y border-zinc-900 bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_100%)]">
         <div className="max-w-4xl mx-auto text-center space-y-12">
@@ -122,7 +176,7 @@ export default function Home() {
               </Card>
             ))}
             
-            <div className="lg:col-span-1 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl p-8 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-2xl">
+            <div className="lg:col-span-1 bg-linear-to-br from-yellow-500 to-yellow-600 rounded-xl p-8 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-2xl">
                <Zap className="absolute -bottom-4 -right-4 w-32 h-32 text-black/10 -rotate-12" />
                <div className="relative z-10">
                  <h4 className="text-3xl font-black uppercase text-black tracking-tighter leading-none mb-4">Werde Teil der Alpha</h4>
