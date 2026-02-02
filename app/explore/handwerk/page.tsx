@@ -50,8 +50,8 @@ export default function HandwerkExplorePage() {
           <div className="relative group fade-up">
              <div className="aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/orkun_blaumann_portrait_1770068839138.png"
-                  alt="Orkun leading with discipline"
+                  src="/images/handwerk/orkun_leadership_blaumann.png"
+                  alt="Orkun leading with discipline in high-end workwear"
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
@@ -59,7 +59,7 @@ export default function HandwerkExplorePage() {
              </div>
              <div className="absolute -bottom-6 -left-6 p-8 bg-zinc-950 border border-zinc-900 rounded-3xl shadow-2xl max-w-sm">
                 <p className="text-xs font-black uppercase tracking-widest text-yellow-500 mb-2">Die Mission</p>
-                <p className="text-lg font-black uppercase text-white leading-tight italic">
+                <p className="text-xl font-black uppercase text-white leading-tight italic">
                   &quot;Ein Meister ohne Disziplin ist nur ein Arbeiter mit Titel.&quot;
                 </p>
              </div>

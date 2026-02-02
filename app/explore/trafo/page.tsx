@@ -58,17 +58,20 @@ export default function TrafoExplorePage() {
             </div>
           </div>
           
-          <div className="relative">
-             <div className="w-full aspect-square bg-[radial-gradient(circle_at_50%_50%,#27272a_0%,#09090b_70%)] rounded-full border border-zinc-900 flex items-center justify-center relative group">
-                <Zap className="w-32 h-32 text-yellow-500/10 group-hover:text-yellow-500/20 transition-all duration-1000 group-hover:scale-110" />
+          <div className="relative fade-up">
+             <div className="w-full aspect-square bg-zinc-900 rounded-[3rem] border border-zinc-900 overflow-hidden relative group shadow-2xl">
+                <Image 
+                  src="/images/handwerk/synergy_detail.png"
+                  alt="Synergy of Craft and Fitness"
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-[80%] h-[80%] rounded-full border border-dashed border-zinc-800 animate-[spin_20s_linear_infinite] opacity-50" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-[60%] h-[60%] rounded-full border border-dashed border-zinc-700 animate-[spin_15s_linear_infinite_reverse] opacity-30" />
+                   <Zap className="w-24 h-24 text-yellow-500/20 group-hover:text-yellow-500/40 transition-all duration-1000" />
                 </div>
              </div>
-             <div className="absolute -top-4 -left-4 p-6 bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl animate-bounce">
+             <div className="absolute -top-4 -left-4 p-6 bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl animate-bounce z-10">
                 <Rocket className="w-6 h-6 text-yellow-500" />
              </div>
           </div>

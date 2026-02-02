@@ -89,9 +89,9 @@ export default function BodybuildingExplorePage() {
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-16">
           <div className="space-y-4 fade-up">
             <h2 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-500">Die ultimative Prüfung</h2>
-            <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Doppelsieg 2024/25</h3>
-            <p className="text-zinc-500 max-w-2xl mx-auto text-lg leading-relaxed">
-              Dieses System wurde auf der härtesten Bühne Deutschlands getestet. Orkun hat bewiesen, dass man im Handwerk Vollgas geben kann und trotzdem zum Champion wird.
+            <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">Vom NRW Champion zur<br />Deutschen Spitze</h3>
+            <p className="text-zinc-500 max-w-2xl mx-auto text-lg leading-relaxed font-bold">
+              Nach dem NRW-Sieg kam der mentale Crash. Doch das Support-System aus Familie, Freunden und Trainern hielt den Kurs. Heute ist dieser Triumph der Beweis für die Kraft des LÖWENTRAFO Systems.
             </p>
           </div>
 
