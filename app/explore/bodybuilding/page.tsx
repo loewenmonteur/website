@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { Dumbbell, Target, Flame, Award, ArrowRight, CheckCircle2, Zap, Heart, Activity } from "lucide-react";
+import { Target, Flame, Zap, Activity } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
@@ -88,7 +88,7 @@ export default function BodybuildingExplorePage() {
       <section className="py-24 px-6 bg-zinc-900/30 border-y border-zinc-900">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center fade-up">
            <div className="flex-1 relative">
-              <div className="aspect-[16/10] bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl">
+              <div className="aspect-16/10 bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl">
                  <Image 
                     src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
                     alt="Löwen-Küche high protein"

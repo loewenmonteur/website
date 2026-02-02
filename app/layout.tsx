@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { CookieBanner } from "@/components/CookieBanner";
 
 export default function RootLayout({
   children,
@@ -28,6 +29,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <CookieBanner />
       </body>
     </html>
   );

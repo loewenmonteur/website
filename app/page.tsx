@@ -5,7 +5,7 @@ import { PreOrderButton } from "@/components/PreOrderButton";
 import { 
   Play, Users, Dumbbell, Utensils, ListTodo, 
   GraduationCap, ShieldCheck, Zap, ArrowRight,
-  Target, Rocket, Quote
+  Target, Quote
 } from "lucide-react";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -17,7 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const storyRef = useRef<HTMLDivElement>(null);
 
   const modules = [
     { name: "TRAIN", icon: Dumbbell, desc: "Kraft & Leistungsfähigkeit für den Alltag eines Meisters." },
@@ -137,7 +136,7 @@ export default function Home() {
           </div>
           
           <div className="relative order-1 lg:order-2 group">
-             <div className="story-image aspect-[4/5] bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
+             <div className="story-image aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
                 <Image 
                   src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/orkun_blaumann_portrait_1770068839138.png"
                   alt="Orkun portrait in Blaumann"
@@ -168,7 +167,7 @@ export default function Home() {
             
             {/* Pillar 1: Handwerk */}
             <Link href="/explore/handwerk" className="pillar-card group cursor-pointer">
-              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+              <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
                 <Image 
                   src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
                   alt="Handwerk Mastery"
@@ -196,7 +195,7 @@ export default function Home() {
 
             {/* Pillar 2: Bodybuilding */}
             <Link href="/explore/bodybuilding" className="pillar-card group cursor-pointer md:mt-12">
-              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+              <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
                 <Image 
                   src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/training_iron_gym_1770068881023.png"
                   alt="Training Iron Gym"
@@ -224,7 +223,7 @@ export default function Home() {
 
             {/* Pillar 3: Die Trafo */}
             <Link href="/explore/trafo" className="pillar-card group cursor-pointer">
-              <div className="h-[600px] bg-zinc-900 rounded-[2rem] border border-yellow-500/30 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
+              <div className="h-[600px] bg-zinc-900 rounded-4xl border border-yellow-500/30 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale group-hover:scale-110 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
                 <div className="relative z-10 space-y-6">
@@ -265,7 +264,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
              {/* Content 1: Training */}
              <div className="group relative">
-                <div className="aspect-[16/10] bg-zinc-900 rounded-[2rem] border border-zinc-800 overflow-hidden relative shadow-2xl">
+                <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541534741688-6078c65b5a33?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-all duration-1000" />
                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
                    <div className="absolute top-8 left-8 p-3 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-zinc-800">
@@ -280,7 +279,7 @@ export default function Home() {
              
              {/* Content 2: Nutrition */}
              <div className="group relative mt-12 md:mt-24">
-                <div className="aspect-[16/10] bg-zinc-900 rounded-[2rem] border border-zinc-800 overflow-hidden relative shadow-2xl">
+                <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
                    <Image 
                       src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
                       alt="Performance Fueling"
@@ -314,7 +313,7 @@ export default function Home() {
                   src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
                   alt="Doku teaser background"
                   fill
-                  className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-[2000ms]"
+                  className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-2000"
                 />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
@@ -344,8 +343,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {modules.map((m, i) => (
-              <div key={i} className="bg-zinc-900 p-10 rounded-[2rem] border border-zinc-800 hover:border-yellow-500/30 transition-all duration-500 group relative overflow-hidden">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/5 blur-[40px] rounded-full group-hover:bg-yellow-500/10 transition-all" />
+              <div key={i} className="bg-zinc-900 p-10 rounded-4xl border border-zinc-800 hover:border-yellow-500/30 transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/5 blur-2xl rounded-full group-hover:bg-yellow-500/10 transition-all" />
                 <div className="w-16 h-16 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-8 text-zinc-700 group-hover:text-yellow-500 transition-colors duration-500">
                   <m.icon className="w-8 h-8" />
                 </div>
@@ -354,7 +353,7 @@ export default function Home() {
               </div>
             ))}
             
-            <div className="lg:col-span-1 bg-yellow-500 rounded-[2rem] p-12 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-[0_0_100px_rgba(234,179,8,0.15)] transition-transform duration-500 hover:scale-[1.02]">
+            <div className="lg:col-span-1 bg-yellow-500 rounded-4xl p-12 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-[0_0_100px_rgba(234,179,8,0.15)] transition-transform duration-500 hover:scale-[1.02]">
                <Zap className="absolute -bottom-10 -right-10 w-48 h-48 text-black/10 -rotate-12 group-hover:scale-110 transition-transform duration-1000" />
                <div className="relative z-10 space-y-4">
                  <h4 className="text-4xl md:text-5xl font-black uppercase text-black tracking-tighter leading-[0.85] mb-4 group-hover:translate-y-[-5px] transition-transform">Werde Teil<br />der Alpha</h4>

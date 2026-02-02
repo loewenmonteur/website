@@ -1,5 +1,5 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { Zap, Brain, Activity, ArrowRight, CheckCircle2, Quote, LayoutDashboard, Rocket } from "lucide-react";
+import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket } from "lucide-react";
 import Link from "next/link";
 
 export default function TrafoExplorePage() {

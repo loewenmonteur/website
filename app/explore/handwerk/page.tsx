@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { PreOrderButton } from "@/components/PreOrderButton";
-import { ShieldCheck, HardHat, Users, ArrowRight, CheckCircle2, Trophy, Clock, Quote } from "lucide-react";
+import { Users, CheckCircle2, Trophy, Clock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
@@ -48,7 +48,7 @@ export default function HandwerkExplorePage() {
       <section className="py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative group fade-up">
-             <div className="aspect-[4/5] bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
+             <div className="aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
                 <Image 
                   src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/orkun_blaumann_portrait_1770068839138.png"
                   alt="Orkun leading with discipline"
