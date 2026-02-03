@@ -1,3 +1,5 @@
+"use client";
+
 import { PreOrderButton } from "@/components/PreOrderButton";
 import { useEffect, useRef } from "react";
 import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket, Camera, Eye } from "lucide-react";
