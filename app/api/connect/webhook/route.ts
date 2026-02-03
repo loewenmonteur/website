@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { stripeClient } from "@/lib/stripe-v2";
@@ -18,10 +19,10 @@ export async function POST(req: Request) {
      * V2 events are 'thin', meaning the payload is minimal. 
      * We must parse it and then fetch the full event details.
      */
-    const thinEvent = stripeClient.parseThinEvent(body, signature, webhookSecret);
+    const thinEvent = (stripeClient as any).parseThinEvent(body, signature, webhookSecret);
 
     // Fetch the full event data
-    const event = await stripeClient.v2.core.events.retrieve(thinEvent.id);
+    const event = await stripeClient.v2.core.events.retrieve(thinEvent.id) as any;
 
     // Handle specific V2 events
     switch (event.type) {
