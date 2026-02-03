@@ -21,12 +21,20 @@ export const metadata: Metadata = {
     url: "https://loewentrafo.de",
     siteName: "LÖWENTRAFO",
     locale: "de_DE",
-    type: "website",
+    images: [
+      {
+        url: "/images/brand/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "LÖWENTRAFO Brand Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LÖWENTRAFO",
     description: "Das System für echte Macher.",
+    images: ["/images/brand/logo.png"],
   },
 };
 
@@ -35,7 +43,7 @@ const jsonLd = {
   "@type": "Organization",
   "name": "LÖWENTRAFO",
   "url": "https://loewentrafo.de",
-  "logo": "https://loewentrafo.de/logo.png",
+  "logo": "https://loewentrafo.de/images/brand/logo.png",
   "founder": {
     "@type": "Person",
     "name": "Orkun K."

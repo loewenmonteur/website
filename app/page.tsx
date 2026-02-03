@@ -81,16 +81,16 @@ export default function Home() {
 
       {/* 1. Impact Hero */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 relative">
-        <div className="absolute inset-0 opacity-10 grayscale mix-blend-luminosity">
-          <Image 
-            src="/images/doku/main.jpg"
-            alt="Hero Background"
-            fill
-            priority
-            quality={90}
-            className="object-cover"
-            sizes="100vw"
-          />
+        <div className="absolute inset-0 opacity-40 mix-blend-luminosity">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/logo_transformation.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-zinc-950/0 via-zinc-950/80 to-zinc-950" />
         
@@ -149,7 +149,7 @@ export default function Home() {
           <div className="relative order-1 lg:order-2 group">
              <div className="story-image aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/orkun_blaumann_portrait_1770068839138.png"
+                  src="/images/handwerk/orkun_leadership_blaumann.png"
                   alt="Orkun portrait in Blaumann"
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
@@ -229,7 +229,7 @@ export default function Home() {
             <Link href="/explore/handwerk" className="pillar-card group cursor-pointer">
               <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/handwerk_mastery_action_1770068852063.png"
+                  src="/images/handwerk/orkun_shk_master.png"
                   alt="Handwerk Mastery"
                   fill
                   className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
@@ -257,7 +257,7 @@ export default function Home() {
             <Link href="/explore/bodybuilding" className="pillar-card group cursor-pointer md:mt-12">
               <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
                 <Image 
-                  src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/training_iron_gym_1770068881023.png"
+                  src="/images/championships/german_champion_pose.png"
                   alt="Training Iron Gym"
                   fill
                   className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
@@ -476,10 +476,10 @@ export default function Home() {
             <div className="order-2 lg:order-1 relative">
                <div className="aspect-square bg-zinc-900 rounded-[4rem] border border-zinc-900 overflow-hidden relative group">
                   <Image 
-                    src="/images/championships/nrw_stage_overview.png"
-                    alt="The Stage Audience"
+                    src="/images/championships/orkun_trainer.png"
+                    alt="Orkun and Trainer Mertzenich - Mentorship"
                     fill
-                    className="object-cover grayscale opacity-40 group-hover:scale-105 transition-all duration-1000"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                   <div className="absolute inset-0 flex items-center justify-center p-12">
@@ -558,7 +558,7 @@ export default function Home() {
              <div className="group relative md:mt-12">
                 <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
                    <Image 
-                      src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
+                      src="/images/doku/meal_prep.png"
                       alt="Performance Fueling"
                       fill
                       className="object-cover opacity-40 group-hover:scale-105 transition-all duration-1000"
@@ -721,9 +721,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 px-6 bg-zinc-950 border-t border-zinc-900 text-center">
          <div className="max-w-6xl mx-auto flex flex-col items-center gap-16">
-            <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-800 hover:text-zinc-600 transition-colors cursor-default">
-              Löwenmonteur <span className="text-zinc-900">Framework</span>
-            </h2>
+            <div className="flex flex-col items-center gap-6">
+              <div className="w-24 h-24 relative opacity-80 hover:opacity-100 transition-opacity duration-500">
+                <Image 
+                  src="/images/brand/logo.png"
+                  alt="Löwenmonteur Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-800 hover:text-zinc-600 transition-colors cursor-default">
+                Löwenmonteur <span className="text-zinc-900">Framework</span>
+              </h2>
+            </div>
             
             <div className="flex flex-wrap justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-700">
                <Link href="/impressum" className="hover:text-yellow-500 transition-colors">Impressum</Link>
