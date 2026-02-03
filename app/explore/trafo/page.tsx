@@ -54,10 +54,17 @@ export default function TrafoExplorePage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-12 fade-up">
             <div className="space-y-4">
-              <h2 className="text-3xl font-black uppercase tracking-tighter text-white">Das Blueprint</h2>
-              <p className="text-zinc-500 leading-relaxed text-lg">
-                Die meisten Menschen versuchen, ihre Lebensbereiche zu trennen. Wir tun das Gegenteil: Wir integrieren sie. Dein Training befähigt deine Arbeit. Deine Arbeit finanziert deine Leidenschaft. Deine Haltung bestimmt alles.
-              </p>
+              <h2 className="text-3xl font-black uppercase tracking-tighter text-white">Vom Motivator zum Systembauer</h2>
+              <div className="text-zinc-500 leading-relaxed text-lg space-y-4">
+                <p>
+                  <strong className="text-white">Fitnessorkun hat gezeigt, was möglich ist. Löwentrafo zeigt, was tragfähig ist.</strong>
+                </p>
+                <p>
+                  Motivation ist flüchtig. Disziplin ohne Struktur zerbricht. Reichweite ersetzt keine Ordnung.
+                  Löwentrafo ist kein Influencer-Projekt, sondern die technische Konsequenz aus Jahren an der Belastungsgrenze.
+                  Wir bauen das System, das deinen Erfolg unvermeidbar macht – nicht, weil du motiviert bist, sondern weil du strukturiert bist.
+                </p>
+              </div>
             </div>
             
             <div className="space-y-8">
@@ -158,8 +165,8 @@ export default function TrafoExplorePage() {
       <section className="py-32 px-6 bg-zinc-900/5 text-center">
          <div className="max-w-3xl mx-auto space-y-8">
             <Quote className="w-16 h-16 text-zinc-900 mx-auto" />
-            <p className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white italic leading-tight">
-              &quot;Du bist kein Handwerker, kein Sportler, kein Vater. Du bist EINE Person. Hör auf, dein Leben zu stückeln. Werde ganzheitlich stark.&quot;
+            <p className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-white italic leading-tight">
+              &quot;Ich bin nicht das Ziel. Ich bin der Beweis, dass ein System funktioniert. Fitness war der Einstieg – Ordnung ist das Ziel.&quot;
             </p>
             <p className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">— Orkun (Der Löwenmonteur)</p>
          </div>

@@ -83,7 +83,7 @@ export default function Home() {
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 relative">
         <div className="absolute inset-0 opacity-10 grayscale mix-blend-luminosity">
           <Image 
-            src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2532&auto=format&fit=crop"
+            src="/images/doku/main.jpg"
             alt="Hero Background"
             fill
             priority
@@ -133,7 +133,7 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-zinc-400 leading-relaxed text-2xl font-bold tracking-tight italic border-l-4 border-yellow-500 pl-8 py-4">
-              &quot;Motivation ist flüchtig. Disziplin ohne Struktur zerbricht. Ich habe Jahre damit verbracht zu zeigen, was möglich ist – jetzt baue ich das System, das diese Leistung dauerhaft trägt.&quot;
+              &quot;Ich bin nicht das Ziel. Ich bin der Beweis, dass ein System funktioniert. Fitnessorkun war der Einstieg – Löwentrafo ist das Fundament, das bleibt.&quot;
             </p>
             <div className="space-y-6 pt-4">
                <p className="text-zinc-500 text-lg leading-relaxed">
@@ -284,7 +284,7 @@ export default function Home() {
             {/* Pillar 3: Die Trafo */}
             <Link href="/explore/trafo" className="pillar-card group cursor-pointer">
               <div className="h-[600px] bg-zinc-900 rounded-4xl border border-yellow-500/30 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 filter grayscale group-hover:scale-110 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-[url('/images/handwerk/synergy_detail.png')] bg-cover bg-center opacity-20 filter grayscale group-hover:scale-110 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
                 <div className="relative z-10 space-y-6">
                   <div className="w-12 h-12 rounded-xl bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center">
@@ -542,7 +542,7 @@ export default function Home() {
              {/* Content 1: Training */}
              <div className="group relative">
                 <div className="aspect-16/10 bg-zinc-900 rounded-4xl border border-zinc-800 overflow-hidden relative shadow-2xl">
-                   <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541534741688-6078c65b5a33?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-all duration-1000" />
+                   <div className="absolute inset-0 bg-[url('/images/doku/training.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-all duration-1000" />
                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
                    <div className="absolute top-8 left-8 p-3 bg-zinc-950/80 backdrop-blur-md rounded-lg border border-zinc-800">
                       <Target className="w-5 h-5 text-yellow-500" />
@@ -656,9 +656,11 @@ export default function Home() {
              </div>
            </div>
            
-           <p className="text-zinc-500 text-lg max-w-2xl mx-auto font-bold tracking-tight">
-             Die ungeschönte Geschichte der Evolution von Fitnessorkun zu LÖWENTRAFO – Einblick in den Systembau.
-           </p>
+           <div className="flex justify-center mt-12">
+              <p className="text-zinc-500 text-lg max-w-2xl mx-auto font-bold tracking-tight text-center">
+                Wir dokumentieren nicht für Likes. Wir dokumentieren den Beweis. Vom Motivator zum Systembauer – die ungeschönte Evolution.
+              </p>
+           </div>
         </div>
       </section>
 
