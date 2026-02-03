@@ -7,7 +7,7 @@ import {
   useElements,
   Elements,
 } from "@stripe/react-stripe-js";
-import { loadStripe, StripeAppearance } from "@stripe/stripe-js";
+import { loadStripe, Appearance } from "@stripe/stripe-js";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShieldCheck, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -48,7 +48,7 @@ export function PaymentModal({ isOpen, onClose, tier, amount }: PaymentModalProp
     }
   }, [isOpen, clientSecret, fetchIntent]);
 
-  const appearance: StripeAppearance = {
+  const appearance: Appearance = {
     theme: 'night',
     variables: {
       colorPrimary: '#eab308',
