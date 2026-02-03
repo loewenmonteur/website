@@ -1,9 +1,26 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
+import { useEffect, useRef } from "react";
 import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket, Camera, Eye } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { gsap } from "gsap";
 
 export default function TrafoExplorePage() {
+  const containerRef = useRef(null);
+  
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".fade-up", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "expo.out"
+      });
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
   const synergySteps = [
     { title: "Physisches Fundament", icon: Activity, desc: "Ohne einen starken Körper gibt es keinen starken Geist. TRAIN & EAT bilden die Basis." },
     { title: "Operative Struktur", icon: LayoutDashboard, desc: "MOVE schafft die Routinen, die deinen Tag vom Chaos befreien." },
@@ -11,7 +28,7 @@ export default function TrafoExplorePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
+    <main ref={containerRef} className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals */}
       <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
       <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
@@ -19,14 +36,14 @@ export default function TrafoExplorePage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 text-center z-10">
         <div className="max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-6">
+          <div className="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-6 shadow-2xl">
             <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Pillar III: Die Trafo</span>
           </div>
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white">
+          <h1 className="fade-up text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white">
             Die<br /><span className="text-zinc-700">Synergie</span>
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-zinc-400 max-w-2xl mx-auto tracking-tight">
+          <p className="fade-up text-xl md:text-2xl font-bold text-zinc-400 max-w-2xl mx-auto tracking-tight">
             Wir verbinden Sport, Arbeit und Leben zu einem einzigen, hocheffizienten System. Das ist die wahre Transformation.
           </p>
         </div>
@@ -35,7 +52,7 @@ export default function TrafoExplorePage() {
       {/* The Vision Section */}
       <section className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-12">
+          <div className="space-y-12 fade-up">
             <div className="space-y-4">
               <h2 className="text-3xl font-black uppercase tracking-tighter text-white">Das Blueprint</h2>
               <p className="text-zinc-500 leading-relaxed text-lg">
@@ -64,7 +81,9 @@ export default function TrafoExplorePage() {
                   src="/images/handwerk/synergy_detail.png"
                   alt="Synergy of Craft and Fitness"
                   fill
+                  priority
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">

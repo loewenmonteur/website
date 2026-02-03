@@ -13,11 +13,11 @@ export default function BodybuildingExplorePage() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".fade-up", {
-        y: 40,
+        y: 50,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
+        duration: 1,
+        stagger: 0.1,
+        ease: "expo.out"
       });
     }, containerRef);
     return () => ctx.revert();
@@ -73,9 +73,11 @@ export default function BodybuildingExplorePage() {
              <div className="aspect-square bg-zinc-900 rounded-[3rem] border border-zinc-800 overflow-hidden shadow-2xl relative group">
                 <Image 
                   src="/images/championships/nrw_champion_pose.png"
-                  alt="Orkun on stage - NRW Landesmeister"
+                  alt="Orkun Arslanmekik on stage - NRW Landesmeister"
                   fill
+                  priority
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
              </div>
@@ -128,9 +130,10 @@ export default function BodybuildingExplorePage() {
               <div className="aspect-16/10 bg-zinc-900 rounded-3xl border border-zinc-800 overflow-hidden shadow-2xl">
                  <Image 
                     src="/brain/6236508e-f6dd-4e9f-84cf-689f93580393/nutrition_steak_bowl_1770068868595.png"
-                    alt="Löwen-Küche high protein"
+                    alt="Löwen-Küche high protein meal prep"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                  />
               </div>
               <div className="absolute -top-4 -left-4 px-6 py-2 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-widest rounded-full">

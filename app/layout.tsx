@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google"; // Premium, modern font
 import "./globals.css";
-
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
@@ -13,6 +12,9 @@ export const metadata: Metadata = {
   description: "Das ultimative System für Handwerk, Bodybuilding und die Trafo-Vision. Werde zum Meister deines Lebens.",
   keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
   authors: [{ name: "Orkun K." }],
+  alternates: {
+    canonical: "https://loewentrafo.de",
+  },
   openGraph: {
     title: "LÖWENTRAFO - Leistung im Leben",
     description: "Körper. Arbeit. Verantwortung. Das System für Transformation.",
@@ -28,9 +30,26 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LÖWENTRAFO",
+  "url": "https://loewentrafo.de",
+  "logo": "https://loewentrafo.de/logo.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Orkun K."
+  },
+  "description": "Premium Coaching & System-Struktur für Handwerker und Performer.",
+  "sameAs": [
+    "https://instagram.com/fitnessorkun"
+  ]
+};
+
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CookieBanner } from "@/components/CookieBanner";
 import { AIFloatingButton } from "@/components/AIFloatingButton";
+import { StripeProvider } from "@/components/StripeProvider";
 
 export default function RootLayout({
   children,
@@ -40,13 +59,19 @@ export default function RootLayout({
   return (
     <html lang="de" className="dark">
       <body
-        className={`${outfit.variable} antialiased bg-background text-foreground`}
+        className={`${outfit.variable} font-sans bg-background text-foreground antialiased selection:bg-yellow-500 selection:text-black`}
       >
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        <CookieBanner />
-        <AIFloatingButton />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <StripeProvider>
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <CookieBanner />
+          <AIFloatingButton />
+        </StripeProvider>
       </body>
     </html>
   );

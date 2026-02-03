@@ -13,11 +13,11 @@ export default function HandwerkExplorePage() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".fade-up", {
-        y: 40,
+        y: 50,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
+        duration: 1,
+        stagger: 0.1,
+        ease: "expo.out"
       });
     }, containerRef);
     return () => ctx.revert();
@@ -51,9 +51,11 @@ export default function HandwerkExplorePage() {
              <div className="aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
                 <Image 
                   src="/images/handwerk/orkun_leadership_blaumann.png"
-                  alt="Orkun leading with discipline in high-end workwear"
+                  alt="Orkun Arslanmekik leading with discipline in high-end workwear"
                   fill
+                  priority
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 to-transparent opacity-60" />
              </div>

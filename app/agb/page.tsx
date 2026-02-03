@@ -73,7 +73,7 @@ export default function AGBPage() {
                  <strong>Mängelhaftung:</strong> Es gelten die gesetzlichen Mängelhaftungsrechte.
               </p>
               <p>
-                 <strong>Schlussbestimmungen:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist, soweit gesetzlich zulässig, [Deine Stadt].
+                 <strong>Schlussbestimmungen:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist, soweit gesetzlich zulässig, <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Deine Stadt]</span>.
               </p>
            </div>
         </div>

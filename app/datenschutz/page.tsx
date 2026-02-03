@@ -70,7 +70,7 @@ export default function DatenschutzPage() {
            <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Weitere Details</h3>
            <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
               <p>
-                 <strong>Verantwortliche Stelle:</strong> Orkun K., [Straße], [Ort]. Bei Fragen rufen Sie uns an oder schreiben Sie eine E-Mail an mail@loewentrafo.de.
+                 <strong>Verantwortliche Stelle:</strong> Orkun K., <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Straße]</span>, <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Ort]</span>. Bei Fragen rufen Sie uns an oder schreiben Sie eine E-Mail an mail@loewentrafo.de.
               </p>
               <p>
                  <strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung:</strong> Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.

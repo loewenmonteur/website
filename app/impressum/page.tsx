@@ -35,8 +35,8 @@ export default function ImpressumPage() {
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed">
                     Orkun K.<br />
                     Löwenmonteur Framework<br />
-                    [Straße Hausnummer]<br />
-                    [PLZ Ort]
+                    <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Straße Hausnummer]</span><br />
+                    <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[PLZ Ort]</span>
                  </div>
               </section>
 
@@ -46,7 +46,7 @@ export default function ImpressumPage() {
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed underline decoration-zinc-800 underline-offset-8">
                     E-Mail: mail@loewentrafo.de<br />
-                    Telefon: [Deine Telefonnummer]
+                    Telefon: <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Deine Telefonnummer]</span>
                  </div>
               </section>
            </div>
@@ -63,11 +63,11 @@ export default function ImpressumPage() {
                     </div>
                     <div>
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Aufsichtsbehörde</p>
-                       <p className="text-white font-bold">Handwerkskammer [Deine Stadt]</p>
+                       <p className="text-white font-bold"><span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">Handwerkskammer [Deine Stadt]</span></p>
                     </div>
                     <div>
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">USt-IdNr.</p>
-                       <p className="text-white font-bold">[Umsatzsteuer-Identifikationsnummer]</p>
+                       <p className="text-white font-bold"><span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Umsatzsteuer-Identifikationsnummer]</span></p>
                     </div>
                  </div>
               </section>

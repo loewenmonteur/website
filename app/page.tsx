@@ -32,17 +32,17 @@ export default function Home() {
       gsap.from(".hero-title span", {
         y: 100,
         opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power4.out",
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "expo.out",
       });
 
       gsap.from(".hero-p", {
         opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.8,
-        ease: "power3.out",
+        y: 30,
+        duration: 1.2,
+        delay: 1,
+        ease: "expo.out",
       });
 
       // Story Section Parallax
@@ -58,13 +58,14 @@ export default function Home() {
 
       // Pillar Cards stagger
       gsap.from(".pillar-card", {
-        y: 50,
+        y: 60,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
+        duration: 1,
+        stagger: 0.1,
+        ease: "expo.out",
         scrollTrigger: {
           trigger: ".pillars-section",
-          start: "top 80%",
+          start: "top 85%",
         },
       });
     }, containerRef);
@@ -80,7 +81,17 @@ export default function Home() {
 
       {/* 1. Impact Hero */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2532&auto=format&fit=crop')] bg-cover bg-center opacity-10 grayscale mix-blend-luminosity" />
+        <div className="absolute inset-0 opacity-10 grayscale mix-blend-luminosity">
+          <Image 
+            src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2532&auto=format&fit=crop"
+            alt="Hero Background"
+            fill
+            priority
+            quality={90}
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-linear-to-b from-zinc-950/0 via-zinc-950/80 to-zinc-950" />
         
         <div className="space-y-8 max-w-6xl mx-auto relative z-10">

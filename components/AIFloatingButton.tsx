@@ -58,6 +58,7 @@ export function AIFloatingButton() {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          aria-label="KI Mentor Chat öffnen"
           className="w-16 h-16 rounded-full bg-yellow-500 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)] flex items-center justify-center relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
