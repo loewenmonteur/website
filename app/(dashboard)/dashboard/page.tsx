@@ -53,8 +53,8 @@ export default function DashboardPage() {
         {/* Overall Progress Bar */}
         <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden">
           <div 
-            className="h-full bg-linear-to-r from-yellow-600 to-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.3)]" 
-            style={{ width: `${(userData.day / userData.totalDays) * 100}%` }} 
+            className="h-full bg-linear-to-r from-yellow-600 to-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.3)] w-[var(--progress-width)]" 
+            style={{ '--progress-width': `${(userData.day / userData.totalDays) * 100}%` } as React.CSSProperties} 
           />
         </div>
       </div>

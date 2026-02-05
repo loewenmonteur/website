@@ -51,10 +51,11 @@ export async function POST(req: Request) {
     // e.g. await db.users.update({ where: { email }, data: { stripeAccountId: account.id } });
 
     return NextResponse.json({ accountId: account.id });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Stripe Account Creation Error:", error);
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
     return NextResponse.json(
-      { error: error.message },
+      { error: errorMessage },
       { status: 500 }
     );
   }

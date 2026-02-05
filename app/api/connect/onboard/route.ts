@@ -33,10 +33,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ url: accountLink.url });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Stripe Onboarding Error:", error);
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
     return NextResponse.json(
-      { error: error.message },
+      { error: errorMessage },
       { status: 500 }
     );
   }

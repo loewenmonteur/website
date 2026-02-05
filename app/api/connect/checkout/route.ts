@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       expand: ['product'],
     });
 
-    const product = price.product as any; // Type assertion for demo
+    const product = price.product as { metadata?: { connected_account_id?: string } };
     const destinationAccountId = product.metadata?.connected_account_id;
 
     if (!destinationAccountId) {
@@ -48,8 +48,9 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ url: session.url });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Checkout Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

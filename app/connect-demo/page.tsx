@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Using existing UI
-import { ShieldCheck, UserPlus, ShoppingBag, Store, Loader2, Link as LinkIcon, AlertCircle, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { UserPlus, ShoppingBag, Store, Loader2, Link as LinkIcon } from "lucide-react";
 
 // Types for our demo state
 interface ConnectedAccount {
@@ -20,13 +19,19 @@ interface Product {
   default_price: string; // Price ID
 }
 
+interface AccountStatus {
+  readyToReceivePayments: boolean;
+  onboardingComplete?: boolean;
+  details?: Record<string, unknown>;
+}
+
 export default function ConnectDemoPage() {
   // State
   const [partnerName, setPartnerName] = useState("");
   const [partnerEmail, setPartnerEmail] = useState("");
   const [currentAccount, setCurrentAccount] = useState<ConnectedAccount | null>(null);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<any>(null);
+  const [status, setStatus] = useState<AccountStatus | null>(null);
 
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("100"); // in EUR
@@ -284,7 +289,7 @@ export default function ConnectDemoPage() {
         )}
 
         {/* 3. Marketplace Storefront */}
-        <section className="p-8 rounded-3xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 space-y-8">
+        <section className="p-8 rounded-3xl bg-linear-to-br from-zinc-800 to-zinc-900 border border-zinc-700 space-y-8">
            <div className="flex items-center gap-4 border-b border-zinc-700 pb-6">
               <Store className="text-purple-500 w-8 h-8" />
               <h2 className="text-2xl font-bold uppercase">3. Live Storefront</h2>
