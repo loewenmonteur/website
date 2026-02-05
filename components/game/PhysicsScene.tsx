@@ -1,5 +1,5 @@
 import { Physics, Debug } from "@react-three/rapier";
-import { Environment, ContactShadows } from "@react-three/drei";
+import { Environment, ContactShadows, Stats } from "@react-three/drei";
 import GymLevel from "./GymLevel";
 import LionController from "./LionController";
 import BabyLion from "./BabyLion";
@@ -21,6 +21,9 @@ export default function PhysicsScene() {
        <Environment preset="city" />
        <ambientLight intensity={0.8} />
        
+       {/* Performance Monitoring (Game DevOps) - Stats is safer for Turbopack than r3f-perf currently */}
+       <Stats />
+
        {/* Debug view (toggleable via Leva ideally, but on for alpha) */}
        {/* <Debug /> */} 
     </Physics>

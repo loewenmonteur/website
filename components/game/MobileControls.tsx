@@ -4,9 +4,7 @@ import { useGameStore } from "@/store/useGameStore";
 
 export default function MobileControls() {
   const managerRef = useRef<any>(null);
-  const { setJoystickData } = useGameStore((state: any) => ({
-    setJoystickData: state.setJoystickData || (() => {}),
-  }));
+  const setJoystickData = useGameStore((state: any) => state.setJoystickData || (() => {}));
 
   useEffect(() => {
     const zone = document.getElementById("joystick-zone");

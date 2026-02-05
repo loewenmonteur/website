@@ -1,12 +1,10 @@
 import { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { RigidBody, CapsuleCollider, useRapier, RapierRigidBody } from "@react-three/rapier";
-import { Vector3, Quaternion, Euler } from "three";
-import { useKeyboardControls } from "@react-three/drei";
+import { RigidBody, CapsuleCollider, RapierRigidBody } from "@react-three/rapier";
+import { Vector3, Quaternion } from "three";
+// import { useGLTF } from "@react-three/drei"; // Uncomment when real model matches
 import { useGameStore } from "@/store/useGameStore";
 
-// Helper for keyboard controls if not using Drei's KeyboardControls wrapper
-// But we will use a simple event listener approach for MVP mixed with joystick
 export default function LionController() {
   const rigidBody = useRef<RapierRigidBody>(null);
   const playerRef = useRef<any>(null);
@@ -14,6 +12,8 @@ export default function LionController() {
   const [movement, setMovement] = useState({ x: 0, z: 0 });
   const [jumping, setJumping] = useState(false);
   const [isTraining, setTraining] = useState(false);
+  
+  // Connect to store for saving game state (e.g. position persistence)
   const { setPlayerPosition } = useGameStore();
 
   // Joystick listener
@@ -21,9 +21,6 @@ export default function LionController() {
     const handleJoystick = (e: any) => {
         const { vector } = e.detail;
         if (vector) {
-            // Invert Y because screen Y is opposite to 3D Z usually in top-down, 
-            // but for third person forward is forward.
-            // Joystick up (y positive) -> Move Forward (z negative)
             setMovement({ x: vector.x, z: -vector.y });
         }
     };
@@ -49,7 +46,6 @@ export default function LionController() {
         if (e.code === "Space") setJumping(true);
         
         if (e.code === "KeyE") {
-             // Check store for target? Or just toggle animation for visual feedback for now?
              setTraining(true);
              setTimeout(() => setTraining(false), 1000); // 1s training burst
         }
@@ -68,18 +64,19 @@ export default function LionController() {
     }
   }, []);
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (!rigidBody.current) return;
 
     // Movement Logic
     const speed = 5;
     const currentTranslation = rigidBody.current.translation();
     
-    // Calculate direction relative to camera (simplified for MVP: movement is absolute world space for now, 
-    // to make "W" always go "North". True third person requires camera forward projection).
+    // Sync position to store occasionally
+    if (state.clock.elapsedTime % 1 < 0.1) {
+        setPlayerPosition([currentTranslation.x, currentTranslation.y, currentTranslation.z]);
+    }
     
     // True Third Person Logic:
-    // 1. Get Camera Forward vector (projected to XZ plane)
     const camForward = new Vector3();
     camera.getWorldDirection(camForward);
     camForward.y = 0;
@@ -121,25 +118,16 @@ export default function LionController() {
     // Rotation: Face movement direction
     if (moveDir.length() > 0.1 && !isTraining) {
         const targetRotation = Math.atan2(moveDir.x, moveDir.z);
-        // Lerp rotation for smoothness (simplified here, just setting rotation)
+        // Lerp rotation
         const q = new Quaternion();
         q.setFromAxisAngle(new Vector3(0, 1, 0), targetRotation);
         rigidBody.current.setRotation(q, true);
     }
 
     // Camera Follow
-    // Camera should stay behind the player, usually smoothly lerped
-    const offset = new Vector3(0, 4, 6); // Offset behind (Z+) and up (Y+)
-    // Rotate offset by player rotation if we want "Chase Cam", 
-    // OR just keep fixed offset and look at player if we want "Zelda/Diablo style".
-    // Let's do a simple Smooth Follow Cam that keeps distance.
-    
+    const offset = new Vector3(0, 4, 6); 
     const t = new Vector3(currentTranslation.x, currentTranslation.y, currentTranslation.z);
-    
-    // Target camera position
     const camPos = t.clone().add(offset);
-    
-    // Smoothly lerp camera
     state.camera.position.lerp(camPos, 0.1);
     state.camera.lookAt(t);
 
@@ -150,29 +138,50 @@ export default function LionController() {
         ref={rigidBody} 
         position={[0, 2, 0]} 
         colliders={false} 
-        enabledRotations={[false, true, false]} // Lock X/Z rotation (don't tip over)
+        enabledRotations={[false, true, false]} // Lock X/Z rotation
         friction={1}
     >
         <CapsuleCollider args={[0.5, 0.5]} position={[0, 0.75, 0]} />
         
-        {/* Visuals - Placeholder Lion */}
+        {/* Character Model */}
         <group ref={playerRef}>
-            {/* Body */}
-            <mesh position={[0, 0.5, 0]} castShadow>
-                <boxGeometry args={[0.8, 0.8, 1.2]} />
-                <meshStandardMaterial color="#fbbf24" />
-            </mesh>
-            {/* Head */}
-            <mesh position={[0, 1.2, 0.6]} castShadow>
-                <boxGeometry args={[0.6, 0.6, 0.6]} />
-                <meshStandardMaterial color="#fbbf24" />
-            </mesh>
-            {/* Mane */}
-            <mesh position={[0, 1.2, 0.5]}>
-                 <boxGeometry args={[0.7, 0.7, 0.5]} />
-                 <meshStandardMaterial color="#b45309" />
-            </mesh>
+             <LionModel isWalk={movement.x !== 0 || movement.z !== 0} isTraining={isTraining} />
         </group>
     </RigidBody>
+  );
+}
+
+// Separate component for model to handle GLTF loading cleanly
+function LionModel({ isWalk, isTraining }: { isWalk: boolean, isTraining: boolean }) {
+  // GAME DEV OPS: Asset Pipeline
+  // const { scene, animations } = useGLTF("/models/lion.glb", true); // true = useDraco
+  // const { actions } = useAnimations(animations, scene);
+  // useEffect(() => {
+  //    const action = isTraining ? actions["Train"] : isWalk ? actions["Walk"] : actions["Idle"];
+  //    action?.reset().fadeIn(0.2).play();
+  //    return () => action?.fadeOut(0.2);
+  // }, [isWalk, isTraining]);
+
+  // Dynamic color for "Juice" (visual feedback)
+  const color = isTraining ? "#fbbf24" : "#f59e0b"; // Brighter golden when training
+  
+  return (
+    <group>
+        {/* Placeholder Body */}
+        <mesh position={[0, 0.5, 0]} castShadow>
+            <boxGeometry args={[0.8, 0.8, 1.2]} />
+            <meshStandardMaterial color={color} roughness={0.6} />
+        </mesh>
+        {/* Head */}
+        <mesh position={[0, 1.2, 0.6]} castShadow>
+            <boxGeometry args={[0.6, 0.6, 0.6]} />
+            <meshStandardMaterial color={color} roughness={0.6} />
+        </mesh>
+        {/* Mane (Darker) */}
+        <mesh position={[0, 1.2, 0.5]}>
+                <boxGeometry args={[0.7, 0.7, 0.5]} />
+                <meshStandardMaterial color="#78350f" />
+        </mesh>
+    </group>
   );
 }

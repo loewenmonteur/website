@@ -4,9 +4,15 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe, Appearance } from "@stripe/stripe-js";
 import { ReactNode } from "react";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string);
+const key = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+const stripePromise = key ? loadStripe(key) : null;
 
 export function StripeProvider({ children }: { children: ReactNode }) {
+  if (!key || !stripePromise) {
+      console.warn("Stripe Publishable Key missing. Stripe elements will not render.");
+      return <>{children}</>;
+  }
+
   const appearance: Appearance = {
     theme: 'night',
     variables: {
