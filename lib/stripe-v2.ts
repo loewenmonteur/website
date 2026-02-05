@@ -11,14 +11,10 @@ const getStripeClient = () => {
   const secretKey = process.env.STRIPE_SECRET_KEY;
 
   if (!secretKey) {
-    /**
-     * ERROR HANDLING:
-     * If the API Key is missing, we provide a helpful error message to guide the developer.
-     */
-    throw new Error(
-      "MISSING_STRIPE_SECRET_KEY: Please add your 'STRIPE_SECRET_KEY' to your environment variables (e.g., .env.local). " +
-      "You can find your keys at https://dashboard.stripe.com/apikeys"
-    );
+    console.warn("WARN: STRIPE_SECRET_KEY is missing. Using placeholder for build compatibility.");
+    // Return a dummy client so the build doesn't fail on import.
+    // Runtime calls will likely fail auth, which is expected without a key.
+    return new Stripe("sk_test_build_placeholder");
   }
 
   return new Stripe(secretKey);

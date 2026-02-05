@@ -9,7 +9,7 @@ export default function ShakeMiniGame() {
   const addXP = useGameStore((s) => s.addXP);
   const setQuest = useGameStore((s) => s.setQuest);
   
-  const meshRef = useRef<any>();
+  const meshRef = useRef<any>(null);
 
   useFrame((state, delta) => {
     if (power > 0) {

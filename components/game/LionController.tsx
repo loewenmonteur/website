@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { RigidBody, CapsuleCollider, RapierRigidBody } from "@react-three/rapier";
 import { Vector3, Quaternion } from "three";
-// import { useGLTF } from "@react-three/drei"; // Uncomment when real model matches
+import { useGLTF, useAnimations } from "@react-three/drei"; 
 import { useGameStore } from "@/store/useGameStore";
 
 export default function LionController() {
@@ -136,7 +136,7 @@ export default function LionController() {
   return (
     <RigidBody 
         ref={rigidBody} 
-        position={[0, 2, 0]} 
+        position={[0, 2, 30]}  // Start outside
         colliders={false} 
         enabledRotations={[false, true, false]} // Lock X/Z rotation
         friction={1}
@@ -153,35 +153,53 @@ export default function LionController() {
 
 // Separate component for model to handle GLTF loading cleanly
 function LionModel({ isWalk, isTraining }: { isWalk: boolean, isTraining: boolean }) {
-  // GAME DEV OPS: Asset Pipeline
-  // const { scene, animations } = useGLTF("/models/lion.glb", true); // true = useDraco
-  // const { actions } = useAnimations(animations, scene);
-  // useEffect(() => {
-  //    const action = isTraining ? actions["Train"] : isWalk ? actions["Walk"] : actions["Idle"];
-  //    action?.reset().fadeIn(0.2).play();
-  //    return () => action?.fadeOut(0.2);
-  // }, [isWalk, isTraining]);
+  // GAME DEV OPS: Asset Pipeline - Loading 'Lion' (Fox placeholder)
+  // Ensure the model exists at /models/lion.glb
+  const group = useRef<any>(null);
+  const { scene, animations } = useGLTF("/models/lion.glb"); 
+  const { actions } = useAnimations(animations, group);
 
-  // Dynamic color for "Juice" (visual feedback)
-  const color = isTraining ? "#fbbf24" : "#f59e0b"; // Brighter golden when training
+  useEffect(() => {
+     // Animation Mapping (Fox specific for now)
+     // Survey = Idle, Walk = Walk, Run = Run
+     const idleAction = actions["Survey"]; 
+     const walkAction = actions["Walk"];
+     const runAction = actions["Run"]; // detailed run
+
+     const current = isTraining ? runAction : isWalk ? walkAction : idleAction;
+     
+     // Fade transition
+     Object.values(actions).forEach(action => {
+         if (action !== current && action?.isRunning()) action.fadeOut(0.3);
+     });
+
+     if (current) {
+         current.reset().fadeIn(0.3).play();
+         if (isTraining) current.timeScale = 2.0; // Fast motion for training
+         else current.timeScale = 1.0;
+     }
+
+     return () => {
+         current?.fadeOut(0.3);
+     };
+  }, [isWalk, isTraining, actions]);
+
+  // Dynamic color for "Juice" (visual feedback) - tinting the model
+  // Note: Primitives (skinned meshes) might need traverse to set color, 
+  // but for now we rely on the model's texture. We can add a 'glow' mesh if needed.
   
   return (
-    <group>
-        {/* Placeholder Body */}
-        <mesh position={[0, 0.5, 0]} castShadow>
-            <boxGeometry args={[0.8, 0.8, 1.2]} />
-            <meshStandardMaterial color={color} roughness={0.6} />
-        </mesh>
-        {/* Head */}
-        <mesh position={[0, 1.2, 0.6]} castShadow>
-            <boxGeometry args={[0.6, 0.6, 0.6]} />
-            <meshStandardMaterial color={color} roughness={0.6} />
-        </mesh>
-        {/* Mane (Darker) */}
-        <mesh position={[0, 1.2, 0.5]}>
-                <boxGeometry args={[0.7, 0.7, 0.5]} />
-                <meshStandardMaterial color="#78350f" />
-        </mesh>
+    <group ref={group} dispose={null}>
+        {/* Scale correction for Fox model to match our capsule size */}
+        <primitive object={scene} scale={[0.02, 0.02, 0.02]} position={[0, -0.6, 0]} rotation={[0, Math.PI, 0]} />
+        
+        {/* Helper glow for Training state */}
+        {isTraining && (
+            <mesh position={[0, 0, 0]}>
+                <sphereGeometry args={[0.5, 16, 16]} />
+                <meshBasicMaterial color="#fbbf24" transparent opacity={0.3} />
+            </mesh>
+        )}
     </group>
   );
 }

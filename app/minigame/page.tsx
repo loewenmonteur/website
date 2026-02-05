@@ -34,7 +34,11 @@ function UIOverlay() {
 
           <div className="pt-2 border-t border-white/10">
             <div className="text-[10px] uppercase tracking-widest text-zinc-400">Quest</div>
-            <div className="text-sm font-bold text-green-400">{activeQuest === "warmup" ? "Warm Up!" : "Protein Time!"}</div>
+            <div className="text-sm font-bold text-green-400">
+                {activeQuest === "travel_to_gym" && "Go to the Gym!"}
+                {activeQuest === "warmup" && "Warm Up (Press E)"}
+                {activeQuest === "shake" && "Protein Time!"}
+            </div>
           </div>
         </div>
         

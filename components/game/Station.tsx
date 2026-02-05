@@ -12,7 +12,7 @@ export default function Station({ position, type }: { position: [number, number,
   const playerPosition = useGameStore((s) => s.playerPosition);
   
   const [isClose, setClose] = useState(false);
-  const meshRef = useRef<any>();
+  const meshRef = useRef<any>(null);
   const stationPos = new Vector3(...position);
 
   // Check distance

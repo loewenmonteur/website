@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber";
 
 export default function BabyLion({ position }: { position: [number, number, number] }) {
   const quest = useGameStore((s) => s.activeQuest);
-  const groupRef = useRef<any>();
+  const groupRef = useRef<any>(null);
 
   useFrame((state) => {
     if (groupRef.current) {

@@ -15,8 +15,8 @@ interface GameState {
 export const useGameStore = create<GameState>((set) => ({
   xp: 0,
   level: 1,
-  activeQuest: "warmup",
-  playerPosition: [0, 0, 0],
+  activeQuest: "travel_to_gym",
+  playerPosition: [0, 0, 25], // Start outside on the street (Z=25)
   interactionTarget: null,
 
   addXP: (amount: number) =>

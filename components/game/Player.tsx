@@ -4,7 +4,7 @@ import { Vector3 } from "three";
 import { useGameStore } from "@/store/useGameStore";
 
 export default function Player() {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   const [active, setActive] = useState(false);
   const { level } = useGameStore();
 

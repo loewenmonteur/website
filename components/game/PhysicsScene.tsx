@@ -1,4 +1,4 @@
-import { Physics, Debug } from "@react-three/rapier";
+import { Physics } from "@react-three/rapier";
 import { Environment, ContactShadows, Stats } from "@react-three/drei";
 import GymLevel from "./GymLevel";
 import LionController from "./LionController";
