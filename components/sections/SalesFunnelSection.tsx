@@ -4,7 +4,7 @@ import { PreOrderButton } from "@/components/PreOrderButton";
 
 export default function SalesFunnelSection() {
   return (
-    <section className="py-48 px-6 bg-[radial-gradient(circle_at_50%_100%,#1a1a1e_0%,#09090b_80%)] border-t border-zinc-900">
+    <section className="py-24 md:py-48 px-6 bg-[radial-gradient(circle_at_50%_100%,#1a1a1e_0%,#09090b_80%)] border-t border-zinc-900">
        <div className="max-w-4xl mx-auto text-center space-y-16">
           <div className="space-y-4">
              <h3 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-500">Ready to Ship</h3>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function EvolutionSection() {
   return (
-    <section className="py-24 px-6 bg-zinc-950/50">
+    <section className="py-12 md:py-24 px-6 bg-zinc-950/50">
       <div className="max-w-7xl mx-auto border border-zinc-900 rounded-[3rem] p-12 lg:p-24 overflow-hidden relative group/grid">
          <div className="absolute inset-0 opacity-5 group-hover/grid:opacity-10 transition-opacity duration-1000">
            <Image 

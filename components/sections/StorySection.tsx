@@ -29,7 +29,7 @@ export default function StorySection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="story-section py-48 px-6 bg-zinc-950 relative overflow-hidden">
+    <section ref={containerRef} className="story-section py-24 md:py-48 px-6 bg-zinc-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
         <div className="space-y-10 order-2 lg:order-1">
           <div className="space-y-4">

@@ -39,11 +39,11 @@ export default function PillarsSection() {
           <h3 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">Die 3 Welten</h3>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+        <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-8 pb-8 md:pb-0 px-6 md:px-0 -mx-6 md:mx-0 scrollbar-hide">
           
           {/* Pillar 1: Handwerk */}
-          <Link href="/explore/handwerk" className="pillar-card group cursor-pointer">
-            <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+          <Link href="/explore/handwerk" className="pillar-card group cursor-pointer min-w-[85vw] md:min-w-0 snap-center">
+            <div className="h-[500px] md:h-[600px] bg-zinc-900 rounded-3xl md:rounded-4xl border border-zinc-800 p-8 md:p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
               <Image 
                 src="/images/handwerk/orkun_shk_master.png"
                 alt="Handwerk Mastery"
@@ -51,18 +51,18 @@ export default function PillarsSection() {
                 className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
-              <div className="relative z-10 space-y-6">
-                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-yellow-500" />
+              <div className="relative z-10 space-y-4 md:space-y-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1 md:space-y-2">
                   <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar I</h4>
-                  <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Handwerk &<br />Betriebe</h5>
+                  <h5 className="text-3xl md:text-4xl font-black uppercase text-white tracking-tighter leading-none">Handwerk &<br />Betriebe</h5>
                 </div>
-                <p className="text-zinc-500 text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors">
+                <p className="text-zinc-500 text-xs md:text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors line-clamp-3 md:line-clamp-none">
                   Wir bringen Disziplin, Stolz und Systematik zurück in den Betrieb. Gegen den Fachkräftemangel, für die Meisterschaft.
                 </p>
-                <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                <div className="pt-2 md:pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest md:opacity-0 group-hover:opacity-100 transition-all md:translate-x-[-10px] group-hover:translate-x-0">
                   Mehr erfahren <ArrowRight className="w-3 h-3" />
                 </div>
               </div>
@@ -70,8 +70,8 @@ export default function PillarsSection() {
           </Link>
 
           {/* Pillar 2: Bodybuilding */}
-          <Link href="/explore/bodybuilding" className="pillar-card group cursor-pointer md:mt-12">
-            <div className="h-[600px] bg-zinc-900 rounded-4xl border border-zinc-800 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
+          <Link href="/explore/bodybuilding" className="pillar-card group cursor-pointer min-w-[85vw] md:min-w-0 snap-center md:mt-12">
+            <div className="h-[500px] md:h-[600px] bg-zinc-900 rounded-3xl md:rounded-4xl border border-zinc-800 p-8 md:p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.1)]">
               <Image 
                 src="/images/championships/german_champion_pose.png"
                 alt="Training Iron Gym"
@@ -79,18 +79,18 @@ export default function PillarsSection() {
                 className="object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
-              <div className="relative z-10 space-y-6">
-                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
-                  <Dumbbell className="w-6 h-6 text-yellow-500" />
+              <div className="relative z-10 space-y-4 md:space-y-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
+                  <Dumbbell className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1 md:space-y-2">
                   <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar II</h4>
-                  <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Eisen &<br />Ästhetik</h5>
+                  <h5 className="text-3xl md:text-4xl font-black uppercase text-white tracking-tighter leading-none">Eisen &<br />Ästhetik</h5>
                 </div>
-                <p className="text-zinc-500 text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors">
+                <p className="text-zinc-500 text-xs md:text-sm leading-relaxed font-bold group-hover:text-zinc-300 transition-colors line-clamp-3 md:line-clamp-none">
                   Das Training als Labor der Transformation. Wir lehren die Liebe zum harten Training und die physische Dominanz.
                 </p>
-                <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                <div className="pt-2 md:pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest md:opacity-0 group-hover:opacity-100 transition-all md:translate-x-[-10px] group-hover:translate-x-0">
                   Mehr erfahren <ArrowRight className="w-3 h-3" />
                 </div>
               </div>
@@ -98,28 +98,27 @@ export default function PillarsSection() {
           </Link>
 
           {/* Pillar 3: Die Trafo */}
-          <Link href="/explore/trafo" className="pillar-card group cursor-pointer">
-            <div className="h-[600px] bg-zinc-900 rounded-4xl border border-yellow-500/30 p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
+          <Link href="/explore/trafo" className="pillar-card group cursor-pointer min-w-[85vw] md:min-w-0 snap-center">
+            <div className="h-[500px] md:h-[600px] bg-zinc-900 rounded-3xl md:rounded-4xl border border-yellow-500/30 p-8 md:p-10 flex flex-col justify-end relative overflow-hidden transition-all duration-700 hover:border-yellow-500/50 hover:shadow-[0_0_60px_rgba(250,204,21,0.2)]">
               <div className="absolute inset-0 bg-[url('/images/handwerk/synergy_detail.png')] bg-cover bg-center opacity-20 filter grayscale group-hover:scale-110 transition-all duration-1000" />
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-              <div className="relative z-10 space-y-6">
-                <div className="w-12 h-12 rounded-xl bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-yellow-500" />
+              <div className="relative z-10 space-y-4 md:space-y-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center">
+                  <Zap className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1 md:space-y-2">
                   <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-500">Pillar III</h4>
-                  <h5 className="text-4xl font-black uppercase text-white tracking-tighter leading-none">Sport, Arbeit<br />& Leben</h5>
+                  <h5 className="text-3xl md:text-4xl font-black uppercase text-white tracking-tighter leading-none">Sport, Arbeit<br />& Leben</h5>
                 </div>
-                <p className="text-zinc-500 text-sm leading-relaxed font-black group-hover:text-zinc-300 transition-colors">
+                <p className="text-zinc-500 text-xs md:text-sm leading-relaxed font-black group-hover:text-zinc-300 transition-colors line-clamp-3 md:line-clamp-none">
                   Die ultimative Synergie. Ein operatives System für den modernen High-Performer im Handwerk.
                 </p>
-                <div className="pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                <div className="pt-2 md:pt-4 flex items-center gap-2 text-yellow-500 text-[10px] font-black uppercase tracking-widest md:opacity-0 group-hover:opacity-100 transition-all md:translate-x-[-10px] group-hover:translate-x-0">
                   Mehr erfahren <ArrowRight className="w-3 h-3" />
                 </div>
               </div>
             </div>
           </Link>
-
         </div>
       </div>
     </section>

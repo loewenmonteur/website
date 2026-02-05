@@ -16,10 +16,6 @@ const PillarsSection = dynamic(() => import("@/components/sections/PillarsSectio
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
-const HubsSection = dynamic(() => import("@/components/sections/HubsSection"), { 
-  ssr: false,
-  loading: () => <div className="py-24 bg-zinc-950" />
-});
 const StageSection = dynamic(() => import("@/components/sections/StageSection"), { 
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
@@ -56,7 +52,6 @@ export default function Home() {
       <StorySection />
       <EvolutionSection />
       <PillarsSection />
-      <HubsSection />
       <StageSection />
       <GritSection />
       <SneakPeakSection />

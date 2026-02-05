@@ -50,7 +50,7 @@ export default function HeroSection() {
           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Pre-Order Phase Aktiv</span>
         </div>
         
-        <h1 className="hero-title text-7xl md:text-[12rem] font-black tracking-tighter uppercase leading-[0.8] text-white">
+        <h1 className="hero-title text-6xl md:text-[12rem] font-black tracking-tighter uppercase leading-[0.85] md:leading-[0.8] text-white">
           <span className="block">Löwen</span>
           <span className="block text-zinc-800">trafo</span>
         </h1>
