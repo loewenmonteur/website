@@ -4,14 +4,13 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import Footer from "@/components/Footer";
 
-const StorySection = dynamic(() => import("@/components/sections/StorySection"), { 
-  ssr: false,
-  loading: () => <div className="min-h-screen bg-zinc-950" />
-});
-const EvolutionSection = dynamic(() => import("@/components/sections/EvolutionSection"), { 
+const OriginStorySection = dynamic(() => import("@/components/sections/OriginStorySection"), { 
   ssr: false,
   loading: () => <div className="py-24 bg-zinc-950" />
 });
+// const StorySection = dynamic(() => import("@/components/sections/StorySection")...
+// const EvolutionSection = dynamic(() => import("@/components/sections/EvolutionSection")...
+
 const PillarsSection = dynamic(() => import("@/components/sections/PillarsSection"), { 
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
@@ -49,8 +48,10 @@ export default function Home() {
       <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
 
       <HeroSection />
-      <StorySection />
-      <EvolutionSection />
+      <OriginStorySection />
+      {/* <StorySection /> (Replaced by OriginStorySection) */}
+      {/* <EvolutionSection /> (Replaced by OriginStorySection) */}
+
       <PillarsSection />
       <StageSection />
       <GritSection />

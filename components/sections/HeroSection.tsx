@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Link from "next/link";
+
+
 import { PreOrderButton } from "@/components/PreOrderButton";
 import { gsap } from "gsap";
 
@@ -64,10 +65,7 @@ export default function HeroSection() {
         <div className="hero-p pt-12 flex flex-col items-center gap-6">
           <PreOrderButton className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl" />
           
-          <Link href="/minigame" className="group flex items-center gap-2 px-6 py-2 rounded-full bg-zinc-900/50 border border-zinc-800 hover:border-yellow-500/50 hover:bg-zinc-900 transition-all cursor-pointer backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest group-hover:text-yellow-500 transition-colors">Play LionsGym Alpha</span>
-          </Link>
+
           
           <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Inklusive Zugang zur Alpha-Phase</p>
         </div>
