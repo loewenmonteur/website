@@ -35,6 +35,10 @@ const FrameworkSection = dynamic(() => import("@/components/sections/FrameworkSe
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
+const PartnerSection = dynamic(() => import("@/components/sections/PartnerSection"), { 
+  ssr: false,
+  loading: () => <div className="py-48 bg-zinc-950" />
+});
 const SalesFunnelSection = dynamic(() => import("@/components/sections/SalesFunnelSection"), { 
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
@@ -58,6 +62,7 @@ export default function Home() {
       <SneakPeakSection />
       <DokuSection />
       <FrameworkSection />
+      <PartnerSection />
       <SalesFunnelSection />
       
       <Footer />

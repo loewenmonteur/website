@@ -1,6 +1,8 @@
 "use client";
 
 import { PreOrderButton } from "@/components/PreOrderButton";
+import StageSection from "@/components/sections/StageSection";
+import SneakPeakSection from "@/components/sections/SneakPeakSection";
 import { useEffect, useRef } from "react";
 import { Zap, Brain, Activity, Quote, LayoutDashboard, Rocket, Camera, Eye } from "lucide-react";
 import Link from "next/link";
@@ -106,6 +108,9 @@ export default function TrafoExplorePage() {
         </div>
       </section>
 
+      {/* Stage Section: The Transformation */}
+      <StageSection />
+
       {/* Evidence Log: The sheer volume of reality */}
       <section className="py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-16">
@@ -162,6 +167,9 @@ export default function TrafoExplorePage() {
           </div>
         </div>
       </section>
+
+      {/* Sneak Peak Section: Digital Mastery */}
+      <SneakPeakSection />
 
       {/* Quote Section */}
       <section className="py-32 px-6 bg-zinc-900/5 text-center">
