@@ -106,39 +106,38 @@ export default function TrafoExplorePage() {
              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">System-Inhalt</h2>
              <h3 className="text-3xl md:text-5xl font-black uppercase text-white tracking-tighter">Was du bekommst</h3>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             {[
-               {
-                 title: "Leitfaden & Web-App",
-                 desc: "Dein zentraler Hub. Keine Installation nötig – logge dich einfach über den Browser ein und starte deine Transformation.",
-                 features: ["Auf allen Geräten", "Zugang ab Mai 2026", "Progress-Tracking"]
-               },
-               {
-                 title: "Community Access",
-                 desc: "Werde Teil eines Netzwerks von Handwerkern, die mehr wollen. Austausch, Motivation und echte Treffen.",
-                 features: ["Discord Server", "Regionale Events", "24/7 Support"]
-               },
-               {
-                 title: "Live Calls & Mentoring",
-                 desc: "Wöchentliche Q&A Calls mit Orkun und Experten aus Handwerk, Sport und Business.",
-                 features: ["Mindset-Coaching", "Business-Talks", "Individuelles Feedback"]
-               }
-             ].map((item, i) => (
-                <div key={i} className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-yellow-500/30 transition-all group">
-                   <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter">{item.title}</h4>
-                   <p className="text-zinc-500 mb-8 h-20">{item.desc}</p>
-                   <ul className="space-y-3">
-                      {item.features.map((feat, j) => (
-                        <li key={j} className="flex items-center gap-3 text-sm text-zinc-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                          {feat}
-                        </li>
-                      ))}
-                   </ul>
-                </div>
-             ))}
-          </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Training & System",
+                  desc: "Dein zentraler Hub. Präzise Pläne und Videos für maximalen Fortschritt. Keine Installation nötig.",
+                  features: ["Maßgeschneiderte Trainingspläne", "Video-Bibliothek (Übungen)", "Progress-Tracking App"]
+                },
+                {
+                  title: "Ernährung & Taktik",
+                  desc: "Kein Verzicht, sondern Strategie. Energie für die Baustelle und das Gym.",
+                  features: ["Individuelle Ernährungspläne", "Meal Prep für Schichtarbeit", "Einkaufs-Guides"]
+                },
+                {
+                  title: "Community & Mentoring",
+                  desc: "Werde Teil eines starken Netzwerks. Wöchentliche Live-Calls und 24/7 Support.",
+                  features: ["Live Q&A Calls mit Orkun", "Discord Community Access", "Regionale Events"]
+                }
+              ].map((item, i) => (
+                 <div key={i} className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-yellow-500/30 transition-all group">
+                    <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter">{item.title}</h4>
+                    <p className="text-zinc-500 mb-8 h-20">{item.desc}</p>
+                    <ul className="space-y-3">
+                       {item.features.map((feat, j) => (
+                         <li key={j} className="flex items-center gap-3 text-sm text-zinc-300">
+                           <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                           {feat}
+                         </li>
+                       ))}
+                    </ul>
+                 </div>
+              ))}
+           </div>
         </div>
       </section>
 
