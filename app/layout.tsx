@@ -76,6 +76,7 @@ const jsonLd = {
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CookieBanner } from "@/components/CookieBanner";
 import { StripeProvider } from "@/components/StripeProvider";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -94,6 +95,7 @@ export default function RootLayout({
         <StripeProvider>
           <SmoothScroll>
             {children}
+            <ScrollToTop />
           </SmoothScroll>
           <CookieBanner />
         </StripeProvider>
