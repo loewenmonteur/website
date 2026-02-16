@@ -13,7 +13,7 @@ export default function GatewaySection() {
             src="/images/gateway_sport_new.jpg"
             alt="Löwenmonteur - Handwerk"
             fill
-            priority
+            loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-70"
           />
@@ -47,7 +47,7 @@ export default function GatewaySection() {
             src="/images/championships/orkun_dbfv_win.jpg"
             alt="Der Architekt - Bodybuilding"
             fill
-            priority
+            loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-top md:object-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-70"
           />
