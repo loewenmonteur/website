@@ -25,31 +25,57 @@ export default function TrafoExplorePage() {
 
   return (
     <main ref={containerRef} className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
-      {/* Background Visuals */}
-      <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
-      <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
+      {/* Background Visuals - YouTube Archive Loop */}
+      <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-black/80 z-10" /> {/* Heavy overlay for readability */}
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05] mix-blend-overlay z-20" />
+        <iframe 
+          className="w-full h-full object-cover scale-[1.35] opacity-60 grayscale brightness-75"
+          src="https://www.youtube.com/embed/s-Amde2FQKw?autoplay=1&mute=1&loop=1&playlist=s-Amde2FQKw&controls=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1&iv_load_policy=3" 
+          allow="autoplay; encrypted-media"
+          title="Löwentrafo Doku Archive"
+        />
+      </div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6 text-center z-10">
+      <section className="pt-32 pb-12 px-6 text-center z-10 relative">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-6 shadow-2xl">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">System Online v1.0</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">System Online</span>
           </div>
-          <h1 className="fade-up text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white">
-            LÖWEN<span className="text-zinc-800">TRAFO</span>
+          <h1 className="fade-up text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white drop-shadow-2xl">
+            LÖWEN<span className="text-zinc-500">TRAFO</span>
           </h1>
-          <p className="fade-up text-xl md:text-2xl font-bold text-zinc-500 max-w-2xl mx-auto tracking-tight">
-            Dein Zugang zum System. <span className="text-zinc-300">Training, Ernährung, Mindset.</span>
+          <p className="fade-up text-xl md:text-2xl font-bold text-zinc-400 max-w-2xl mx-auto tracking-tight">
+            Der Zugang für Männer, die Verantwortung tragen.
           </p>
+          
+          {/* Watch Doku Trigger */}
+          <div className="fade-up pt-8 flex justify-center">
+            <a 
+              href="https://youtu.be/s-Amde2FQKw?si=s15raUErJJYM15tA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700 hover:border-yellow-500/50 transition-all backdrop-blur-sm"
+            >
+              <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-black border-b-[5px] border-b-transparent ml-1" />
+              </div>
+              <div className="text-left">
+                <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Dokumentation</p>
+                <p className="text-xs text-white uppercase font-black tracking-wider group-hover:text-yellow-500 transition-colors">Das Manifest ansehen</p>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* The Trafo Box Interaction */}
-      <section className="py-12 px-6 flex justify-center min-h-[500px]">
+      <section className="py-12 px-6 flex justify-center min-h-[500px] z-10 relative">
         <div className="fade-up w-full">
            <TrafoBox />
         </div>
