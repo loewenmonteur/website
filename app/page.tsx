@@ -20,8 +20,11 @@ const AboutMissionSection = dynamic(() => import("@/components/sections/AboutMis
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
-
-export default function Home() {
+const SystemMapSection = dynamic(() => import("@/components/sections/SystemMapSection"), {
+  ssr: false,
+  loading: () => <div className="py-48 bg-zinc-950" />
+});
+const GatewaySection = dynamic(() => import("@/components/sections/GatewaySection"), {
   return (
     <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals */}
