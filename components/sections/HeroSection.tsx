@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 
 
-import { PreOrderButton } from "@/components/PreOrderButton";
+
 import { gsap } from "gsap";
 
 export default function HeroSection() {
@@ -63,7 +63,9 @@ export default function HeroSection() {
         </p>
 
         <div className="hero-p pt-12 flex flex-col items-center gap-6">
-          <PreOrderButton className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl" />
+          <a href="/explore/trafo" className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105">
+            System Starten
+          </a>
           
 
           
