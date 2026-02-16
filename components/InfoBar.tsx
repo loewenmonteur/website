@@ -36,7 +36,7 @@ export function InfoBar() {
           <div key={i} className="flex items-center gap-8 mx-4">
             <span className="text-xs font-black uppercase tracking-widest flex items-center gap-3">
                <Image 
-                 src="/images/lion_logo.png" 
+                 src="/images/brand/lion_head_black.png" 
                  alt="Leo Icon" 
                  width={24} 
                  height={24} 
