@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-6">
             <div className="w-24 h-24 relative opacity-80 hover:opacity-100 transition-opacity duration-500">
               <Image 
-                src="/images/brand/logo.png"
+                src="/images/brand/lion_wrench_logo.png"
                 alt="Löwenmonteur Logo"
                 fill
                 className="object-contain"

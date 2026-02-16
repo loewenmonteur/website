@@ -92,7 +92,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                  <div className="absolute inset-0 bg-yellow-500/20 rounded-full blur-xl animate-pulse" />
                  <div className="relative w-full h-full bg-zinc-900/50 backdrop-blur-sm rounded-full border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors duration-500 overflow-hidden">
                     <Image 
-                       src="/images/lion_logo.png" 
+                       src="/images/brand/lion_wrench_logo.png" 
                        alt="Löwentrafo Emblem" 
                        width={128} 
                        height={128} 
@@ -135,7 +135,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="flex items-center gap-4">
                    <div className="hidden md:flex w-12 h-12 bg-yellow-500 rounded-xl items-center justify-center shadow-lg shadow-yellow-500/20 overflow-hidden border border-yellow-400">
                       <Image 
-                         src="/images/lion_logo.png" 
+                         src="/images/brand/lion_wrench_logo.png" 
                          alt="Löwentrafo Logo" 
                          width={48} 
                          height={48} 
