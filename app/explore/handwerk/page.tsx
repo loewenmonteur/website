@@ -169,7 +169,7 @@ export default function HandwerkExplorePage() {
              Bereit für den<br/><span className="text-zinc-800">Vorverkauf?</span>
            </h2>
            <p className="text-zinc-500 max-w-md mx-auto mb-10 text-lg font-bold">
-             Sichere dir das exklusive &quot;Betriebs-Paket&quot; in der Alpha-Phase.
+             Sichere dir das exklusive &quot;Betriebs-Paket&quot; in der Start-Phase.
            </p>
            <div className="flex flex-col items-center gap-8">
               <PreOrderButton className="h-24 px-20 text-2xl shadow-2xl rounded-2xl" />

@@ -68,7 +68,7 @@ export default function HeroSection() {
           
 
           
-          <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Inklusive Zugang zur Alpha-Phase</p>
+          <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Inklusive Zugang zur Start-Phase</p>
         </div>
       </div>
       

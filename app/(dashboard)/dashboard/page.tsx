@@ -79,7 +79,7 @@ export default function DashboardPage() {
               <div className="space-y-4">
                 {/* Max 3 points per PRD */}
                 {[
-                  { label: "TRAIN: Push Alpha (Körper)", completed: false, href: "/train" },
+                  { label: "TRAIN: Push A (Körper)", completed: false, href: "/train" },
                   { label: "EAT: High Protein Focus (Fuel)", completed: true, href: "/eat" },
                   { label: "LEAD: Verantwortung (Haltung)", completed: false, href: "/lead" }
                 ].map((task, idx) => (

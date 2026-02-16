@@ -38,7 +38,7 @@ export default function FrameworkSection() {
           <div className="lg:col-span-1 bg-yellow-500 rounded-4xl p-12 flex flex-col justify-between group cursor-pointer overflow-hidden relative shadow-[0_0_100px_rgba(234,179,8,0.15)] transition-transform duration-500 hover:scale-[1.02] mt-4 lg:mt-0">
              <Zap className="absolute -bottom-10 -right-10 w-48 h-48 text-black/10 -rotate-12 group-hover:scale-110 transition-transform duration-1000" />
              <div className="relative z-10 space-y-4">
-               <h4 className="text-4xl md:text-5xl font-black uppercase text-black tracking-tighter leading-[0.85] mb-4 group-hover:translate-y-[-5px] transition-transform">Werde Teil<br />der Alpha</h4>
+               <h4 className="text-4xl md:text-5xl font-black uppercase text-black tracking-tighter leading-[0.85] mb-4 group-hover:translate-y-[-5px] transition-transform">Werde Teil<br />des Rudels</h4>
                <p className="text-black/60 text-sm font-black uppercase tracking-widest">Begrenzte Plätze verfügbar.</p>
              </div>
              <div className="relative z-10 pt-12">

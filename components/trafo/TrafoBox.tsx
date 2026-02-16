@@ -169,7 +169,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_sport_new.jpg"
+                         src="/images/gateway_work_new.png"
                          alt="Training Background"
                          fill
                          sizes="(max-width: 768px) 100vw, 50vw"
@@ -241,7 +241,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_work_new.png"
+                         src="/images/gateway_sport_new.jpg"
                          alt="Mindset Background"
                          fill
                          sizes="(max-width: 768px) 100vw, 50vw"
