@@ -46,10 +46,10 @@ export default function AboutMissionSection() {
            
            <div className="space-y-6 text-lg text-zinc-400 leading-relaxed">
               <p>
-                 <strong className="text-white">Orkun Arslanmekik</strong> ist kein Theoretiker. Als gelernter Anlagenmechaniker SHK, Handwerksmeister und aktiver Bodybuilding-Champion kennt er beide Welten: Die harte Realität auf der Baustelle und die absolute Disziplin des Spitzensports.
+                 <strong className="text-white">Orkun Arslanmekik</strong> ist kein Theoretiker. Als gelernter Anlagenmechaniker SHK, Handwerksmeister und aktiver Bodybuilder kennt er beide Welten: Die harte Realität auf der Baustelle und die absolute Disziplin des Leistungssports. Über die NRW-Meisterschaft qualifizierte er sich für die Deutsche Meisterschaft – und trat dort an.
               </p>
               <p>
-                 LöwenTrafo ist die Antwort auf eine Lücke im System. Handwerker werden oft nur als "Arbeitskraft" gesehen, nicht als Athleten des Alltags. Wir ändern das. Wir geben dir die Werkzeuge für Körper, Geist und Karriere.
+                  LöwenTrafo ist die Antwort auf eine Lücke im System. Handwerker werden oft nur als &quot;Arbeitskraft&quot; gesehen, nicht als Athleten des Alltags. Wir ändern das. Wir geben dir die Werkzeuge für Körper, Geist und Karriere.
               </p>
            </div>
 
