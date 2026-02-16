@@ -42,7 +42,6 @@ export default function Home() {
       
       <SalesFunnelSection />
 
-      <GatewaySection />
       
       <Footer />
     </main>
