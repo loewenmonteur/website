@@ -1,38 +1,28 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import {
-  PaymentElement,
-  useStripe,
-  useElements,
-  Elements,
-} from "@stripe/react-stripe-js";
-import { loadStripe, Appearance } from "@stripe/stripe-js";
+import { useState } from "react";
 import { ShieldCheck, Loader2, Tag, Check, ArrowLeft, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
-);
-
-const REGULAR_PRICE = 29900; // 299€ in cents
-const EARLYBIRD_PRICE = 9900; // 99€ in cents
+const REGULAR_PRICE = 29900; // 299€
+const EARLYBIRD_PRICE = 9900; // 99€
 
 export default function CheckoutPage() {
   const [promoCode, setPromoCode] = useState("");
   const [appliedCode, setAppliedCode] = useState("");
   const [promoError, setPromoError] = useState("");
-  const [currentPrice, setCurrentPrice] = useState(REGULAR_PRICE);
-  const [clientSecret, setClientSecret] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [error, setError] = useState("");
+
+  const currentPrice = appliedCode === "EARLYBIRD" ? EARLYBIRD_PRICE : REGULAR_PRICE;
+  const discount = REGULAR_PRICE - currentPrice;
+  const hasDiscount = discount > 0;
 
   const applyPromoCode = () => {
     setPromoError("");
     if (promoCode.trim().toUpperCase() === "EARLYBIRD") {
       setAppliedCode("EARLYBIRD");
-      setCurrentPrice(EARLYBIRD_PRICE);
-      setClientSecret(""); // Reset to fetch new intent with discounted price
     } else {
       setPromoError("Ungültiger Code");
     }
@@ -41,54 +31,34 @@ export default function CheckoutPage() {
   const removePromoCode = () => {
     setAppliedCode("");
     setPromoCode("");
-    setCurrentPrice(REGULAR_PRICE);
-    setClientSecret(""); // Reset to fetch new intent with full price
   };
 
-  const fetchIntent = useCallback(async () => {
-    setLoading(true);
+  const handleCheckout = async () => {
+    setIsRedirecting(true);
+    setError("");
+
     try {
-      const res = await fetch("/api/create-payment-intent", {
+      const res = await fetch("/api/checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          amount: currentPrice,
-          tier: "trafo",
           promoCode: appliedCode || undefined,
         }),
       });
+
       const data = await res.json();
-      if (data.clientSecret) {
-        setClientSecret(data.clientSecret);
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || "Checkout konnte nicht gestartet werden.");
+        setIsRedirecting(false);
       }
-    } catch (err) {
-      console.error("Error creating payment intent:", err);
-    } finally {
-      setLoading(false);
+    } catch {
+      setError("Verbindungsfehler. Bitte versuche es erneut.");
+      setIsRedirecting(false);
     }
-  }, [currentPrice, appliedCode]);
-
-  useEffect(() => {
-    if (!clientSecret) {
-      fetchIntent();
-    }
-  }, [clientSecret, fetchIntent]);
-
-  const appearance: Appearance = {
-    theme: "night",
-    variables: {
-      colorPrimary: "#eab308",
-      colorBackground: "#18181b",
-      colorText: "#ffffff",
-      colorDanger: "#ef4444",
-      fontFamily: "Inter, system-ui, sans-serif",
-      spacingUnit: "4px",
-      borderRadius: "12px",
-    },
   };
-
-  const discount = REGULAR_PRICE - currentPrice;
-  const hasDiscount = discount > 0;
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
@@ -213,37 +183,39 @@ export default function CheckoutPage() {
           )}
         </div>
 
-        {/* Payment Section */}
-        <div className="rounded-2xl bg-zinc-900/50 border border-zinc-800 p-6">
-          <h2 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-6">
-            Zahlungsinformationen
-          </h2>
-
-          {loading ? (
-            <div className="flex flex-col items-center justify-center py-16 gap-4">
-              <Loader2 className="w-8 h-8 text-yellow-500 animate-spin" />
-              <p className="text-sm font-black uppercase tracking-widest text-zinc-500">
-                Wird vorbereitet...
-              </p>
-            </div>
-          ) : clientSecret ? (
-            <Elements
-              stripe={stripePromise}
-              options={{ clientSecret, appearance }}
-            >
-              <CheckoutForm price={currentPrice} />
-            </Elements>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-red-500 font-bold">
-                Verbindungsfehler. Bitte laden Sie die Seite neu.
-              </p>
+        {/* Checkout CTA */}
+        <div className="space-y-4">
+          {error && (
+            <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold">
+              {error}
             </div>
           )}
+
+          <Button
+            onClick={handleCheckout}
+            disabled={isRedirecting}
+            className="w-full h-16 text-lg bg-yellow-500 text-black hover:bg-yellow-400 font-black uppercase tracking-tighter rounded-xl transition-all shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/30"
+          >
+            {isRedirecting ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Weiterleitung zu Stripe...
+              </>
+            ) : (
+              <>
+                Jetzt sicher bezahlen — {(currentPrice / 100).toFixed(2).replace(".", ",")}€
+                <Sparkles className="ml-2 w-4 h-4" />
+              </>
+            )}
+          </Button>
+
+          <p className="text-center text-[10px] text-zinc-600 font-bold uppercase tracking-wider">
+            Du wirst zu Stripe weitergeleitet, um die Zahlung sicher abzuschließen
+          </p>
         </div>
 
         {/* Trust badges */}
-        <div className="mt-8 flex flex-col items-center gap-4">
+        <div className="mt-12 flex flex-col items-center gap-4">
           <div className="flex items-center gap-2 text-zinc-600">
             <ShieldCheck className="w-4 h-4" />
             <span className="text-[10px] font-black uppercase tracking-widest">
@@ -256,63 +228,5 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
-  );
-}
-
-function CheckoutForm({ price }: { price: number }) {
-  const stripe = useStripe();
-  const elements = useElements();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!stripe || !elements) return;
-    setIsProcessing(true);
-    setErrorMessage("");
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `${window.location.origin}/success`,
-      },
-    });
-
-    if (error) {
-      setErrorMessage(
-        error.message || "Ein unbekannter Fehler ist aufgetreten."
-      );
-    }
-    setIsProcessing(false);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <PaymentElement />
-
-      {errorMessage && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold">
-          {errorMessage}
-        </div>
-      )}
-
-      <Button
-        type="submit"
-        disabled={!stripe || isProcessing}
-        className="w-full h-14 text-lg bg-yellow-500 text-black hover:bg-yellow-400 font-black uppercase tracking-tighter rounded-xl transition-all"
-      >
-        {isProcessing ? (
-          <>
-            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Verarbeitung...
-          </>
-        ) : (
-          <>
-            Jetzt sicher bezahlen — {(price / 100).toFixed(2).replace(".", ",")}€
-            <Sparkles className="ml-2 w-4 h-4" />
-          </>
-        )}
-      </Button>
-    </form>
   );
 }
