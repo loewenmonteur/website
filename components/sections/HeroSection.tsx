@@ -33,7 +33,7 @@ export default function HeroSection() {
 
   return (
     <section ref={containerRef} className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-12 z-10 relative">
-      <div className="absolute inset-0 opacity-40 mix-blend-luminosity">
+      <div className="absolute inset-0 opacity-40">
         <video
           autoPlay
           loop
@@ -58,8 +58,7 @@ export default function HeroSection() {
         </h1>
         
         <p className="hero-p text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight mt-8">
-          Fitnessorkun hat gezeigt, was möglich ist.<br />
-          <span className="text-white">LÖWENTRAFO zeigt, was tragfähig ist.</span>
+          Der Zugang für <span className="text-white">Menschen</span>, die Verantwortung tragen.
         </p>
 
         <div className="hero-p pt-12 flex flex-col items-center gap-6">

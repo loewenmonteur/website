@@ -33,7 +33,7 @@ export default function SneakPeakSection() {
                     Mehr als nur<br /><span className="text-zinc-800">ein Buch.</span>
                  </h3>
                  <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-lg">
-                    Kein theoretisches Blabla. Ein operatives System für Männer, die im Alltag funktionieren müssen.
+                    Kein theoretisches Blabla. Ein operatives System für Menschen, die im Alltag funktionieren müssen.
                  </p>
               </div>
 
@@ -72,7 +72,7 @@ export default function SneakPeakSection() {
                     <div className="space-y-2">
                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Das Rudel</h4>
                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Umfeld ist alles. Ein Kreis von Männern, die Verantwortung tragen. Echter Austausch und gegenseitige Rechenschaft.
+                          Umfeld ist alles. Eine Gemeinschaft, die Verantwortung trägt. Echter Austausch und gegenseitige Rechenschaft.
                        </p>
                     </div>
                  </div>
