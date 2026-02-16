@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, Utensils, Users, Check } from "lucide-react";
+import { Target, Utensils, Users } from "lucide-react";
 
 export default function SneakPeakSection() {
   return (
@@ -16,7 +16,7 @@ export default function SneakPeakSection() {
                   <div className="absolute inset-0 bg-yellow-500/20 blur-3xl rounded-full transform scale-75 animate-pulse" />
                   
                   <Image 
-                    src="/images/book_cover.png"
+                    src="/images/book_cover.jpg"
                     alt="Die Löwentransformation - Das Buch"
                     fill
                     className="object-contain drop-shadow-2xl z-10"
@@ -33,7 +33,7 @@ export default function SneakPeakSection() {
                     Operative<br /><span className="text-zinc-800">Exzellenz</span>
                  </h3>
                  <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-lg">
-                    Kein "Fitness-Buch". Eine Blaupause für Männer, die Ergebnisse verlangen. Komprimiertes Wissen aus Jahrzehnten.
+                    Kein &quot;Fitness-Buch&quot;. Eine Blaupause für Männer, die Ergebnisse verlangen. Komprimiertes Wissen aus Jahrzehnten.
                  </p>
               </div>
 
