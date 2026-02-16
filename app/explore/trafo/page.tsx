@@ -2,6 +2,7 @@
 
 import { PreOrderButton } from "@/components/PreOrderButton";
 import TrafoBox from "@/components/trafo/TrafoBox";
+import TrafoGallery from "@/components/trafo/TrafoGallery";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -84,6 +85,10 @@ export default function TrafoExplorePage() {
            <TrafoBox />
         </div>
       </section>
+
+      {/* Gallery Loop */}
+      <TrafoGallery />
+
 
       {/* Quote Section */}
 

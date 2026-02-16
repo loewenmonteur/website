@@ -20,7 +20,7 @@ export default function DokuSection() {
              className="block aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110"
            >
                 <Image 
-                  src="/images/doku/movie_poster.png"
+                  src="/images/doku/doku_bg_final.jpg"
                   alt="Doku teaser background"
                   fill
                   sizes="(max-width: 768px) 100vw, 80vw"

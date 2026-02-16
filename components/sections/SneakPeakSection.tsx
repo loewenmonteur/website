@@ -73,7 +73,7 @@ export default function SneakPeakSection() {
                      <div className="space-y-2">
                         <h4 className="text-xl font-black uppercase text-white tracking-wide">Gemeinschaft</h4>
                         <p className="text-zinc-500 font-medium leading-relaxed">
-                           Du bist nicht allein. Ein Netzwerk aus Männern, die vor den gleichen Herausforderungen stehen wie du.
+                           Du bist nicht allein. Ein Netzwerk aus Menschen, die vor den gleichen Herausforderungen stehen wie du.
                         </p>
                      </div>
                   </div>
