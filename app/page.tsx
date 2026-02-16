@@ -8,15 +8,15 @@ const SneakPeakSection = dynamic(() => import("@/components/sections/SneakPeakSe
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
-const DokuSection = dynamic(() => import("@/components/sections/DokuSection"), { 
-  ssr: false,
-  loading: () => <div className="py-48 bg-zinc-950" />
-});
 const SalesFunnelSection = dynamic(() => import("@/components/sections/SalesFunnelSection"), { 
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
 const GatewaySection = dynamic(() => import("@/components/sections/GatewaySection"), {
+  ssr: false,
+  loading: () => <div className="py-48 bg-zinc-950" />
+});
+const AboutMissionSection = dynamic(() => import("@/components/sections/AboutMissionSection"), {
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
@@ -30,10 +30,17 @@ export default function Home() {
 
       <HeroSection />
       
-      {/* Trafo Specific Content */}
+      {/* Brand Story */}
+      <AboutMissionSection />
+      
       {/* Trafo Specific Content */}
       <SneakPeakSection />
-      <DokuSection />
+
+      {/* System Navigation */}
+      <SystemMapSection />
+      
+      {/* External Gateways */}
+      <GatewaySection />
       
       <SalesFunnelSection />
 
