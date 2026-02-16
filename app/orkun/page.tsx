@@ -24,10 +24,10 @@ export default function OrkunPage() {
 
       <section className="pt-32 pb-12 px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4">
-          Der Architekt
+          FitnessOrkun
         </h1>
         <p className="text-zinc-500 font-bold uppercase tracking-widest">
-          Hinter dem System
+          Bodybuilding & Mindset
         </p>
       </section>
 
