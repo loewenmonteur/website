@@ -79,7 +79,7 @@ export default function OriginStorySection() {
 
              <div className="space-y-6 pt-4">
                  <p className="text-zinc-500 text-base md:text-lg leading-relaxed">
-                    Viele kennen Orkun als <strong>Fitnessorkun</strong>. Ein Gesicht, eine Reichweite, eine sichtbare Transformation. Doch wahre Ordnung entsteht nicht durch Sichtbarkeit, sondern durch Substanz. LÖWENTRAFO ist die Konsequenz aus Jahren an der Front: Weg vom Influencer-Dasein, hin zum Systembau für Männer mit Verantwortung.
+                    Viele kennen Orkun als <strong>Fitnessorkun</strong>. Ein Gesicht, eine Reichweite, eine sichtbare Transformation. Doch wahre Ordnung entsteht nicht durch Sichtbarkeit, sondern durch Substanz. LÖWENTRAFO ist die Konsequenz aus Jahren an der Front: Weg vom Influencer-Dasein, hin zum Systembau für Menschen mit Verantwortung.
                  </p>
                  <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-900 group">
                     <Quote className="w-8 h-8 text-yellow-500/20 group-hover:text-yellow-500 transition-colors" />
