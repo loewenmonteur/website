@@ -3,7 +3,7 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
 import TrafoBox from "@/components/trafo/TrafoBox";
 import TrafoGallery from "@/components/trafo/TrafoGallery";
-import TrafoTestimonials from "@/components/trafo/TrafoTestimonials";
+
 import FAQSection from "@/components/sections/FAQSection";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
@@ -92,8 +92,6 @@ export default function TrafoExplorePage() {
       <TrafoGallery />
 
 
-      {/* Social Proof / Testimonials */}
-      <TrafoTestimonials />
 
 
       {/* Quote Section */}
