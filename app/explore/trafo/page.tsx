@@ -3,6 +3,7 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
 import TrafoBox from "@/components/trafo/TrafoBox";
 import TrafoGallery from "@/components/trafo/TrafoGallery";
+import FAQSection from "@/components/sections/FAQSection";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -92,6 +93,76 @@ export default function TrafoExplorePage() {
 
       {/* Quote Section */}
 
+
+      {/* What's Included Section */}
+      <section className="py-24 px-6 bg-zinc-900/30 border-y border-zinc-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-center space-y-4">
+             <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">System-Inhalt</h2>
+             <h3 className="text-3xl md:text-5xl font-black uppercase text-white tracking-tighter">Was du bekommst</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             {[
+               {
+                 title: "Leitfaden & App",
+                 desc: "Zugang zur exklusiven LöwenTrafo App mit täglichen To-Dos, Trainingsplänen und Ernährungs-Trackern.",
+                 features: ["Android & iOS", "Offline-Modus", "Progress-Tracking"]
+               },
+               {
+                 title: "Community Access",
+                 desc: "Werde Teil eines Netzwerks von Handwerkern, die mehr wollen. Austausch, Motivation und echte Treffen.",
+                 features: ["Discord Server", "Regionale Events", "24/7 Support"]
+               },
+               {
+                 title: "Live Calls & Mentoring",
+                 desc: "Wöchentliche Q&A Calls mit Orkun und Experten aus Handwerk, Sport und Business.",
+                 features: ["Mindset-Coaching", "Business-Talks", "Individuelles Feedback"]
+               }
+             ].map((item, i) => (
+                <div key={i} className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-yellow-500/30 transition-all group">
+                   <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter">{item.title}</h4>
+                   <p className="text-zinc-500 mb-8 h-20">{item.desc}</p>
+                   <ul className="space-y-3">
+                      {item.features.map((feat, j) => (
+                        <li key={j} className="flex items-center gap-3 text-sm text-zinc-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                          {feat}
+                        </li>
+                      ))}
+                   </ul>
+                </div>
+             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection 
+        title="Antworten auf deine Fragen"
+        items={[
+          {
+            question: "Ist das Programm für Anfänger geeignet?",
+            answer: "Absolut. Das LöwenTrafo System holt dich da ab, wo du stehst. Egal ob du noch nie trainiert hast oder schon fortgeschritten bist – die Pläne sind skalierbar."
+          },
+          {
+            question: "Brauche ich ein Fitnessstudio?",
+            answer: "Für optimale Ergebnisse empfehlen wir ein Gym. Es gibt jedoch auch Home-Workout Varianten im System, falls du es zeitlich mal nicht schaffst."
+          },
+          {
+            question: "Wie viel Zeit muss ich investieren?",
+            answer: "Das System ist für arbeitende Menschen konzipiert. Rechne mit ca. 45-60 Minuten Training, 4-mal pro Woche. Meal Prep und Mindset-Routinen lassen sich in den Alltag integrieren."
+          },
+          {
+            question: "Was kostet die Mitgliedschaft?",
+            answer: "Aktuell befinden wir uns in der Pre-Launch Phase. Die genauen Preise werden zum Start im Mai 2026 bekanntgegeben. Wer sich jetzt auf die Liste setzt, erhält Early-Bird Konditionen."
+          },
+          {
+            question: "Kann ich das neben der Arbeit und Familie machen?",
+            answer: "Ja. Das ist der Kern des Systems. Wir bringen Struktur in dein Chaos, damit du MEHR Energie für Familie und Arbeit hast, nicht weniger."
+          }
+        ]}
+      />
 
       {/* CTA Footer */}
       <section className="py-32 px-6 text-center border-t border-zinc-900 bg-linear-to-b from-zinc-950 to-zinc-900">

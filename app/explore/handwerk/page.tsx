@@ -191,7 +191,7 @@ export default function HandwerkExplorePage() {
            </p>
            <div className="flex flex-col items-center gap-8">
               <PreOrderButton className="h-24 px-20 text-2xl shadow-2xl rounded-2xl" />
-              <Link href="/" className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-700 hover:text-white transition-colors">Zurück zur Startseite</Link>
+              <Link href="/" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700 hover:text-white transition-colors">Zurück zur Startseite</Link>
            </div>
          </div>
       </section>
