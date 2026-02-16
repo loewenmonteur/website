@@ -77,6 +77,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { CookieBanner } from "@/components/CookieBanner";
 import { StripeProvider } from "@/components/StripeProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { InfoBar } from "@/components/InfoBar";
 
 export default function RootLayout({
   children,
@@ -94,6 +95,7 @@ export default function RootLayout({
         />
         <StripeProvider>
           <SmoothScroll>
+            <InfoBar />
             {children}
             <ScrollToTop />
           </SmoothScroll>

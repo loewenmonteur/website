@@ -3,6 +3,7 @@ import { motion, Variants, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Dumbbell, TrendingUp, Zap, Utensils, Wallet, Clock } from "lucide-react";
 import Image from "next/image";
 import CommunityView from "./CommunityView";
+import { PaymentModal } from "../PaymentModal";
 
 interface TrafoBoxProps {
   isOpen?: boolean;
@@ -11,6 +12,7 @@ interface TrafoBoxProps {
 
 export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: TrafoBoxProps) {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   
   const isControlled = externalIsOpen !== undefined;
   const isOpen = isControlled ? externalIsOpen : internalIsOpen;
@@ -274,8 +276,12 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 
                 {/* Footer / CTA */}
                 <div className="p-12 text-center border-t border-zinc-800/50 bg-linear-to-b from-zinc-950 to-black">
-                   <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Bereit?</p>
-                   <button className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-yellow-500/20 hover:scale-105">
+                   <p className="text-yellow-500 text-xs font-black uppercase tracking-widest mb-2">Launch: Mai 2026</p>
+                   <p className="text-zinc-500 text-[10px] uppercase tracking-wider mb-6">Bis dahin Zugang sichern</p>
+                   <button 
+                     onClick={() => setIsPaymentModalOpen(true)}
+                     className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-yellow-500/20 hover:scale-105 cursor-pointer"
+                   >
                       Zugang sichern
                    </button>
                 </div>
@@ -285,6 +291,13 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
         )}
         </AnimatePresence>
       </motion.div>
+
+      <PaymentModal 
+        isOpen={isPaymentModalOpen} 
+        onClose={() => setIsPaymentModalOpen(false)} 
+        amount={9900}
+        tier="basic"
+      />
     </div>
   );
 }

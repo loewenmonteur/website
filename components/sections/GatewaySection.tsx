@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, Hammer, Dumbbell } from "lucide-react";
 
 export default function GatewaySection() {
@@ -9,7 +8,7 @@ export default function GatewaySection() {
     <section className="bg-zinc-950 border-t border-zinc-900">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Work / Monteur Gateway */}
-        <Link href="/monteur" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
+        <a href="https://loewenmonteur.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
           <Image
             src="/images/gateway_sport_new.jpg"
             alt="Löwenmonteur - Handwerk"
@@ -40,10 +39,10 @@ export default function GatewaySection() {
               <ArrowRight className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform rotate-180" />
             </div>
           </div>
-        </Link>
+        </a>
  
         {/* Sport / Orkun Gateway */}
-        <Link href="/orkun" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block border-t md:border-t-0 md:border-l border-zinc-900">
+        <a href="https://fitnessorkun.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block border-t md:border-t-0 md:border-l border-zinc-900">
           <Image
             src="/images/championships/orkun_dbfv_win.jpg"
             alt="Der Architekt - Bodybuilding"
@@ -74,13 +73,10 @@ export default function GatewaySection() {
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
-        </Link>
+        </a>
       </div>
       
-      {/* Footer Text for Context */}
-      <div className="py-12 bg-black text-center border-t border-zinc-900">
-         <p className="text-zinc-600 text-xs font-black uppercase tracking-[0.3em]">Weitere Bereiche</p>
-      </div>
+      
     </section>
   );
 }

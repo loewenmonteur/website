@@ -58,7 +58,7 @@ export default function HeroSection() {
         </h1>
         
         <p className="hero-p text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight mt-8">
-          Der Zugang für <span className="text-white">Menschen</span>, die Verantwortung tragen.
+          Der Zugang für <span className="text-white">Männer</span>, die Verantwortung tragen.
         </p>
 
         <div className="hero-p pt-12 flex flex-col items-center gap-6">

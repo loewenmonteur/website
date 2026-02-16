@@ -2,6 +2,8 @@
 
 
 import Image from "next/image";
+import { PreOrderButton } from "@/components/PreOrderButton";
+
 export default function SalesFunnelSection() {
   return (
     <section className="py-24 md:py-48 px-6 bg-zinc-950 relative overflow-hidden border-t border-zinc-900">
@@ -33,9 +35,11 @@ export default function SalesFunnelSection() {
                 <div className="w-10 h-px bg-zinc-700" />
                 <span>Rückgrat</span>
              </div>
-              <a href="/explore/trafo" className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105 hover:shadow-[0_0_80px_rgba(250,204,21,0.4)]">
-                System Starten
-              </a>
+              <PreOrderButton 
+                amount={9900} 
+                text="System Starten" 
+                className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105 hover:shadow-[0_0_80px_rgba(250,204,21,0.4)]"
+              />
           </div>
        </div>
     </section>

@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-800 hover:text-zinc-600 transition-colors cursor-default">
-              Löwenmonteur
+              LÖWENTRAFO
             </h2>
           </div>
           
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
           
           <p className="text-[9px] font-mono text-zinc-900 uppercase tracking-widest">
-            Löwenmonteur © 2026. Dominance in Craftsmanship.
+            Löwentrafo © 2026. Dominance in Craftsmanship.
           </p>
        </div>
     </footer>

@@ -34,9 +34,10 @@ export default function Home() {
       {/* Trafo Specific Content */}
       <SneakPeakSection />
       <DokuSection />
-      <GatewaySection />
       
       <SalesFunnelSection />
+
+      <GatewaySection />
       
       <Footer />
     </main>

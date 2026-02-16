@@ -86,7 +86,13 @@ export function PaymentModal({ isOpen, onClose, tier, amount }: PaymentModalProp
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white uppercase tracking-tighter">Sicherer Checkout</h3>
-                  <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest">Powered by Stripe</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest">Powered by Stripe</p>
+                    <span className="w-1 h-1 rounded-full bg-zinc-700" />
+                    <p className="text-[10px] text-yellow-500 font-black uppercase tracking-widest">
+                       {amount && amount === 9900 ? 'Frühbucher: 99€' : `${(amount || 0) / 100}€`}
+                    </p>
+                  </div>
                 </div>
               </div>
               <button

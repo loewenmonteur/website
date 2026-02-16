@@ -42,7 +42,7 @@ export default function FrameworkSection() {
                <p className="text-black/60 text-sm font-black uppercase tracking-widest">Begrenzte Plätze verfügbar.</p>
              </div>
              <div className="relative z-10 pt-12">
-               <PreOrderButton className="w-full bg-black text-white border-none hover:bg-zinc-900 h-20 text-lg rounded-xl shadow-2xl" />
+               <PreOrderButton amount={9900} className="w-full bg-black text-white border-none hover:bg-zinc-900 h-20 text-lg rounded-xl shadow-2xl" />
              </div>
           </div>
         </div>

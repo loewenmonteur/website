@@ -9,9 +9,10 @@ interface PreOrderButtonProps {
   className?: string;
   tier?: 'basic' | 'pro' | 'elite';
   amount?: number;
+  text?: string;
 }
 
-export function PreOrderButton({ className, tier = 'basic', amount = 29900 }: PreOrderButtonProps) {
+export function PreOrderButton({ className, tier = 'basic', amount = 9900, text = "Jetzt Vorbestellen" }: PreOrderButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ export function PreOrderButton({ className, tier = 'basic', amount = 29900 }: Pr
         transition-all duration-300 transform hover:scale-105 active:scale-95 
         shadow-[0_0_20px_rgba(250,204,21,0.2)] hover:shadow-[0_0_40px_rgba(250,204,21,0.4)] ${className}`}
       >
-        Jetzt Vorbestellen <ShoppingCart className="ml-2 w-5 h-5" />
+        {text} <ShoppingCart className="ml-2 w-5 h-5" />
         <Sparkles className="ml-2 w-4 h-4 text-yellow-200 animate-pulse" />
       </Button>
 

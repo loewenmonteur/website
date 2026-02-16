@@ -3,7 +3,6 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
 import TrafoBox from "@/components/trafo/TrafoBox";
 import { useEffect, useRef } from "react";
-import { Quote } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { gsap } from "gsap";
@@ -46,13 +45,17 @@ export default function TrafoExplorePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">System Online</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">TRANSFORMATION STARTEN</span>
           </div>
           <h1 className="fade-up text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-white drop-shadow-2xl">
             LÖWEN<span className="text-zinc-500">TRAFO</span>
           </h1>
           <p className="fade-up text-xl md:text-2xl font-bold text-zinc-400 max-w-2xl mx-auto tracking-tight">
-            Der Zugang für Männer, die Verantwortung tragen.
+            Der Zugang für Menschen, die Verantwortung tragen.
+          </p>
+
+          <p className="fade-up text-sm md:text-base text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+            Egal ob als Single, in einer Partnerschaft oder als alleinerziehender Elternteil – das Löwentrafo System ist universell adaptierbar. Es bietet die Struktur, die jeder Mensch benötigt, um sein volles Potenzial zu entfalten, unabhängig von der aktuellen Lebenssituation.
           </p>
           
           {/* Watch Doku Trigger */}
@@ -91,7 +94,7 @@ export default function TrafoExplorePage() {
            Starte deine<br/><span className="text-zinc-700">Ganzwerdung</span>
          </h2>
          <p className="text-zinc-400 max-w-sm mx-auto mb-10 text-sm">
-           Sichere dir deinen Platz in der ersten Start-Runde und erlebe das volle System.
+           Der offizielle Launch ist im <span className="text-white font-bold">Mai 2026</span>. Sichere dir bis dahin deinen Platz im System.
          </p>
          <div className="flex flex-col items-center gap-6">
             <PreOrderButton className="h-20 px-16 text-xl shadow-[0_0_30px_rgba(250,204,21,0.15)]" />
