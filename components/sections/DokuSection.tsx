@@ -19,6 +19,7 @@ export default function DokuSection() {
                   src="/images/doku/main.jpg"
                   alt="Doku teaser background"
                   fill
+                  sizes="(max-width: 768px) 100vw, 80vw"
                   className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-2000"
                 />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700" />
@@ -47,6 +48,7 @@ export default function DokuSection() {
                      src={src}
                      alt={`Snapshot ${i}`}
                      fill
+                     sizes="(max-width: 768px) 50vw, 25vw"
                      className="object-cover grayscale group-hover/snap:grayscale-0 transition-all duration-700 group-hover/snap:scale-110"
                    />
                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 via-transparent to-transparent opacity-0 group-hover/snap:opacity-100 transition-opacity" />

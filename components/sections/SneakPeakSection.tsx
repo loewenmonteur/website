@@ -19,6 +19,7 @@ export default function SneakPeakSection() {
                     src="/images/book_cover.jpg"
                     alt="Die Löwentransformation - Das Buch"
                     fill
+                    sizes="(max-width: 768px) 80vw, 40vw"
                     className="object-contain drop-shadow-2xl z-10"
                     priority
                   />

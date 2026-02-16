@@ -8,10 +8,11 @@ export default function SalesFunnelSection() {
        {/* Background Image */}
        <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/rudel_bg.png" 
+            src="/images/doku/main.jpg" 
             alt="Werde Teil vom Rudel" 
             fill 
-            className="object-cover opacity-40 grayscale mix-blend-luminosity"
+            sizes="100vw"
+            className="object-cover opacity-20 grayscale mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/50" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#09090b_100%)]" />

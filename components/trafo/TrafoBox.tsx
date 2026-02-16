@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
-import { X, Sparkles } from "lucide-react";
+import { X, Sparkles, Dumbbell, TrendingUp, Zap, Utensils, Wallet, Clock } from "lucide-react";
 import Image from "next/image";
-import TrainingView from "./TrainingView";
-import NutritionView from "./NutritionView";
 import CommunityView from "./CommunityView";
 
 interface TrafoBoxProps {
@@ -171,17 +169,35 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_sport_stage.png"
+                         src="/images/gateway_orkun.png"
                          alt="Training Background"
                          fill
-                         className="object-cover object-left opacity-30 group-hover:opacity-50 transition-opacity"
+                         sizes="(max-width: 768px) 100vw, 50vw"
+                         className="object-cover object-top opacity-30 group-hover:opacity-50 transition-opacity"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
                    <div className="relative z-10 p-6 md:p-12 border-b border-zinc-800/30">
                       <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Der Schlachtplan</h3>
                       <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Klare Pläne. Keine Ausreden. Für Männer mit Verantwortung.</p>
-                      <TrainingView />
+                      
+                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {[
+                            { title: 'PPL Split', desc: 'Push / Pull / Legs', icon: Dumbbell },
+                            { title: 'Progressive Overload', desc: 'Zwingendes Wachstum', icon: TrendingUp },
+                            { title: 'Hypertrophie', desc: 'Maximaler Reiz', icon: Zap },
+                          ].map((item, i) => (
+                            <div key={i} className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl flex flex-col items-center text-center gap-3 backdrop-blur-sm hover:border-yellow-500/30 transition-colors">
+                               <div className="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20">
+                                  <item.icon className="w-4 h-4 text-yellow-500" />
+                               </div>
+                               <div>
+                                  <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-1">{item.title}</h4>
+                                  <p className="text-xs text-zinc-400">{item.desc}</p>
+                               </div>
+                            </div>
+                          ))}
+                       </div>
                    </div>
                 </div>
 
@@ -192,6 +208,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                          src="/images/nutrition_father_a.png"
                          alt="Nutrition Background"
                          fill
+                         sizes="(max-width: 768px) 100vw, 50vw"
                          className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
@@ -199,17 +216,35 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                    <div className="relative z-10 p-6 md:p-12 border-b border-zinc-800/30 bg-zinc-900/10">
                       <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Was dich trägt</h3>
                       <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Ernährung als Werkzeug. Budget-freundlich und machbar.</p>
-                      <NutritionView />
+                      
+                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {[
+                            { title: 'High Protein', desc: '2g / kg Körpergewicht', icon: Utensils },
+                            { title: 'Low Budget', desc: 'Teuer ist nicht besser', icon: Wallet },
+                            { title: 'Meal Prep', desc: 'Kochen für Gewinner', icon: Clock },
+                          ].map((item, i) => (
+                            <div key={i} className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl flex flex-col items-center text-center gap-3 backdrop-blur-sm hover:border-yellow-500/30 transition-colors">
+                               <div className="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20">
+                                  <item.icon className="w-4 h-4 text-yellow-500" />
+                               </div>
+                               <div>
+                                  <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-1">{item.title}</h4>
+                                  <p className="text-xs text-zinc-400">{item.desc}</p>
+                               </div>
+                            </div>
+                          ))}
+                       </div>
                    </div>
                 </div>
 
-                {/* Mindset Section (NEW) */}
+                {/* Mindset Section */}
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_work_sparks.png"
+                         src="/images/gateway_monteur.png"
                          alt="Mindset Background"
                          fill
+                         sizes="(max-width: 768px) 100vw, 50vw"
                          className="object-cover object-center opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
@@ -219,8 +254,8 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                       <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Haltung bewahren, wenn niemand zusieht.</p>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                          {['Disziplin', 'Verantwortung', 'Konstanz'].map((item) => (
-                           <div key={item} className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl flex flex-col items-center text-center gap-3 backdrop-blur-sm">
-                              <div className="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center">
+                           <div key={item} className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl flex flex-col items-center text-center gap-3 backdrop-blur-sm hover:border-yellow-500/30 transition-colors">
+                              <div className="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20">
                                  <Sparkles className="w-4 h-4 text-yellow-500" />
                               </div>
                               <h4 className="font-bold text-white uppercase tracking-wider text-sm">{item}</h4>
