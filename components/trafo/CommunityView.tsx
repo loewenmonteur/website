@@ -11,9 +11,9 @@ export default function CommunityView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
        
-       <div className="flex justify-center py-4 perspective-1000">
+       <div className="flex justify-center py-4" style={{ perspective: "1000px" }}>
           <motion.div 
-            className="relative w-full max-w-sm aspect-16/10 cursor-pointer group perspective-1000"
+            className="relative w-full max-w-sm aspect-16/10 cursor-pointer group"
             onClick={() => setIsFlipped(!isFlipped)}
             initial={false}
             animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -21,7 +21,10 @@ export default function CommunityView() {
             style={{ transformStyle: "preserve-3d" }}
           >
              {/* --- FRONT SIDE (Member Card) --- */}
-             <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-black">
+             <div 
+               className="absolute inset-0 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-black"
+               style={{ backfaceVisibility: "hidden" }}
+             >
                  {/* Gradient Background */}
                  <div className="absolute inset-0 bg-linear-to-br from-zinc-900 via-black to-zinc-900" />
                  <div className="absolute inset-0 bg-[url('/noise.png')] opacity-30 mix-blend-overlay" />
@@ -67,8 +70,8 @@ export default function CommunityView() {
 
              {/* --- BACK SIDE (Benefits) --- */}
              <div 
-                className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 p-5 flex flex-col"
-                style={{ transform: "rotateY(180deg)" }}
+                className="absolute inset-0 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 p-5 flex flex-col"
+                style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
              >
                 <div className="flex items-center gap-2 mb-4 pb-2 border-b border-zinc-900">
                     <TrendingUp className="w-4 h-4 text-yellow-500" />
