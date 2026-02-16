@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -17,14 +17,11 @@ function SuccessContent() {
   const sessionId = searchParams.get("session_id");
 
   const [session, setSession] = useState<SessionData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!!sessionId);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!sessionId) {
-      setLoading(false);
-      return;
-    }
+    if (!sessionId) return;
 
     fetch(`/api/checkout-session?session_id=${sessionId}`)
       .then((res) => res.json())
@@ -123,5 +120,15 @@ function SuccessContent() {
 }
 
 export default function SuccessPage() {
-  return <SuccessContent />;
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
+          <Loader2 className="w-12 h-12 text-yellow-500 animate-spin" />
+        </div>
+      }
+    >
+      <SuccessContent />
+    </Suspense>
+  );
 }
