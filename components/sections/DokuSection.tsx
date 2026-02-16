@@ -20,11 +20,11 @@ export default function DokuSection() {
              className="block aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110"
            >
                 <Image 
-                  src="/images/doku/main.jpg"
+                  src="/images/doku/movie_poster.png"
                   alt="Doku teaser background"
                   fill
                   sizes="(max-width: 768px) 100vw, 80vw"
-                  className="object-cover opacity-20 filter grayscale group-hover:scale-105 transition-all duration-2000"
+                  className="object-cover group-hover:scale-105 transition-all duration-2000"
                 />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
