@@ -26,7 +26,7 @@ export default function TrafoExplorePage() {
   return (
     <main ref={containerRef} className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals - YouTube Archive Loop */}
-      <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-black/80 z-10" /> {/* Heavy overlay for readability */}
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05] mix-blend-overlay z-20" />
         <iframe 
@@ -82,10 +82,10 @@ export default function TrafoExplorePage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-32 px-6 bg-zinc-900/5 text-center mt-auto">
+      <section className="py-32 px-6 bg-zinc-900/40 backdrop-blur-sm text-center mt-auto relative z-10">
          <div className="max-w-3xl mx-auto space-y-8">
             <Quote className="w-16 h-16 text-zinc-900 mx-auto" />
-            <p className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-white italic leading-tight">
+            <p className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-white italic leading-tight drop-shadow-lg">
               &quot;Ich bin nicht das Ziel. Ich bin der Beweis, dass ein System funktioniert. Fitness war der Einstieg – Ordnung ist das Ziel.&quot;
             </p>
             <p className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">— Trafo System Architekt</p>

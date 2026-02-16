@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { X, Box, Sparkles } from "lucide-react";
 import TrainingView from "./TrainingView";
 import NutritionView from "./NutritionView";
@@ -41,9 +41,8 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
     },
     open: { 
       width: "100%", 
-      height: "auto", 
-      minHeight: "85vh",
-      borderRadius: "0px", 
+      height: "auto",
+      borderRadius: "24px", 
       rotate: 0,
       scale: 1,
       transition: { type: "spring", stiffness: 300, damping: 30 }
@@ -57,21 +56,8 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
   };
 
   return (
-    <div className={`relative flex items-center justify-center transition-all duration-700 ${isOpen ? 'w-full max-w-6xl mx-auto z-50 px-0 md:px-4' : ''}`}>
+    <div className={`relative flex items-center justify-center transition-all duration-700 w-full`}>
       
-      {/* Backdrop when open */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40"
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
       <motion.div
         layout
         variants={containerVariants}
@@ -79,7 +65,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
         whileHover={!isOpen ? "hover" : undefined}
         animate={isOpen ? "open" : "closed"}
         onClick={() => !isOpen && setIsOpen(true)}
-        className={`relative bg-zinc-950 border border-zinc-800 overflow-hidden shadow-2xl z-50 ${isOpen ? 'md:rounded-3xl border-yellow-500/20 ring-1 ring-yellow-500/10' : 'cursor-pointer hover:border-yellow-500/50 transition-colors'}`}
+        className={`relative bg-zinc-950 border border-zinc-800 overflow-hidden shadow-2xl z-50 mx-auto ${isOpen ? 'border-yellow-500/20 ring-1 ring-yellow-500/10' : 'cursor-pointer hover:border-yellow-500/50 transition-colors'}`}
       >
         {/* Closed State Visualization */}
         {!isOpen && (
@@ -100,12 +86,13 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
               </div>
 
               <div className="relative z-10 space-y-2">
-                 <h2 className="text-3xl font-black uppercase text-white tracking-tighter">Die Trafo Box</h2>
+                 <h2 className="text-3xl font-black uppercase text-white tracking-tighter">LÖWENTRAFO</h2>
                  <p className="text-xs text-yellow-500 uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-2">
                     <Sparkles className="w-3 h-3" />
-                    Systemzugriff
+                    Zugang freischalten
                     <Sparkles className="w-3 h-3" />
                  </p>
+                 <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">Kein Programm. Ein System.</p>
               </div>
               
               <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-yellow-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -119,13 +106,13 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="flex flex-col h-full bg-zinc-950/50 max-h-[90vh] overflow-y-auto relative scroll-smooth"
+            className="flex flex-col h-full bg-zinc-950/50 relative"
           >
              {/* Background Texture */}
-             <div className="sticky top-0 left-0 w-full h-screen bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none -mt-[100vh]" />
+             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
              
              {/* Header */}
-             <div className="p-6 md:p-8 flex items-center justify-between border-b border-zinc-800/50 sticky top-0 bg-zinc-950/90 backdrop-blur-md z-30">
+             <div className="p-6 md:p-8 flex items-center justify-between border-b border-zinc-800/50 bg-zinc-950/90 backdrop-blur-md sticky top-0 z-30">
                 <div className="flex items-center gap-4">
                    <div className="hidden md:flex w-12 h-12 bg-yellow-500 rounded-xl items-center justify-center shadow-lg shadow-yellow-500/20">
                       <Box className="w-6 h-6 text-black" />
@@ -140,14 +127,14 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 </div>
                 
                 <div className="flex items-center gap-4">
-                   {/* Mobile Close Button */}
+                   {/* Close / Minimize Button */}
                    <button 
                      onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
-                     className="p-2 bg-zinc-900 hover:bg-zinc-800 rounded-xl transition-colors border border-zinc-800"
+                     className="p-2 bg-zinc-900 hover:bg-zinc-800 rounded-xl transition-colors border border-zinc-800 group"
                      title="Box schließen"
                      aria-label="Close Box"
                    >
-                       <X className="w-5 h-5 text-zinc-500 hover:text-white" />
+                       <X className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
                    </button>
                 </div>
              </div>
@@ -156,25 +143,47 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
              <div className="flex-1 bg-zinc-950/30">
                 
                 {/* Training Section */}
-                <div className="p-6 md:p-8 border-b border-zinc-800/30">
+                <div className="p-6 md:p-12 border-b border-zinc-800/30">
+                   <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Der Schlachtplan</h3>
+                   <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Klare Pläne. Keine Ausreden. Für Männer mit Verantwortung.</p>
                    <TrainingView />
                 </div>
 
                 {/* Nutrition Section */}
-                <div className="p-6 md:p-8 border-b border-zinc-800/30 bg-zinc-900/10">
+                <div className="p-6 md:p-12 border-b border-zinc-800/30 bg-zinc-900/10">
+                   <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Was dich trägt</h3>
+                   <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Ernährung als Werkzeug. Budget-freundlich und machbar.</p>
                    <NutritionView />
                 </div>
 
+                {/* Mindset Section (NEW) */}
+                <div className="p-6 md:p-12 border-b border-zinc-800/30">
+                   <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Rückgrat</h3>
+                   <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Haltung bewahren, wenn niemand zusieht.</p>
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {['Disziplin', 'Verantwortung', 'Konstanz'].map((item) => (
+                        <div key={item} className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl flex flex-col items-center text-center gap-3">
+                           <div className="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center">
+                              <Sparkles className="w-4 h-4 text-yellow-500" />
+                           </div>
+                           <h4 className="font-bold text-white uppercase tracking-wider text-sm">{item}</h4>
+                        </div>
+                      ))}
+                   </div>
+                </div>
+
                 {/* Community Section */}
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-12">
+                   <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Teil des Rudels</h3>
+                   <p className="text-zinc-500 text-sm mb-8 max-w-2xl">Kein VIP Status. Löwen Member.</p>
                    <CommunityView />
                 </div>
                 
                 {/* Footer / CTA */}
-                <div className="p-8 text-center border-t border-zinc-800/50 bg-linear-to-b from-zinc-950 to-black">
-                   <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Bereit für die Transformation?</p>
+                <div className="p-12 text-center border-t border-zinc-800/50 bg-linear-to-b from-zinc-950 to-black">
+                   <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Bereit?</p>
                    <button className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-yellow-500/20 hover:scale-105">
-                      Jetzt Starten
+                      Zugang sichern
                    </button>
                 </div>
 

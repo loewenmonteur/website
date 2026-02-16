@@ -56,7 +56,6 @@ const jsonLd = {
 
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CookieBanner } from "@/components/CookieBanner";
-import { AIFloatingButton } from "@/components/AIFloatingButton";
 import { StripeProvider } from "@/components/StripeProvider";
 
 export default function RootLayout({
@@ -78,7 +77,7 @@ export default function RootLayout({
             {children}
           </SmoothScroll>
           <CookieBanner />
-          <AIFloatingButton />
+          <CookieBanner />
         </StripeProvider>
       </body>
     </html>
