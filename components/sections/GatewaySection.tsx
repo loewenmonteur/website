@@ -11,7 +11,7 @@ export default function GatewaySection() {
         {/* Work / Monteur Gateway */}
         <Link href="/monteur" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
           <Image
-            src="/images/gateway_monteur.png"
+            src="/images/gateway_work_new.png"
             alt="Löwenmonteur - Handwerk"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -44,7 +44,7 @@ export default function GatewaySection() {
         {/* Sport / Orkun Gateway */}
         <Link href="/orkun" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block border-t md:border-t-0 md:border-l border-zinc-900">
           <Image
-            src="/images/gateway_orkun.png"
+            src="/images/gateway_sport_new.jpg"
             alt="Der Architekt - Bodybuilding"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

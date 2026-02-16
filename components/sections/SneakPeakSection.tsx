@@ -38,50 +38,50 @@ export default function SneakPeakSection() {
                  </p>
               </div>
 
-              <div className="space-y-8">
-                 {/* Feature 1: Schlachtplan */}
-                 <div className="flex gap-6 group">
-                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                       <Target className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
-                    </div>
-                    <div className="space-y-2">
-                       <h4 className="text-xl font-black uppercase text-white tracking-wide">Der Schlachtplan</h4>
-                       <p className="text-zinc-500 font-medium leading-relaxed">
-                          Kein stundenlanges Training. Ein präziser Plan für maximale Hypertrophie in 45 Minuten.
-                       </p>
-                    </div>
-                 </div>
+               <div className="space-y-8">
+                  {/* Feature 1: Der Plan */}
+                  <div className="flex gap-6 group">
+                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                        <Target className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
+                     </div>
+                     <div className="space-y-2">
+                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Der Plan</h4>
+                        <p className="text-zinc-500 font-medium leading-relaxed">
+                           Vergiss komplizierte Wissenschaft. Du bekommst einen einfachen, klaren Ablauf für dein Training, der Ergebnisse liefert.
+                        </p>
+                     </div>
+                  </div>
 
-                 {/* Feature 2: Treibstoff */}
-                 <div className="flex gap-6 group">
-                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-emerald-500/50 transition-colors">
-                       <Utensils className="w-6 h-6 text-white group-hover:text-emerald-500 transition-colors" />
-                    </div>
-                    <div className="space-y-2">
-                       <h4 className="text-xl font-black uppercase text-white tracking-wide">Treibstoff</h4>
-                       <p className="text-zinc-500 font-medium leading-relaxed">
-                          Energie auf Knopfdruck. Vergiss komplizierte Diäten. Einfache Rezepte, die in deinen Arbeitsalltag passen.
-                       </p>
-                    </div>
-                 </div>
+                  {/* Feature 2: Energie */}
+                  <div className="flex gap-6 group">
+                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-emerald-500/50 transition-colors">
+                        <Utensils className="w-6 h-6 text-white group-hover:text-emerald-500 transition-colors" />
+                     </div>
+                     <div className="space-y-2">
+                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Energie</h4>
+                        <p className="text-zinc-500 font-medium leading-relaxed">
+                           Keine Hunger-Diäten. Lerne, wie du dich und deine Familie gesund ernährst, ohne ein Vermögen auszugeben.
+                        </p>
+                     </div>
+                  </div>
 
-                 {/* Feature 3: Rudel */}
-                 <div className="flex gap-6 group">
-                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                       <Users className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
-                    </div>
-                    <div className="space-y-2">
-                       <h4 className="text-xl font-black uppercase text-white tracking-wide">Das Rudel</h4>
-                       <p className="text-zinc-500 font-medium leading-relaxed">
-                          Umfeld ist alles. Eine Gemeinschaft, die Verantwortung trägt. Echter Austausch und gegenseitige Rechenschaft.
-                       </p>
-                    </div>
-                 </div>
-              </div>
-           </div>
+                  {/* Feature 3: Gemeinschaft */}
+                  <div className="flex gap-6 group">
+                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                        <Users className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
+                     </div>
+                     <div className="space-y-2">
+                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Gemeinschaft</h4>
+                        <p className="text-zinc-500 font-medium leading-relaxed">
+                           Du bist nicht allein. Ein Netzwerk aus Männern, die vor den gleichen Herausforderungen stehen wie du.
+                        </p>
+                     </div>
+                  </div>
+               </div>
 
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
