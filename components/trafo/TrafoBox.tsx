@@ -171,10 +171,10 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_orkun.png"
+                         src="/images/gateway_sport_stage.png"
                          alt="Training Background"
                          fill
-                         className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
+                         className="object-cover object-left opacity-30 group-hover:opacity-50 transition-opacity"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
@@ -207,10 +207,10 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_monteur.png"
+                         src="/images/gateway_work_sparks.png"
                          alt="Mindset Background"
                          fill
-                         className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
+                         className="object-cover object-center opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
