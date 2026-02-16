@@ -63,7 +63,7 @@ export default function TrafoExplorePage() {
               className="group flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-700 hover:border-yellow-500/50 transition-all backdrop-blur-sm"
             >
               <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-black border-b-[5px] border-b-transparent ml-1" />
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-8 border-l-black border-b-[5px] border-b-transparent ml-1" />
               </div>
               <div className="text-left">
                 <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Dokumentation</p>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import { X, Sparkles } from "lucide-react";
 import Image from "next/image";
 import TrainingView from "./TrainingView";
@@ -33,7 +33,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
       borderRadius: "24px",
       rotate: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 300, damping: 25 }
+      transition: { type: "spring", stiffness: 300, damping: 25, delay: 0.1 } // Small delay to let content exit
     },
     hover: {
       scale: 1.05,
@@ -52,8 +52,14 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
 
   const contentVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.5 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
+    visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.4 } },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.1 } } // Fast exit
+  };
+
+  const closedContentVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { delay: 0.2, duration: 0.3 } },
+    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.1 } }
   };
 
   return (
@@ -68,11 +74,16 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
         onClick={() => !isOpen && setIsOpen(true)}
         className={`relative bg-zinc-950 border border-zinc-800 overflow-hidden shadow-2xl z-50 mx-auto ${isOpen ? 'border-yellow-500/20 ring-1 ring-yellow-500/10' : 'cursor-pointer hover:border-yellow-500/50 transition-colors'}`}
       >
+        <AnimatePresence mode="wait">
         {/* Closed State Visualization */}
         {!isOpen && (
            <motion.div 
+              key="closed"
+              variants={closedContentVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
               className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 group"
-              exit={{ opacity: 0 }}
            >
               {/* Outer Glow Ring */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(234,179,8,0.15),transparent_70%)] animate-pulse" />
@@ -109,6 +120,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
         {/* Open State Content */}
         {isOpen && (
           <motion.div 
+            key="open"
             variants={contentVariants}
             initial="hidden"
             animate="visible"
@@ -164,7 +176,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                          fill
                          className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
+                      <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
                    <div className="relative z-10 p-6 md:p-12 border-b border-zinc-800/30">
                       <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Der Schlachtplan</h3>
@@ -182,7 +194,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                          fill
                          className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
+                      <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
                    <div className="relative z-10 p-6 md:p-12 border-b border-zinc-800/30 bg-zinc-900/10">
                       <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Was dich trägt</h3>
@@ -200,7 +212,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                          fill
                          className="object-cover opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
+                      <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>
                    <div className="relative z-10 p-6 md:p-12 border-b border-zinc-800/30">
                       <h3 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Rückgrat</h3>
@@ -236,6 +248,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
              </div>
           </motion.div>
         )}
+        </AnimatePresence>
       </motion.div>
     </div>
   );
