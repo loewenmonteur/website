@@ -1,7 +1,7 @@
 "use client";
 
 import { PreOrderButton } from "@/components/PreOrderButton";
-import TrafoBox from "@/components/trafo/TrafoBox";
+import TrafoSection from "@/components/trafo/TrafoSection";
 import TrafoGallery from "@/components/trafo/TrafoGallery";
 
 import FAQSection from "@/components/sections/FAQSection";
@@ -81,10 +81,10 @@ export default function TrafoExplorePage() {
         </div>
       </section>
 
-      {/* The Trafo Box Interaction */}
-      <section className="py-12 px-6 flex justify-center min-h-[500px] z-10 relative">
-        <div className="fade-up w-full">
-           <TrafoBox />
+      {/* Trafo System Sections — Scroll Reveal */}
+      <section className="z-10 relative">
+        <div className="fade-up w-full max-w-5xl mx-auto">
+           <TrafoSection />
         </div>
       </section>
 
