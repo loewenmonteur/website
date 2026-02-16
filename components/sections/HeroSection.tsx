@@ -58,15 +58,17 @@ export default function HeroSection() {
         </h1>
         
         <p className="hero-p text-xl md:text-3xl font-bold text-zinc-400 max-w-3xl mx-auto tracking-tight leading-tight mt-8">
-          Der Zugang für <span className="text-white">Männer</span>, die Verantwortung tragen.
+          Der Zugang für <span className="text-white">Menschen</span>, die Verantwortung tragen.
+        </p>
+        
+        <p className="hero-p text-sm md:text-base text-zinc-500 max-w-2xl mx-auto leading-relaxed mt-4">
+          Egal ob als Single, in einer Partnerschaft oder als alleinerziehender Elternteil – das Löwentrafo System ist universell adaptierbar. Es bietet die Struktur, die jeder Mensch benötigt, um sein volles Potenzial zu entfalten, unabhängig von der aktuellen Lebenssituation.
         </p>
 
-        <div className="hero-p pt-12 flex flex-col items-center gap-6">
-          <a href="/explore/trafo" className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105">
-            System Starten
+        <div className="hero-p pt-8 flex flex-col items-center gap-6">
+          <a href="/explore/trafo" className="h-24 px-12 md:px-20 text-xl md:text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105 text-center">
+            Transformation Starten
           </a>
-          
-
           
           <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Inklusive Zugang zur Start-Phase</p>
         </div>
