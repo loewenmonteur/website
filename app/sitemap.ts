@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://loewentrafo.de";
+  const baseUrl = "https://loewenmonteur.de";
   
   const routes = [
     "",
@@ -15,8 +15,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.8,
-  }));
+    const priority = route === "" ? 1 : 
+                    route.includes("/explore") ? 0.9 : 
+                    0.5;
+
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly" as const,
+      priority: priority,
+    };
+  });
 
   return routes;
 }

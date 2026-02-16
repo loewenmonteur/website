@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <h2 className="text-3xl font-black uppercase tracking-tighter text-zinc-800 hover:text-zinc-600 transition-colors cursor-default">
-              Löwenmonteur <span className="text-zinc-900">Framework</span>
+              Löwenmonteur
             </h2>
           </div>
           

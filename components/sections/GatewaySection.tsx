@@ -14,6 +14,7 @@ export default function GatewaySection() {
             src="/images/gateway_sport_new.jpg"
             alt="Löwenmonteur - Handwerk"
             fill
+            priority
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-70"
           />
@@ -44,11 +45,12 @@ export default function GatewaySection() {
         {/* Sport / Orkun Gateway */}
         <Link href="/orkun" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block border-t md:border-t-0 md:border-l border-zinc-900">
           <Image
-            src="/images/gateway_work_new.png"
+            src="/images/championships/orkun_dbfv_win.jpg"
             alt="Der Architekt - Bodybuilding"
             fill
+            priority
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-left md:object-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-70"
+            className="object-cover object-top md:object-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-70"
           />
           <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />

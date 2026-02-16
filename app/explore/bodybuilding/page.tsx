@@ -5,6 +5,7 @@ import { PreOrderButton } from "@/components/PreOrderButton";
 import { Target, Flame, Zap, Activity } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 import { gsap } from "gsap";
 
 export default function BodybuildingExplorePage() {
@@ -174,9 +175,7 @@ export default function BodybuildingExplorePage() {
       </section>
 
       {/* Small Footer */}
-      <footer className="py-10 px-6 text-center border-t border-zinc-900/10 text-[9px] font-mono text-zinc-900 uppercase tracking-widest">
-         No Pain. No Trafo. © 2026 Löwentrafo
-      </footer>
+      <Footer />
     </main>
   );
 }

@@ -89,22 +89,23 @@ export default function OriginStorySection() {
           </div>
 
           {/* Image Content */}
-          <div className="relative order-1 lg:order-2 group">
-             <div className="story-image aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
+          <div className="relative order-1 lg:order-2 group flex justify-center lg:justify-end">
+             <div className="story-image w-full lg:w-2/3 aspect-3/4 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] relative">
                 <Image 
-                  src="/images/handwerk/orkun_leadership_blaumann.png"
-                  alt="Orkun portrait in Blaumann"
+                  src="/images/handwerk/orkun_lion_grit.jpg"
+                  alt="Orkun Systembauer Lion Art"
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                  priority
+                  className="object-cover transition-all duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-90" />
-                <div className="absolute bottom-12 left-12 right-12 space-y-2">
+                <div className="absolute bottom-6 left-8 right-8 space-y-2">
                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">Der Systembauer</p>
-                   <p className="text-4xl font-black uppercase text-white tracking-tighter">Orkun Arslanmekik</p>
+                   <p className="text-2xl md:text-3xl font-black uppercase text-white tracking-tighter">Orkun Arslanmekik</p>
                 </div>
              </div>
              {/* Decorative Elements */}
-             <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-500/5 blur-[80px] rounded-full -z-10" />
+             <div className="absolute -top-10 right-0 lg:right-10 w-40 h-40 bg-yellow-500/5 blur-[80px] rounded-full -z-10" />
           </div>
         </div>
 

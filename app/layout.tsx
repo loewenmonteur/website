@@ -8,47 +8,66 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "LÖWENTRAFO - Dominance in Craftsmanship & Performance",
-  description: "Das ultimative System für Handwerk, Bodybuilding und die Trafo-Vision. Werde zum Meister deines Lebens.",
+  title: "LÖWENMONTEUR - Dominance in Craftsmanship",
+  description: "Das ultimative System für Handwerk, Bodybuilding und Persönlichkeit. Werde zum Meister deines Lebens.",
   keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
-  authors: [{ name: "Orkun K." }],
+  authors: [{ name: "Orkun Arslanmekik" }],
   alternates: {
-    canonical: "https://loewentrafo.de",
+    canonical: "https://loewenmonteur.de",
   },
   openGraph: {
-    title: "LÖWENTRAFO - Leistung im Leben",
+    title: "LÖWENMONTEUR - Dominance in Craftsmanship",
     description: "Körper. Arbeit. Verantwortung. Das System für Transformation.",
-    url: "https://loewentrafo.de",
-    siteName: "LÖWENTRAFO",
+    url: "https://loewenmonteur.de",
+    siteName: "LÖWENMONTEUR",
     locale: "de_DE",
     images: [
       {
         url: "/images/brand/logo.png",
         width: 1200,
         height: 630,
-        alt: "LÖWENTRAFO Brand Logo",
+        alt: "LÖWENMONTEUR Brand Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LÖWENTRAFO",
+    title: "LÖWENMONTEUR",
     description: "Das System für echte Macher.",
     images: ["/images/brand/logo.png"],
+  },
+  icons: {
+    icon: "/images/brand/logo.png",
+    shortcut: "/images/brand/logo.png",
+    apple: "/images/brand/logo.png",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "LÖWENTRAFO",
-  "url": "https://loewentrafo.de",
-  "logo": "https://loewentrafo.de/images/brand/logo.png",
+  "name": "LÖWENMONTEUR",
+  "url": "https://loewenmonteur.de",
+  "logo": "https://loewenmonteur.de/images/brand/logo.png",
   "founder": {
     "@type": "Person",
-    "name": "Orkun K."
+    "name": "Orkun Arslanmekik"
   },
   "description": "Premium Coaching & System-Struktur für Handwerker und Performer.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Musterstraße 1", 
+    "addressLocality": "Duisburg",
+    "postalCode": "47051",
+    "addressCountry": "DE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49-123-456789",
+    "contactType": "customer service",
+    "areaServed": "DE",
+    "availableLanguage": "German"
+  },
   "sameAs": [
     "https://instagram.com/fitnessorkun"
   ]
@@ -76,7 +95,6 @@ export default function RootLayout({
           <SmoothScroll>
             {children}
           </SmoothScroll>
-          <CookieBanner />
           <CookieBanner />
         </StripeProvider>
       </body>

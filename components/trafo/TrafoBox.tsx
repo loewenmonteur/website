@@ -241,11 +241,11 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_sport_new.jpg"
+                         src="/images/championships/orkun_dbfv_win.jpg"
                          alt="Mindset Background"
                          fill
                          sizes="(max-width: 768px) 100vw, 50vw"
-                         className="object-cover object-center opacity-20 group-hover:opacity-30 transition-opacity grayscale"
+                         className="object-cover object-top opacity-20 group-hover:opacity-30 transition-opacity grayscale"
                       />
                       <div className="absolute inset-0 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-zinc-950" />
                    </div>

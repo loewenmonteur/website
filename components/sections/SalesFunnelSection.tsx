@@ -8,14 +8,14 @@ export default function SalesFunnelSection() {
        {/* Background Image */}
        <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/doku/main.jpg" 
-            alt="Werde Teil vom Rudel" 
+            src="/images/brand/lion_beast_reveal.jpg" 
+            alt="Beast Reveal Background" 
             fill 
             sizes="100vw"
-            className="object-cover opacity-20 grayscale mix-blend-luminosity"
+            className="object-cover opacity-40 mix-blend-luminosity scale-110"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/50" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#09090b_100%)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/30" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#09090b_100%)] opacity-80" />
        </div>
 
        <div className="max-w-4xl mx-auto text-center space-y-16 relative z-10">

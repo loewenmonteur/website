@@ -5,6 +5,7 @@ import TrafoBox from "@/components/trafo/TrafoBox";
 import { useEffect, useRef } from "react";
 import { Quote } from "lucide-react";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import { gsap } from "gsap";
 
 export default function TrafoExplorePage() {
@@ -98,7 +99,7 @@ export default function TrafoExplorePage() {
            Starte deine<br/><span className="text-zinc-700">Ganzwerdung</span>
          </h2>
          <p className="text-zinc-400 max-w-sm mx-auto mb-10 text-sm">
-           Sichere dir deinen Platz in der ersten Alpha-Runde und erlebe das volle System.
+           Sichere dir deinen Platz in der ersten Start-Runde und erlebe das volle System.
          </p>
          <div className="flex flex-col items-center gap-6">
             <PreOrderButton className="h-20 px-16 text-xl shadow-[0_0_30px_rgba(250,204,21,0.15)]" />
@@ -107,9 +108,7 @@ export default function TrafoExplorePage() {
       </section>
 
       {/* Small Footer */}
-      <footer className="py-10 px-6 text-center border-t border-zinc-900/10 text-[9px] font-mono text-zinc-800 uppercase tracking-widest">
-         Alpha Phase. Synergy first. © 2026 Löwentrafo
-      </footer>
+      <Footer />
     </main>
   );
 }
