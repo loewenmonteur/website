@@ -20,10 +20,7 @@ const AboutMissionSection = dynamic(() => import("@/components/sections/AboutMis
   ssr: false,
   loading: () => <div className="py-48 bg-zinc-950" />
 });
-const SystemMapSection = dynamic(() => import("@/components/sections/SystemMapSection"), {
-  ssr: false,
-  loading: () => <div className="py-48 bg-zinc-950" />
-});
+
 
 export default function Home() {
   return (
@@ -40,9 +37,6 @@ export default function Home() {
       {/* Trafo Specific Content */}
       <SneakPeakSection />
 
-      {/* System Navigation */}
-      <SystemMapSection />
-      
       {/* External Gateways */}
       <GatewaySection />
       
