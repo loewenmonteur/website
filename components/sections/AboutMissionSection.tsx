@@ -9,12 +9,12 @@ export default function AboutMissionSection() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left: Image / Visual */}
         <div className="relative group">
-           <div className="aspect-4/5 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
+           <div className="aspect-3/4 bg-zinc-900 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl relative">
               <Image 
                 src="/images/about/orkun_portrait.png"
                 alt="Orkun Arslanmekik - Founder of LöwenMonteur"
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-1000"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
