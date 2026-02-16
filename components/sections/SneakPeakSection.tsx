@@ -28,12 +28,12 @@ export default function SneakPeakSection() {
            {/* Right: The Content (System Pillars) */}
            <div className="w-full lg:w-1/2 space-y-12">
               <div className="space-y-6">
-                 <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Das System</h2>
+                 <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">Warum Löwentrafo?</h2>
                  <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9]">
-                    Operative<br /><span className="text-zinc-800">Exzellenz</span>
+                    Mehr als nur<br /><span className="text-zinc-800">ein Buch.</span>
                  </h3>
                  <p className="text-zinc-400 text-lg md:text-xl font-bold leading-relaxed max-w-lg">
-                    Kein &quot;Fitness-Buch&quot;. Eine Blaupause für Männer, die Ergebnisse verlangen. Komprimiertes Wissen aus Jahrzehnten.
+                    Kein theoretisches Blabla. Ein operatives System für Männer, die im Alltag funktionieren müssen.
                  </p>
               </div>
 
@@ -46,7 +46,7 @@ export default function SneakPeakSection() {
                     <div className="space-y-2">
                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Der Schlachtplan</h4>
                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Strukturierte Protokolle. Kein Rätselraten. Klarer Fokus auf Hypertrophie und Kraft.
+                          Kein stundenlanges Training. Ein präziser Plan für maximale Hypertrophie in 45 Minuten.
                        </p>
                     </div>
                  </div>
@@ -59,7 +59,7 @@ export default function SneakPeakSection() {
                     <div className="space-y-2">
                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Treibstoff</h4>
                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Ernährung als Hebel. Budget-freundlich, zeiteffizient und auf Performance getrimmt.
+                          Energie auf Knopfdruck. Vergiss komplizierte Diäten. Einfache Rezepte, die in deinen Arbeitsalltag passen.
                        </p>
                     </div>
                  </div>
@@ -72,7 +72,7 @@ export default function SneakPeakSection() {
                     <div className="space-y-2">
                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Das Rudel</h4>
                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Dein Netzwerk. Verantwortung und Austausch. Zugriff auf exklusive Events.
+                          Umfeld ist alles. Ein Kreis von Männern, die Verantwortung tragen. Echter Austausch und gegenseitige Rechenschaft.
                        </p>
                     </div>
                  </div>
