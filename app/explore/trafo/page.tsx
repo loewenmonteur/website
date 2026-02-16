@@ -105,9 +105,9 @@ export default function TrafoExplorePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {[
                {
-                 title: "Leitfaden & App",
-                 desc: "Zugang zur exklusiven LöwenTrafo App mit täglichen To-Dos, Trainingsplänen und Ernährungs-Trackern.",
-                 features: ["Android & iOS", "Offline-Modus", "Progress-Tracking"]
+                 title: "Leitfaden & Web-App",
+                 desc: "Dein zentraler Hub. Keine Installation nötig – logge dich einfach über den Browser ein und starte deine Transformation.",
+                 features: ["Auf allen Geräten", "Zugang ab Mai 2026", "Progress-Tracking"]
                },
                {
                  title: "Community Access",
