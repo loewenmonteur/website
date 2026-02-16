@@ -83,15 +83,7 @@ export default function TrafoExplorePage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-32 px-6 bg-zinc-900/40 backdrop-blur-sm text-center mt-auto relative z-10">
-         <div className="max-w-3xl mx-auto space-y-8">
-            <Quote className="w-16 h-16 text-zinc-900 mx-auto" />
-            <p className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-white italic leading-tight drop-shadow-lg">
-              &quot;Ich bin nicht das Ziel. Ich bin der Beweis, dass ein System funktioniert. Fitness war der Einstieg – Ordnung ist das Ziel.&quot;
-            </p>
-            <p className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500">— Trafo System Architekt</p>
-         </div>
-      </section>
+
 
       {/* CTA Footer */}
       <section className="py-32 px-6 text-center border-t border-zinc-900 bg-linear-to-b from-zinc-950 to-zinc-900">

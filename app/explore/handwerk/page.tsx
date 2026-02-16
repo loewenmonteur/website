@@ -94,49 +94,66 @@ export default function HandwerkExplorePage() {
         </div>
       </section>
 
-      {/* Documentary Gallery */}
-      <section className="py-24 px-6 relative">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 fade-up">
-            <div className="space-y-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500">Backstage: Realität</p>
-              <h3 className="text-4xl md:text-6xl font-black uppercase text-white tracking-tighter">Einblick in<br/>die Dokumentation</h3>
-            </div>
-            <p className="text-zinc-500 max-w-sm text-sm">Echte Betriebe. Echte Probleme. Echte Systeme. LÖWENTRAFO entsteht direkt aus der Praxis der Duisburger Werkstätten.</p>
-          </div>
+      {/* Events & Cooperation Section */}
+      <section className="py-32 px-6 relative overflow-hidden">
+         {/* Background Image */}
+         <div className="absolute inset-0 z-0">
+             <Image 
+                src="/images/events_bg_texture.png" 
+                alt="Industrial Events Background" 
+                fill 
+                className="object-cover opacity-20"
+             />
+             <div className="absolute inset-0 bg-zinc-950/80" />
+         </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px] md:h-[600px]">
-            <div className="md:col-span-8 relative rounded-3xl overflow-hidden group fade-up">
-              <Image 
-                src="/images/doku/workshop_01.jpg"
-                alt="Workshop Reality"
-                fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
-            </div>
-            <div className="md:col-span-4 grid grid-rows-2 gap-6">
-               <div className="relative rounded-3xl overflow-hidden group fade-up">
-                 <Image 
-                   src="/images/doku/details.jpg"
-                   alt="System Details"
-                   fill
-                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
-                 />
-                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 fade-up">
+               <div>
+                  <h2 className="text-sm font-black uppercase tracking-[0.4em] text-yellow-500 mb-4">B2B & Partnerschaft</h2>
+                  <h3 className="text-5xl md:text-7xl font-black uppercase text-white tracking-tighter leading-none">
+                     Events &<br />Kooperationen
+                  </h3>
                </div>
-               <div className="relative rounded-3xl overflow-hidden group fade-up">
-                  <Image 
-                    src="/images/doku/workshop_02.jpg"
-                    alt="Process"
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+               <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+                  Löwenmonteur ist mehr als ein YouTube-Kanal. Es ist der Zugang zur neuen Generation des Handwerks. Wir suchen Partner, die Qualität genauso ernst nehmen wie wir.
+               </p>
+               <div className="flex flex-col gap-4">
+                  <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-yellow-500/50 transition-colors group cursor-pointer">
+                     <h4 className="text-xl font-black uppercase text-white mb-2 flex items-center gap-3">
+                        <Users className="w-6 h-6 text-yellow-500" />
+                        Werkzeughersteller
+                     </h4>
+                     <p className="text-zinc-500 text-sm group-hover:text-zinc-300 transition-colors">
+                        Platzieren Sie Ihre Premium-Werkzeuge dort, wo sie geschätzt werden: In den Händen von Profis.
+                     </p>
+                  </div>
+                  <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-yellow-500/50 transition-colors group cursor-pointer">
+                     <h4 className="text-xl font-black uppercase text-white mb-2 flex items-center gap-3">
+                        <Trophy className="w-6 h-6 text-yellow-500" />
+                        Materialhandel
+                     </h4>
+                     <p className="text-zinc-500 text-sm group-hover:text-zinc-300 transition-colors">
+                        Verbinden Sie sich direkt mit entscheidungskräftigen Handwerksbetrieben.
+                     </p>
+                  </div>
+               </div>
+               
+               <div className="pt-8">
+                  <a href="mailto:kooperation@loewenmonteur.de" className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-500 text-black font-black uppercase tracking-widest rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_20px_rgba(234,179,8,0.3)]">
+                     Anfrage senden
+                  </a>
                </div>
             </div>
-          </div>
-        </div>
+
+            {/* Visual / Image Side */}
+            <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden border border-zinc-800 shadow-2xl fade-up">
+                {/* We'll use the generated image here once available, for now using a placeholder layout */}
+                <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center">
+                    <p className="text-zinc-700 font-black uppercase tracking-widest">Event Visual Placeholder</p>
+                </div>
+            </div>
+         </div>
       </section>
 
       {/* Partnership Section */}

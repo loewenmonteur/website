@@ -14,7 +14,12 @@ export default function DokuSection() {
          </div>
          
          <div className="space-y-12">
-           <div className="aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110">
+           <a 
+             href="https://youtu.be/s-Amde2FQKw?si=s15raUErJJYM15tA"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="block aspect-video bg-zinc-900 rounded-[3rem] border-8 border-zinc-900/50 shadow-[0_0_80px_rgba(0,0,0,1)] relative overflow-hidden group cursor-pointer lg:scale-110"
+           >
                 <Image 
                   src="/images/doku/main.jpg"
                   alt="Doku teaser background"
@@ -32,7 +37,7 @@ export default function DokuSection() {
                     <div className="h-px w-20 bg-yellow-500 mx-auto scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                  </div>
               </div>
-           </div>
+           </a>
 
            {/* Documentary Snapshot Preview */}
            <div className="flex flex-col items-center gap-12 pt-12">
