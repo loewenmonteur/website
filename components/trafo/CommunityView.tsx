@@ -104,14 +104,7 @@ export default function CommunityView() {
           </motion.div>
        </div>
 
-       <div className="p-4 bg-zinc-950 border border-zinc-900 rounded-xl text-center space-y-3">
-          <p className="text-xs text-zinc-400">
-             Werde Teil der Elite. Monatliche Calls, exklusive Events und ein Netzwerk aus Machern.
-          </p>
-          <button className="w-full py-2 bg-white text-black font-black uppercase text-xs tracking-widest rounded hover:bg-zinc-200 transition-colors">
-             Community Beitreten
-          </button>
-       </div>
+
 
     </div>
   );
