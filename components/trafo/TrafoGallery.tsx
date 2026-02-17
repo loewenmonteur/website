@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const images = [
-  "/images/gallery/trafo/hf_20260216_185749_911e75e6-d208-4584-bc92-a5613e217fae.png",
-  "/images/trafo/training_legs.png",
-  "/images/gallery/trafo/hf_20260216_185814_62996e2d-899a-470e-82ce-8b111edc4a34.png",
-  "/images/championships/german_champion_pose.png",
-  "/images/trafo/training_pull.png",
-  "/images/championships/nrw_stage_overview.png",
-  "/images/trafo/training_push.png",
-  "/images/doku/doku_bg_final.jpg",
+const images: { src: string; position?: string }[] = [
+  { src: "/images/gallery/trafo/hf_20260216_185749_911e75e6-d208-4584-bc92-a5613e217fae.png" },
+  { src: "/images/trafo/training_legs.png" },
+  { src: "/images/gallery/trafo/hf_20260216_185814_62996e2d-899a-470e-82ce-8b111edc4a34.png" },
+  { src: "/images/championships/german_champion_pose.png" },
+  { src: "/images/trafo/training_pull.png" },
+  { src: "/images/championships/nrw_stage_overview.png" },
+  { src: "/images/trafo/training_push.png" },
+  { src: "/images/doku/doku_bg_final.jpg", position: "object-right" },
 ];
 
 export default function TrafoGallery() {
@@ -33,17 +33,17 @@ export default function TrafoGallery() {
           }}
           className="flex gap-4 pr-4 shrink-0"
         >
-          {images.map((src, index) => (
+          {images.map((img, index) => (
             <div
               key={`gallery-first-${index}`}
               className="relative w-[300px] md:w-[450px] aspect-4/5 rounded-2xl overflow-hidden shrink-0 grayscale hover:grayscale-0 transition-all duration-500 group"
             >
               <div className="absolute inset-0 bg-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
               <Image
-                src={src}
+                src={img.src}
                 alt={`Trafo Impression ${index + 1}`}
                 fill
-                className="object-cover"
+                className={`object-cover ${img.position ?? ""}`}
                 sizes="(max-width: 768px) 300px, 450px"
               />
             </div>
@@ -61,17 +61,17 @@ export default function TrafoGallery() {
           }}
           className="flex gap-4 pr-4 shrink-0"
         >
-          {images.map((src, index) => (
+          {images.map((img, index) => (
             <div
               key={`gallery-second-${index}`}
               className="relative w-[300px] md:w-[450px] aspect-4/5 rounded-2xl overflow-hidden shrink-0 grayscale hover:grayscale-0 transition-all duration-500 group"
             >
               <div className="absolute inset-0 bg-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
               <Image
-                src={src}
+                src={img.src}
                 alt={`Trafo Impression ${index + 1}`}
                 fill
-                className="object-cover"
+                className={`object-cover ${img.position ?? ""}`}
                 sizes="(max-width: 768px) 300px, 450px"
               />
             </div>
