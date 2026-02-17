@@ -26,7 +26,7 @@ export default function AboutMissionSection() {
                  <Award className="w-8 h-8 text-yellow-500" />
                  <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Founded</p>
-                    <p className="text-xl font-black uppercase text-white">2024</p>
+                    <p className="text-xl font-black uppercase text-white">2026</p>
                  </div>
               </div>
               <p className="text-xs text-zinc-400">
