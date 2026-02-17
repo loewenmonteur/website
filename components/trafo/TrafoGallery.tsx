@@ -5,12 +5,13 @@ import Image from "next/image";
 
 const images = [
   "/images/gallery/trafo/hf_20260216_185749_911e75e6-d208-4584-bc92-a5613e217fae.png",
-  "/images/gallery/trafo/hf_20260216_185805_fd8e9274-9e07-44fd-b509-591781afe3ab.png",
+  "/images/trafo/training_legs.png",
   "/images/gallery/trafo/hf_20260216_185814_62996e2d-899a-470e-82ce-8b111edc4a34.png",
   "/images/championships/german_champion_pose.png",
   "/images/trafo/training_pull.png",
   "/images/championships/nrw_stage_overview.png",
   "/images/trafo/training_push.png",
+  "/images/doku/doku_bg_final.jpg",
 ];
 
 export default function TrafoGallery() {
