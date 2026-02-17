@@ -43,7 +43,7 @@ export default function DatenschutzPage() {
              <FileText className="w-3 h-3 text-yellow-500" />
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">DSGVO Konformität</span>
           </div>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white leading-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
             Daten<br /><span className="text-zinc-800">schutz.</span>
           </h1>
         </div>
@@ -51,7 +51,7 @@ export default function DatenschutzPage() {
         {/* Content Sections */}
         <div className="space-y-12">
            {sections.map((section, idx) => (
-             <div key={idx} className="p-10 rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
+            <div key={idx} className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
                 <div className="flex items-start gap-6">
                    <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:text-yellow-500 transition-colors">
                       <section.icon className="w-6 h-6" />
@@ -70,7 +70,7 @@ export default function DatenschutzPage() {
            <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Weitere Details</h3>
            <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
               <p>
-                 <strong>Verantwortliche Stelle:</strong> Orkun K., <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Straße]</span>, <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Ort]</span>. Bei Fragen rufen Sie uns an oder schreiben Sie eine E-Mail an mail@loewentrafo.de.
+                  <strong>Verantwortliche Stelle:</strong> Bianca Arslanmekik, Jägerstraße 37, 47166 Duisburg. Bei Fragen schreiben Sie eine E-Mail an management@loewenmonteur.de.
               </p>
               <p>
                  <strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung:</strong> Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
@@ -82,8 +82,8 @@ export default function DatenschutzPage() {
         </div>
 
         {/* Footer info */}
-        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12">
-           Löwenmonteur © 2026. Dominance in Craftsmanship.
+        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12 pb-24 sm:pb-12">
+           LÖWENTRAFO © 2026. Dominance in Craftsmanship.
         </p>
       </div>
     </main>

@@ -13,19 +13,28 @@ export async function POST(req: Request) {
     let discounts: { coupon: string }[] | undefined;
 
     if (promoCode?.toUpperCase() === "EARLYBIRD") {
-      // Create or retrieve the coupon
       try {
-        await stripe.coupons.retrieve("EARLYBIRD");
+        const coupon = await stripe.coupons.retrieve("EARLYBIRD");
+        // If coupon is valid, we use it. If it's restricted, Stripe Checkout will error,
+        // which we catch in the main try/catch block.
+        discounts = [{ coupon: "EARLYBIRD" }];
       } catch {
-        await stripe.coupons.create({
-          id: "EARLYBIRD",
-          amount_off: 20000, // 200€ in cents
-          currency: "eur",
-          name: "Frühbucher-Rabatt",
-          duration: "once",
-        });
+        // Create the coupon if it doesn't exist
+        try {
+          await stripe.coupons.create({
+            id: "EARLYBIRD",
+            amount_off: 20000, // 200€ in cents
+            currency: "eur",
+            name: "Frühbucher-Rabatt",
+            duration: "once",
+          });
+          discounts = [{ coupon: "EARLYBIRD" }];
+        } catch (createErr) {
+          console.error("Failed to create coupon:", createErr);
+          // If coupon creation fails (e.g. already exists but restricted), 
+          // we proceed without discount to keep the flow alive
+        }
       }
-      discounts = [{ coupon: "EARLYBIRD" }];
     }
 
     const session = await stripe.checkout.sessions.create({

@@ -6,7 +6,7 @@ export default function AGBPage() {
     {
       title: "1. Geltungsbereich",
       icon: Scale,
-      content: "Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge über die Lieferung von digitalen Inhalten und Dienstleistungen, die zwischen Orkun K. (Löwenmonteur) und Kunden abgeschlossen werden."
+      content: "Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge über die Lieferung von digitalen Inhalten und Dienstleistungen, die zwischen Orkun K. (LÖWENTRAFO) und Kunden abgeschlossen werden."
     },
     {
       title: "2. Vertragsschluss",
@@ -43,7 +43,7 @@ export default function AGBPage() {
              <ScrollText className="w-3 h-3 text-yellow-500" />
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Geschäftsbedingungen</span>
           </div>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white leading-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
             AG<br /><span className="text-zinc-800">B.</span>
           </h1>
         </div>
@@ -51,7 +51,7 @@ export default function AGBPage() {
         {/* Content Sections */}
         <div className="space-y-12">
            {sections.map((section, idx) => (
-             <div key={idx} className="p-10 rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
+            <div key={idx} className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
                 <div className="flex items-start gap-6">
                    <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:text-yellow-500 transition-colors">
                       <section.icon className="w-6 h-6" />
@@ -73,14 +73,14 @@ export default function AGBPage() {
                  <strong>Mängelhaftung:</strong> Es gelten die gesetzlichen Mängelhaftungsrechte.
               </p>
               <p>
-                 <strong>Schlussbestimmungen:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist, soweit gesetzlich zulässig, <span className="text-yellow-500/50 bg-yellow-500/5 px-1 rounded">[Deine Stadt]</span>.
+                  <strong>Schlussbestimmungen:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist, soweit gesetzlich zulässig, <span className="text-yellow-500">Duisburg</span>.
               </p>
            </div>
         </div>
 
         {/* Footer info */}
-        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12">
-           Löwenmonteur © 2026. Dominance in Craftsmanship.
+        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12 pb-24 sm:pb-12">
+           LÖWENTRAFO © 2026. Dominance in Craftsmanship.
         </p>
       </div>
     </main>

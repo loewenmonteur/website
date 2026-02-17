@@ -7,19 +7,22 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const brandTitle = "LÖWENTRAFO - Dominance in Craftsmanship";
+const brandDescription = "Körper. Arbeit. Verantwortung. Das System für Transformation.";
+
 export const metadata: Metadata = {
-  title: "LÖWENMONTEUR - Dominance in Craftsmanship",
-  description: "Das ultimative System für Handwerk, Bodybuilding und Persönlichkeit. Werde zum Meister deines Lebens.",
+  title: brandTitle,
+  description: brandDescription,
   keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
-  authors: [{ name: "Orkun Arslanmekik" }],
+  authors: [{ name: "Bianca Arslanmekik" }],
   alternates: {
     canonical: "https://www.loewentrafo.de",
   },
   openGraph: {
-    title: "LÖWENMONTEUR - Dominance in Craftsmanship",
-    description: "Körper. Arbeit. Verantwortung. Das System für Transformation.",
+    title: brandTitle,
+    description: brandDescription,
     url: "https://www.loewentrafo.de",
-    siteName: "LÖWENMONTEUR",
+    siteName: "LÖWENTRAFO",
     locale: "de_DE",
     images: [
       {
@@ -46,12 +49,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "LÖWENMONTEUR",
+  "name": "LÖWENTRAFO",
   "url": "https://www.loewentrafo.de",
   "logo": "https://www.loewentrafo.de/images/brand/logo.png",
   "founder": {
     "@type": "Person",
-    "name": "Orkun Arslanmekik"
+    "name": "Bianca Arslanmekik"
   },
   "description": "Premium Coaching & System-Struktur für Handwerker und Performer.",
   "address": {

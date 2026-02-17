@@ -20,7 +20,7 @@ export default function ImpressumPage() {
              <ShieldCheck className="w-3 h-3 text-yellow-500" />
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Rechtliches</span>
           </div>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white leading-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
             Impres<br /><span className="text-zinc-800">sum.</span>
           </h1>
         </div>
@@ -33,10 +33,10 @@ export default function ImpressumPage() {
                     <Info className="w-3 h-3" /> Angaben gemäß § 5 TMG
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed">
-                    Orkun K.<br />
-                    Löwenmonteur Framework<br />
-                    <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Straße Hausnummer]</span><br />
-                    <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[PLZ Ort]</span>
+                    Bianca Arslanmekik<br />
+                    LÖWENTRAFO Framework<br />
+                    Jägerstraße 37<br />
+                    47166 Duisburg
                  </div>
               </section>
 
@@ -45,8 +45,8 @@ export default function ImpressumPage() {
                     <Mail className="w-3 h-3" /> Kontakt
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed underline decoration-zinc-800 underline-offset-8">
-                    E-Mail: mail@loewentrafo.de<br />
-                    Telefon: <span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Deine Telefonnummer]</span>
+                    E-Mail: management@loewenmonteur.de<br />
+                    Webseite: www.fitnessorkun.de
                  </div>
               </section>
            </div>
@@ -63,11 +63,11 @@ export default function ImpressumPage() {
                     </div>
                     <div>
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Aufsichtsbehörde</p>
-                       <p className="text-white font-bold"><span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">Handwerkskammer [Deine Stadt]</span></p>
+                        <p className="text-white font-bold">Handwerkskammer Düsseldorf</p>
                     </div>
                     <div>
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">USt-IdNr.</p>
-                       <p className="text-white font-bold"><span className="text-yellow-500/50 bg-yellow-500/5 px-2 rounded">[Umsatzsteuer-Identifikationsnummer]</span></p>
+                        <p className="text-white font-bold">Wird auf Anfrage mitgeteilt (Kleinunternehmerregelung)</p>
                     </div>
                  </div>
               </section>
@@ -77,19 +77,19 @@ export default function ImpressumPage() {
         {/* Disclaimer */}
         <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-900/50 space-y-6">
            <h3 className="text-sm font-black uppercase text-white tracking-widest">Haftungsausschluss</h3>
-           <div className="space-y-4 text-xs text-zinc-500 leading-relaxed">
-              <p>
-                 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-              </p>
-              <p>
-                 Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
-              </p>
-           </div>
+            <div className="space-y-4 text-xs text-zinc-500 leading-relaxed">
+               <p>
+                  Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+               </p>
+               <p>
+                  <strong>Alternative Streitbeilegung:</strong> Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" className="text-yellow-500/50 hover:text-yellow-500 underline transition-colors">https://ec.europa.eu/odr</a>.
+               </p>
+            </div>
         </div>
 
         {/* Footer info */}
-        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12">
-           Löwenmonteur © 2026. Dominance in Craftsmanship.
+        <p className="text-[9px] font-mono text-zinc-800 uppercase tracking-[0.5em] pt-12 pb-24 sm:pb-12">
+           LÖWENTRAFO © 2026. Dominance in Craftsmanship.
         </p>
       </div>
     </main>
