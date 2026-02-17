@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
   authors: [{ name: "Orkun Arslanmekik" }],
   alternates: {
-    canonical: "https://loewenmonteur.de",
+    canonical: "https://www.loewenmonteur.de",
   },
   openGraph: {
     title: "LÖWENMONTEUR - Dominance in Craftsmanship",
     description: "Körper. Arbeit. Verantwortung. Das System für Transformation.",
-    url: "https://loewenmonteur.de",
+    url: "https://www.loewenmonteur.de",
     siteName: "LÖWENMONTEUR",
     locale: "de_DE",
     images: [
@@ -47,8 +47,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "LÖWENMONTEUR",
-  "url": "https://loewenmonteur.de",
-  "logo": "https://loewenmonteur.de/images/brand/logo.png",
+  "url": "https://www.loewenmonteur.de",
+  "logo": "https://www.loewenmonteur.de/images/brand/logo.png",
   "founder": {
     "@type": "Person",
     "name": "Orkun Arslanmekik"

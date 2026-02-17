@@ -8,7 +8,7 @@ export default function GatewaySection() {
     <section className="bg-zinc-950 border-t border-zinc-900">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Work / Monteur Gateway */}
-        <a href="https://loewenmonteur.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
+        <a href="https://www.loewenmonteur.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
           <Image
             src="/images/gateway_sport_new.jpg"
             alt="Löwenmonteur - Handwerk"

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/auth", "/dashboard", "/verify"],
     },
-    sitemap: "https://loewenmonteur.de/sitemap.xml",
+    sitemap: "https://www.loewenmonteur.de/sitemap.xml",
   };
 }
