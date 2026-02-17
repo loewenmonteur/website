@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 
 const PillarsSection = dynamic(() => import("@/components/sections/PillarsSection"), { 
@@ -37,9 +38,9 @@ export default function MonteurPage() {
 
       <div className="py-24 text-center">
          <p className="text-zinc-500 text-sm mb-4">Offizielle Firmenseite</p>
-         <a href="https://www.loewenmonteur.de" target="_blank" rel="noopener noreferrer" className="text-yellow-500 font-bold uppercase tracking-widest hover:underline">
-            Zu Loewenmonteur.de
-         </a>
+         <Link href="/" className="text-yellow-500 font-bold uppercase tracking-widest hover:underline">
+            Zur Startseite
+         </Link>
       </div>
 
       <Footer />

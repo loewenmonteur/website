@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Hammer, Dumbbell } from "lucide-react";
 
 export default function GatewaySection() {
@@ -8,7 +9,7 @@ export default function GatewaySection() {
     <section className="bg-zinc-950 border-t border-zinc-900">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Work / Monteur Gateway */}
-        <a href="https://www.loewenmonteur.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
+        <Link href="/monteur" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block">
           <Image
             src="/images/gateway_sport_new.jpg"
             alt="Löwenmonteur - Handwerk"
@@ -39,7 +40,7 @@ export default function GatewaySection() {
               <ArrowRight className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform rotate-180" />
             </div>
           </div>
-        </a>
+        </Link>
  
         {/* Sport / Orkun Gateway */}
         <a href="https://fitnessorkun.de" className="group relative h-[60vh] md:h-[80vh] overflow-hidden w-full block border-t md:border-t-0 md:border-l border-zinc-900">
