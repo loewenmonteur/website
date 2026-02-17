@@ -73,9 +73,10 @@ function EarlyHint({
     <motion.span
       ref={ref}
       initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : { opacity: 0 }}
+      animate={inView ? { opacity: 0.3 } : { opacity: 0 }}
+      whileHover={{ opacity: 1, scale: 1.1 }}
       transition={{ duration: 2.5, delay: 1.2 }}
-      className={`font-mono select-none ${className}`}
+      className={`font-mono select-none cursor-help transition-opacity ${className}`}
     >
       {text}
     </motion.span>
@@ -231,9 +232,9 @@ export default function TrafoSection() {
           {/* 🔑 Hidden Hint #2 — fake promo code flash */}
           <Reveal delay={0.6}>
             <div className="mt-8 flex justify-center">
-              <div className="px-3 py-1.5 rounded-lg bg-zinc-900/60 border border-zinc-800/50">
-                <span className="text-[8px] md:text-[9px] font-mono text-zinc-700 tracking-wider">
-                  ••• <span className="text-yellow-500/30">B•I•R•D</span> •••
+              <div className="px-4 py-2 rounded-lg bg-zinc-900/80 border border-zinc-800 backdrop-blur-md">
+                <span className="text-[10px] md:text-[11px] font-mono text-zinc-500 tracking-wider">
+                  ••• <span className="text-yellow-500/60 font-black animate-pulse">E • A • R • L • Y</span> •••
                 </span>
               </div>
             </div>

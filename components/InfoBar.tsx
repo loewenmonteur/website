@@ -45,7 +45,7 @@ export function InfoBar() {
               ACHTUNG: FRÜHBUCHER-PHASE AKTIV
             </span>
             <span className="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-              LÖWENTRAFO SYSTEM NUR 99€ STATT 299€
+              LÖWENTRAFO SYSTEM NUR 99€ STATT 299€ — CODE: EARLYBIRD
             </span>
             <span className="w-1.5 h-1.5 bg-black rounded-full" />
              <span className="text-xs font-black uppercase tracking-widest flex items-center gap-1 group cursor-pointer">
