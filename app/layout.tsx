@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: brandTitle,
   description: brandDescription,
   keywords: ["Handwerk", "Fitness", "Mindset", "Performance", "Orkun K.", "Löwenmonteur", "Bodybuilding"],
-  authors: [{ name: "Bianca Arslanmekik" }],
+  authors: [{ name: "FO-LM UG" }],
   alternates: {
     canonical: "https://www.loewentrafo.de",
   },

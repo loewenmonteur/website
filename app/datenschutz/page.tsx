@@ -70,7 +70,7 @@ export default function DatenschutzPage() {
            <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Weitere Details</h3>
            <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
               <p>
-                  <strong>Verantwortliche Stelle:</strong> Bianca Arslanmekik, Jägerstraße 37, 47166 Duisburg. Bei Fragen schreiben Sie eine E-Mail an management@loewenmonteur.de.
+                  <strong>Verantwortliche Stelle:</strong> FO-LM UG, B. Arslanmekik, Jägerstr. 47, 47166 Duisburg. Bei Fragen schreiben Sie eine E-Mail an management@loewenmonteur.de.
               </p>
               <p>
                  <strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung:</strong> Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.

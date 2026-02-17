@@ -24,6 +24,7 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-700">
              <Link href="/impressum" className="hover:text-yellow-500 transition-colors">Impressum</Link>
              <Link href="/datenschutz" className="hover:text-yellow-500 transition-colors">Datenschutz</Link>
+             <Link href="/cookies" className="hover:text-yellow-500 transition-colors">Cookie-Richtlinie</Link>
              <Link href="/agb" className="hover:text-yellow-500 transition-colors">AGB</Link>
           </div>
           

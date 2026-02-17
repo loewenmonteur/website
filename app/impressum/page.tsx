@@ -33,9 +33,9 @@ export default function ImpressumPage() {
                     <Info className="w-3 h-3" /> Angaben gemäß § 5 TMG
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed">
-                    Bianca Arslanmekik<br />
-                    LÖWENTRAFO Framework<br />
-                    Jägerstraße 37<br />
+                    FO-LM UG<br />
+                    B. Arslanmekik<br />
+                    Jägerstr. 47<br />
                     47166 Duisburg
                  </div>
               </section>
