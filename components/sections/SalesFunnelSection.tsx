@@ -36,8 +36,8 @@ export default function SalesFunnelSection() {
                 <span>Rückgrat</span>
              </div>
               <PreOrderButton 
-              text="System Starten"
-                className="h-24 px-20 text-2xl shadow-[0_0_50px_rgba(250,204,21,0.2)] rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase tracking-widest flex items-center justify-center transition-all hover:scale-105 hover:shadow-[0_0_80px_rgba(250,204,21,0.4)]"
+                text="System Starten"
+                className="shadow-yellow-500/20"
               />
           </div>
        </div>
