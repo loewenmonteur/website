@@ -127,7 +127,7 @@ export default function TrafoSection() {
         {/* BG Image */}
         <div className="absolute inset-0 h-80 overflow-hidden z-0">
           <Image
-            src="/images/gateway_work_new.png"
+            src="/images/trafo/training_legs.png"
             alt="Training Background"
             fill
             sizes="(max-width: 768px) 100vw, 80vw"

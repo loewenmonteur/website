@@ -9,8 +9,7 @@ export default function PartnerSection() {
     <section className="py-32 px-6 bg-zinc-950 border-t border-zinc-900/30 relative overflow-hidden">
       {/* Background Ambience & Noise */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay -z-10" 
-           style={{ backgroundImage: 'url("/noise.png")' }} />
+
       
       <div className="max-w-7xl mx-auto space-y-20">
         <div className="text-center space-y-6 relative z-10">

@@ -64,7 +64,6 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-zinc-950 text-white">
       {/* Background */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
-      <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
         {/* Back Link */}

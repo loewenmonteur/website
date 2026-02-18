@@ -31,7 +31,6 @@ export default function TrafoExplorePage() {
       {/* Background Visuals - YouTube Archive Loop */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-black/80 z-10" /> {/* Heavy overlay for readability */}
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05] mix-blend-overlay z-20" />
         <iframe 
           className="w-full h-full object-cover scale-[1.35] opacity-60 grayscale brightness-75"
           src="https://www.youtube.com/embed/s-Amde2FQKw?autoplay=1&mute=1&loop=1&playlist=s-Amde2FQKw&controls=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1&iv_load_policy=3" 

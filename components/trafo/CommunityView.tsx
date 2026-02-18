@@ -27,7 +27,6 @@ export default function CommunityView() {
              >
                  {/* Gradient Background */}
                  <div className="absolute inset-0 bg-linear-to-br from-zinc-900 via-black to-zinc-900" />
-                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-30 mix-blend-overlay" />
                  
                  {/* Golden Accents */}
                  <div className="absolute top-0 right-0 w-48 h-48 bg-yellow-500/10 rounded-full blur-[60px]" />

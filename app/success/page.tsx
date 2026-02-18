@@ -74,7 +74,6 @@ function SuccessContent() {
     <div className="min-h-screen bg-zinc-950 text-foreground flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
       {/* Background Visuals */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#1a1a1e_0%,#09090b_80%)] -z-10" />
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none -z-10" />
 
       <div className="space-y-12 max-w-2xl relative z-10">
         <div className="relative inline-block">

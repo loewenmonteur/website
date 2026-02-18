@@ -128,7 +128,6 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
             className="flex flex-col h-full bg-zinc-950/50 relative"
           >
              {/* Background Texture */}
-             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
              
              {/* Header */}
              <div className="p-6 md:p-8 flex items-center justify-between border-b border-zinc-800/50 bg-zinc-950/90 backdrop-blur-md sticky top-0 z-30">
@@ -171,7 +170,7 @@ export default function TrafoBox({ isOpen: externalIsOpen, onOpenChange }: Trafo
                 <div className="relative group">
                    <div className="absolute inset-0 h-64 overflow-hidden z-0">
                       <Image
-                         src="/images/gateway_work_new.png"
+                         src="/images/trafo/training_legs.png"
                          alt="Training Background"
                          fill
                          sizes="(max-width: 768px) 100vw, 50vw"
