@@ -104,37 +104,42 @@ export default function TrafoExplorePage() {
              <h3 className="text-3xl md:text-5xl font-black uppercase text-white tracking-tighter">Was du bekommst</h3>
           </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Training & System",
-                  desc: "Dein zentraler Hub. Präzise Pläne und Videos für maximalen Fortschritt. Keine Installation nötig.",
-                  features: ["Maßgeschneiderte Trainingspläne", "Video-Bibliothek (Übungen)", "Progress-Tracking App"]
-                },
-                {
-                  title: "Ernährung & Taktik",
-                  desc: "Kein Verzicht, sondern Strategie. Energie für die Baustelle und das Gym.",
-                  features: ["Individuelle Ernährungspläne", "Meal Prep für Schichtarbeit", "Einkaufs-Guides"]
-                },
-                {
-                  title: "Community & Mentoring",
-                  desc: "Werde Teil eines starken Netzwerks. Wöchentliche Live-Calls und 24/7 Support.",
-                  features: ["Live Q&A Calls mit Orkun", "Discord Community Access", "Regionale Events"]
-                }
-              ].map((item, i) => (
-                 <div key={i} className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-yellow-500/30 transition-all group">
-                    <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter">{item.title}</h4>
-                    <p className="text-zinc-500 mb-8 h-20">{item.desc}</p>
-                    <ul className="space-y-3">
-                       {item.features.map((feat, j) => (
-                         <li key={j} className="flex items-center gap-3 text-sm text-zinc-300">
-                           <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                           {feat}
-                         </li>
-                       ))}
-                    </ul>
-                 </div>
-              ))}
-           </div>
+               {[
+                 {
+                   title: "⚔️ Trainingspläne",
+                   desc: "Kompromisslose Übungsvideos. Ein System, das Ergebnisse liefert, ohne Ausreden.",
+                   features: ["Strukturierte Abläufe", "Video-Bibliothek", "Maximaler Fortschritt"]
+                 },
+                 {
+                   title: "🥩 Ernährungspläne",
+                   desc: "Inklusive Kochbuch – kein Rätselraten mehr. Energie für den Job und das Gym.",
+                   features: ["Individuelle Guides", "Einfache Rezepte", "Effizientes Meal Prep"]
+                 },
+                 {
+                   title: "🦁 Mentoring",
+                   desc: "Werde zum Löwen. Die Mentalität für Sport, Arbeit und dein ganzes Leben.",
+                   features: ["Mindset-Strategien", "Community-Support", "Direktes Feedback"]
+                 }
+               ].map((item, i) => (
+                  <div key={i} className="p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-yellow-500/30 transition-all group">
+                     <h4 className="text-2xl font-black uppercase text-white mb-4 tracking-tighter">{item.title}</h4>
+                     <p className="text-zinc-500 mb-8 h-20">{item.desc}</p>
+                     <ul className="space-y-3">
+                        {item.features.map((feat, j) => (
+                          <li key={j} className="flex items-center gap-3 text-sm text-zinc-300">
+                            <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                            {feat}
+                          </li>
+                        ))}
+                     </ul>
+                  </div>
+               ))}
+            </div>
+            
+            <div className="mt-16 text-center space-y-2 py-8 border-t border-zinc-900/50">
+               <p className="text-xl md:text-2xl font-black uppercase tracking-widest text-white">Keine Ausreden. Keine halben Sachen.</p>
+               <p className="text-zinc-500 font-bold uppercase tracking-widest">Du kommst nicht zum Spielen. Du kommst, um stärker zu werden.</p>
+            </div>
         </div>
       </section>
 

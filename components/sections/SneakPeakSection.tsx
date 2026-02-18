@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, Utensils, Users } from "lucide-react";
+
 
 export default function SneakPeakSection() {
   return (
@@ -39,45 +39,50 @@ export default function SneakPeakSection() {
               </div>
 
                <div className="space-y-8">
-                  {/* Feature 1: Der Plan */}
-                  <div className="flex gap-6 group">
-                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                        <Target className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
-                     </div>
-                     <div className="space-y-2">
-                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Der Plan</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                           Vergiss komplizierte Wissenschaft. Du bekommst einen einfachen, klaren Ablauf für dein Training, der Ergebnisse liefert.
-                        </p>
-                     </div>
-                  </div>
-
-                  {/* Feature 2: Energie */}
-                  <div className="flex gap-6 group">
-                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-emerald-500/50 transition-colors">
-                        <Utensils className="w-6 h-6 text-white group-hover:text-emerald-500 transition-colors" />
-                     </div>
-                     <div className="space-y-2">
-                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Energie</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                           Keine Hunger-Diäten. Lerne, wie du dich und deine Familie gesund ernährst, ohne ein Vermögen auszugeben.
-                        </p>
-                     </div>
-                  </div>
-
-                  {/* Feature 3: Gemeinschaft */}
-                  <div className="flex gap-6 group">
-                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                        <Users className="w-6 h-6 text-white group-hover:text-yellow-500 transition-colors" />
-                     </div>
-                     <div className="space-y-2">
-                        <h4 className="text-xl font-black uppercase text-white tracking-wide">Gemeinschaft</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                           Du bist nicht allein. Ein Netzwerk aus Menschen, die vor den gleichen Herausforderungen stehen wie du.
-                        </p>
-                     </div>
-                  </div>
-               </div>
+                   {/* Feature 1: Training */}
+                   <div className="flex gap-6 group">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                         <span className="text-xl">⚔️</span>
+                      </div>
+                      <div className="space-y-2">
+                         <h4 className="text-xl font-black uppercase text-white tracking-wide">Trainingspläne</h4>
+                         <p className="text-zinc-500 font-medium leading-relaxed">
+                            Kompromisslose Übungsvideos. Ein System, das Ergebnisse liefert, ohne Ausreden.
+                         </p>
+                      </div>
+                   </div>
+ 
+                   {/* Feature 2: Ernährung */}
+                   <div className="flex gap-6 group">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                         <span className="text-xl">🥩</span>
+                      </div>
+                      <div className="space-y-2">
+                         <h4 className="text-xl font-black uppercase text-white tracking-wide">Ernährungspläne</h4>
+                         <p className="text-zinc-500 font-medium leading-relaxed">
+                            Inklusive Kochbuch – kein Rätselraten mehr. Optimale Energie für deinen Erfolg.
+                         </p>
+                      </div>
+                   </div>
+ 
+                   {/* Feature 3: Mentoring */}
+                   <div className="flex gap-6 group">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                         <span className="text-xl">🦁</span>
+                      </div>
+                      <div className="space-y-2">
+                         <h4 className="text-xl font-black uppercase text-white tracking-wide">Mentoring</h4>
+                         <p className="text-zinc-500 font-medium leading-relaxed">
+                            Zum Löwen werden. Die Mentalität für Sport, Arbeit und dein ganzes Leben.
+                         </p>
+                      </div>
+                   </div>
+                </div>
+ 
+                <div className="pt-4 border-t border-zinc-900">
+                   <p className="text-sm font-black uppercase tracking-widest text-yellow-500 mb-2">Keine halben Sachen. Nur Fortschritt.</p>
+                   <p className="text-zinc-500 text-xs italic">Du kommst nicht zum Spielen. Du kommst, um stärker zu werden.</p>
+                </div>
 
         </div>
       </div>

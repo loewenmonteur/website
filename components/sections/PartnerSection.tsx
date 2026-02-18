@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Droplets, Flame, Building2, Key, Construction, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Droplets, Flame, Building2, Key, Construction } from "lucide-react";
 
 export default function PartnerSection() {
   return (
