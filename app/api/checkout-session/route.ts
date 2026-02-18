@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const session = await (stripe.checkout.sessions.create as any)({
       mode: "payment",
-      payment_method_types: ["card", "paypal"],
+      payment_method_configuration: "pmc_1SwWryLE2VLHHRbsPotnsUN1",
       shipping_address_collection: {
         allowed_countries: ["DE", "AT", "CH"],
       },
