@@ -71,7 +71,7 @@ export default function CookiePolicyPage() {
                  <strong>Deine Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Kontaktiere uns dazu bitte per E-Mail.
               </p>
               <p>
-                 <strong>Kontakt:</strong> FO-LM UG (haftungsbeschränkt), Bianca Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
+                 <strong>Kontakt:</strong> FO-LM UG (haftungsbeschränkt), B. Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
               </p>
            </div>
         </div>

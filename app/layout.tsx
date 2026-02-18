@@ -54,14 +54,14 @@ const jsonLd = {
   "logo": "https://www.loewentrafo.de/images/brand/logo.png",
   "founder": {
     "@type": "Person",
-    "name": "Bianca Arslanmekik"
+    "name": "B. Arslanmekik"
   },
   "description": "Premium Coaching & System-Struktur für Handwerker und Performer.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Musterstraße 1", 
+    "streetAddress": "Jägerstr. 47", 
     "addressLocality": "Duisburg",
-    "postalCode": "47051",
+    "postalCode": "47166",
     "addressCountry": "DE"
   },
   "contactPoint": {

@@ -69,7 +69,7 @@ export default function DatenschutzPage() {
               <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Allgemeine Hinweise</h3>
               <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
                  <p>
-                    <strong>Verantwortliche Stelle:</strong> FO-LM UG (haftungsbeschränkt), Bianca Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
+                    <strong>Verantwortliche Stelle:</strong> FO-LM UG (haftungsbeschränkt), B. Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
                  </p>
                  <p>
                     <strong>SSL- bzw. TLS-Verschlüsselung:</strong> Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du an der Adresszeile des Browsers (https://).

@@ -39,7 +39,7 @@ export default function ImpressumPage() {
                  </div>
                  <div className="pt-4 border-t border-zinc-900/50">
                     <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Vertreten durch</p>
-                    <p className="text-white font-bold">Bianca Arslanmekik</p>
+                    <p className="text-white font-bold">B. Arslanmekik</p>
                  </div>
               </section>
 
@@ -76,7 +76,7 @@ export default function ImpressumPage() {
                     <ShieldCheck className="w-3 h-3" /> Redaktionell Verantwortlich
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed">
-                    Bianca Arslanmekik<br />
+                    B. Arslanmekik<br />
                     Jägerstr. 47<br />
                     47166 Duisburg
                  </div>
