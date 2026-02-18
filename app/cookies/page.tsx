@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Cookie, ShieldCheck, Info, FileText, Lock } from "lucide-react";
+import { ArrowLeft, Cookie, ShieldCheck, Info, Lock } from "lucide-react";
 
 export default function CookiePolicyPage() {
   const sections = [
@@ -41,7 +41,7 @@ export default function CookiePolicyPage() {
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Compliance</span>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
-            Cookie<br /><span className="text-zinc-800">Policy.</span>
+            Cookie Policy
           </h1>
         </div>
 
@@ -71,7 +71,7 @@ export default function CookiePolicyPage() {
                  <strong>Deine Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Kontaktiere uns dazu bitte per E-Mail.
               </p>
               <p>
-                 <strong>Kontakt:</strong> FO-LM UG, B. Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
+                 <strong>Kontakt:</strong> FO-LM UG (haftungsbeschränkt), Bianca Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
               </p>
            </div>
         </div>

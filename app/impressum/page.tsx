@@ -33,10 +33,13 @@ export default function ImpressumPage() {
                     <Info className="w-3 h-3" /> Angaben gemäß § 5 TMG
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed">
-                    FO-LM UG<br />
-                    B. Arslanmekik<br />
+                    FO-LM UG (haftungsbeschränkt)<br />
                     Jägerstr. 47<br />
                     47166 Duisburg
+                 </div>
+                 <div className="pt-4 border-t border-zinc-900/50">
+                    <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Vertreten durch</p>
+                    <p className="text-white font-bold">Bianca Arslanmekik</p>
                  </div>
               </section>
 
@@ -58,33 +61,49 @@ export default function ImpressumPage() {
                  </h2>
                  <div className="space-y-6">
                     <div>
-                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Berufsbezeichnung</p>
-                       <p className="text-white font-bold">Installateur- und Heizungsbauermeister</p>
+                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Registereintrag</p>
+                       <p className="text-white font-bold">Eintragung im Handelsregister.<br />Registergericht: Amtsgericht Duisburg<br />Registernummer: HRB folgt</p>
                     </div>
                     <div>
-                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Handelsregister</p>
-                       <p className="text-white font-bold">HRB folgt</p>
-                    </div>
-                    <div>
-                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">USt-IdNr.</p>
+                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Umsatzsteuer-ID</p>
                         <p className="text-white font-bold">UmSt folgt</p>
                     </div>
+                    <div>
+                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Berufsbezeichnung</p>
+                        <p className="text-white font-bold text-sm">Orkun Arslanmekik: Installateur- und Heizungsbauermeister (verliehen in Deutschland, HWK Düsseldorf)</p>
+                    </div>
+                 </div>
+              </section>
+
+              <section className="space-y-4">
+                 <h2 className="text-xs font-black uppercase tracking-[0.3em] text-yellow-500 flex items-center gap-2">
+                    <ShieldCheck className="w-3 h-3" /> Redaktionell Verantwortlich
+                 </h2>
+                 <div className="text-zinc-400 text-lg font-bold leading-relaxed">
+                    Bianca Arslanmekik<br />
+                    Jägerstr. 47<br />
+                    47166 Duisburg
                  </div>
               </section>
            </div>
         </div>
 
         {/* Disclaimer */}
-        <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-900/50 space-y-6">
-           <h3 className="text-sm font-black uppercase text-white tracking-widest">Haftungsausschluss</h3>
-            <div className="space-y-4 text-xs text-zinc-500 leading-relaxed">
-               <p>
-                  Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-               </p>
-               <p>
-                  <strong>Alternative Streitbeilegung:</strong> Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" className="text-yellow-500/50 hover:text-yellow-500 underline transition-colors">https://ec.europa.eu/odr</a>.
-               </p>
-            </div>
+        <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-900/50 space-y-8">
+           <div className="space-y-4">
+              <h3 className="text-sm font-black uppercase text-white tracking-widest">Streitschlichtung</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-yellow-500/50 hover:text-yellow-500 underline transition-colors">https://ec.europa.eu/consumers/odr</a>.<br />
+                Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+           </div>
+           
+           <div className="space-y-4">
+              <h3 className="text-sm font-black uppercase text-white tracking-widest">Haftung für Inhalte</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed">
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+              </p>
+           </div>
         </div>
 
         {/* Footer info */}

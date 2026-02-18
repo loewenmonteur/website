@@ -1,30 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, Gavel, ShieldCheck, Scale, Handshake, ScrollText } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Scale, Handshake, ScrollText } from "lucide-react";
 
 export default function AGBPage() {
-  const sections = [
-    {
-      title: "1. Geltungsbereich",
-      icon: Scale,
-      content: "Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge über die Lieferung von digitalen Inhalten und Dienstleistungen, die zwischen Orkun K. (LÖWENTRAFO) und Kunden abgeschlossen werden."
-    },
-    {
-      title: "2. Vertragsschluss",
-      icon: Handshake,
-      content: "Die Präsentation der Leistungen auf der Webseite stellt kein rechtlich bindendes Angebot dar. Erst durch die Bestellung (Checkout via Stripe) gibt der Kunde ein verbindliches Angebot ab."
-    },
-    {
-      title: "3. Preise & Zahlung",
-      icon: ShieldCheck,
-      content: "Alle Preise sind Endpreise. Die Zahlung erfolgt über die angebotenen Zahlungsmethoden von Stripe (Kreditkarte, SEPA, etc.)."
-    },
-    {
-      title: "4. Widerrufsrecht",
-      icon: Gavel,
-      content: "Bei digitalen Inhalten erlischt das Widerrufsrecht vorzeitig, wenn wir mit der Vertragserfüllung begonnen haben, nachdem Sie ausdrücklich zugestimmt haben."
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals */}
@@ -50,7 +27,33 @@ export default function AGBPage() {
 
         {/* Content Sections */}
         <div className="space-y-12">
-           {sections.map((section, idx) => (
+           {[
+            {
+              title: "1. Geltungsbereich",
+              icon: Scale,
+              content: "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über die Erbringung von Coaching-Dienstleistungen und die Lieferung von digitalen Inhalten (z.B. Trainingspläne, Video-Kurse), die zwischen der FO-LM UG (haftungsbeschränkt) und dem Kunden abgeschlossen werden."
+            },
+            {
+              title: "2. Vertragsschluss",
+              icon: Handshake,
+              content: "Die Darstellung der Leistungen auf der Website stellt kein rechtlich bindendes Angebot dar. Durch den Abschluss des Bezahlvorgangs über Stripe gibt der Kunde ein verbindliches Angebot ab. Der Vertrag kommt durch unsere ausdrückliche Bestätigung oder durch Bereitstellung der Leistung zustande."
+            },
+            {
+              title: "3. Leistungen & Mitwirkung",
+              icon: ShieldCheck,
+              content: "Unsere Leistungen umfassen Coaching und digitale Inhalte. Der Erfolg des Coachings hängt maßgeblich von der aktiven Teilnahme und Umsetzung des Kunden ab. Eine medizinische Beratung oder Heilversprechen sind ausdrücklich nicht Gegenstand des Vertrages."
+            },
+            {
+              title: "4. Preise & Zahlung",
+              icon: ShieldCheck,
+              content: "Es gelten die zum Zeitpunkt der Bestellung angegebenen Preise. Die Zahlung erfolgt über Stripe. Bei Ratenzahlungsmodellen verpflichtet sich der Kunde zur fristgerechten Deckung seines Kontos."
+            },
+            {
+              title: "5. Nutzungsrechte",
+              icon: ScrollText,
+              content: "Sämtliche digitalen Inhalte sind urheberrechtlich geschützt. Der Kunde erhält ein einfaches, nicht übertragbares Recht zur persönlichen Nutzung. Eine Weitergabe an Dritte oder kommerzielle Nutzung ist untersagt."
+            }
+           ].map((section, idx) => (
             <div key={idx} className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
                 <div className="flex items-start gap-6">
                    <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:text-yellow-500 transition-colors">
@@ -65,17 +68,32 @@ export default function AGBPage() {
            ))}
         </div>
 
-        {/* Detailed Info (Placeholder) */}
-        <div className="space-y-8 pt-12 border-t border-zinc-900">
-           <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Weitere Details</h3>
-           <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
-              <p>
-                 <strong>Mängelhaftung:</strong> Es gelten die gesetzlichen Mängelhaftungsrechte.
-              </p>
-              <p>
-                  <strong>Schlussbestimmungen:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist, soweit gesetzlich zulässig, <span className="text-yellow-500">Duisburg</span>.
-              </p>
-           </div>
+        {/* Detailed Info */}
+        <div className="space-y-12 pt-12 border-t border-zinc-900">
+           <section className="space-y-6">
+              <h3 className="text-sm font-black uppercase text-white tracking-[0.3em]">Widerrufsrecht</h3>
+              <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-4 leading-relaxed bg-zinc-900/30 p-8 rounded-3xl border border-zinc-900">
+                 <p className="font-bold text-white uppercase tracking-tighter">Widerrufsbelehrung für digitale Inhalte</p>
+                 <p>
+                    Du hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.
+                 </p>
+                 <p className="bg-yellow-500/10 text-yellow-500 p-4 rounded-xl text-xs border border-yellow-500/20">
+                    <strong>Wichtiger Hinweis:</strong> Dein Widerrufsrecht erlischt bei digitalen Inhalten (z.B. Sofort-Downloads) vorzeitig, sobald wir mit der Ausführung des Vertrags begonnen haben, nachdem du ausdrücklich zugestimmt hast und bestätigt hast, dass du dein Widerrufsrecht verlierst.
+                 </p>
+              </div>
+           </section>
+
+           <section className="space-y-6">
+              <h3 className="text-sm font-black uppercase text-white tracking-[0.3em]">Haftung & Sonstiges</h3>
+              <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-4 leading-relaxed">
+                 <p>
+                    <strong>Haftung:</strong> Wir haften unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Für leichte Fahrlässigkeit haften wir nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht).
+                 </p>
+                 <p>
+                    <strong>Anwendbares Recht:</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist Duisburg.
+                 </p>
+              </div>
+           </section>
         </div>
 
         {/* Footer info */}

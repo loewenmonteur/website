@@ -2,29 +2,6 @@ import Link from "next/link";
 import { ArrowLeft, Lock, ShieldCheck, Database, FileText, Globe } from "lucide-react";
 
 export default function DatenschutzPage() {
-  const sections = [
-    {
-      title: "1. Datenschutz auf einen Blick",
-      icon: Lock,
-      content: "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung."
-    },
-    {
-      title: "2. Datenerfassung auf unserer Webseite",
-      icon: Database,
-      content: "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben oder bei der Registrierung (Name, E-Mail)."
-    },
-    {
-      title: "3. Stripe Zahlungsabwicklung",
-      icon: ShieldCheck,
-      content: "Wir nutzen Stripe zur Abwicklung von Zahlungen. Dabei werden Zahlungsdaten an Stripe übermittelt. Stripe ist DSGVO-konform und nutzt modernste Verschlüsselungstechnologien."
-    },
-    {
-      title: "4. Cookies & Analyse",
-      icon: Globe,
-      content: "Unsere Webseite verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen."
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col relative overflow-hidden selection:bg-yellow-500 selection:text-black">
       {/* Background Visuals */}
@@ -44,13 +21,34 @@ export default function DatenschutzPage() {
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">DSGVO Konformität</span>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
-            Daten<br /><span className="text-zinc-800">schutz.</span>
+            Datenschutz
           </h1>
         </div>
 
         {/* Content Sections */}
         <div className="space-y-12">
-           {sections.map((section, idx) => (
+           {[
+            {
+              title: "1. Datenschutz auf einen Blick",
+              icon: Lock,
+              content: "Wir behandeln deine personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung. Wenn du diese Website benutzt, werden verschiedene personenbezogene Daten erhoben."
+            },
+            {
+              title: "2. Datenerfassung & Hosting",
+              icon: Database,
+              content: "Unsere Website wird bei Vercel gehostet. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit Vercel geschlossen."
+            },
+            {
+              title: "3. Stripe Zahlungsdienst",
+              icon: ShieldCheck,
+              content: "Für Zahlungen nutzen wir Stripe. Stripe verarbeitet Daten wie Name, Adresse und Bankverbindung zur Abwicklung der Transaktion. Die Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)."
+            },
+            {
+              title: "4. Deine Rechte",
+              icon: Globe,
+              content: "Du hast jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck deiner gespeicherten Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten."
+            }
+           ].map((section, idx) => (
             <div key={idx} className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-zinc-900/40 border border-zinc-800/50 hover:border-yellow-500/20 transition-all group">
                 <div className="flex items-start gap-6">
                    <div className="w-14 h-14 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:text-yellow-500 transition-colors">
@@ -65,20 +63,22 @@ export default function DatenschutzPage() {
            ))}
         </div>
 
-        {/* Detailed Info (Placeholder) */}
-        <div className="space-y-8 pt-12 border-t border-zinc-900">
-           <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Weitere Details</h3>
-           <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
-              <p>
-                  <strong>Verantwortliche Stelle:</strong> FO-LM UG, B. Arslanmekik, Jägerstr. 47, 47166 Duisburg. Bei Fragen schreiben Sie eine E-Mail an management@loewenmonteur.de.
-              </p>
-              <p>
-                 <strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung:</strong> Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
-              </p>
-              <p>
-                 <strong>Beschwerderecht bei der zuständigen Aufsichtsbehörde:</strong> Im Falle von datenschutzrechtlichen Verstößen steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
-              </p>
-           </div>
+        {/* Detailed Info */}
+        <div className="space-y-12 pt-12 border-t border-zinc-900">
+           <section className="space-y-6">
+              <h3 className="text-sm font-black uppercase text-zinc-600 tracking-[0.3em]">Allgemeine Hinweise</h3>
+              <div className="prose prose-invert max-w-none text-sm text-zinc-500 space-y-6 leading-relaxed">
+                 <p>
+                    <strong>Verantwortliche Stelle:</strong> FO-LM UG (haftungsbeschränkt), Bianca Arslanmekik, Jägerstr. 47, 47166 Duisburg. E-Mail: management@loewenmonteur.de.
+                 </p>
+                 <p>
+                    <strong>SSL- bzw. TLS-Verschlüsselung:</strong> Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du an der Adresszeile des Browsers (https://).
+                 </p>
+                 <p>
+                    <strong>Cookies:</strong> Wir verwenden überwiegend technisch notwendige Cookies zur Funktionsfähigkeit der Website. Soweit Tracking-Cookies eingesetzt werden, erfolgt dies nur nach deiner ausdrücklichen Einwilligung via Consent-Banner.
+                 </p>
+              </div>
+           </section>
         </div>
 
         {/* Footer info */}
