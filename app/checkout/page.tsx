@@ -61,11 +61,11 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white flex flex-col justify-center py-12 sm:py-0 transition-all duration-500 lg:items-center">
       {/* Background */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,#18181b_0%,#09090b_60%)] -z-10" />
 
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
         {/* Back Link */}
         <Link
           href="/"
@@ -74,6 +74,8 @@ export default function CheckoutPage() {
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Zurück
         </Link>
+        
+
 
         {/* Header */}
         <div className="mb-10">
@@ -155,7 +157,7 @@ export default function CheckoutPage() {
               </button>
             </div>
           ) : (
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <input
                 type="text"
                 value={promoCode}
@@ -164,13 +166,13 @@ export default function CheckoutPage() {
                   setPromoError("");
                 }}
                 onKeyDown={(e) => e.key === "Enter" && applyPromoCode()}
-                placeholder="Code eingeben"
-                className="flex-1 h-12 px-4 rounded-xl bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-600 text-sm font-bold uppercase tracking-wider focus:outline-none focus:border-yellow-500/50 focus:ring-1 focus:ring-yellow-500/20 transition-all"
+                placeholder="Code"
+                className="flex-1 h-10 sm:h-12 px-3 sm:px-4 rounded-xl bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-600 text-sm font-bold uppercase tracking-wider focus:outline-none focus:border-yellow-500/50 focus:ring-1 focus:ring-yellow-500/20 transition-all"
               />
               <Button
                 onClick={applyPromoCode}
                 disabled={!promoCode.trim()}
-                className="h-12 px-6 rounded-xl bg-zinc-800 border border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-600 font-black uppercase tracking-wider text-sm disabled:opacity-30"
+                className="h-10 sm:h-12 px-4 sm:px-6 rounded-xl bg-zinc-800 border border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-600 font-black uppercase tracking-wider text-xs sm:text-sm disabled:opacity-30"
               >
                 Einlösen
               </Button>
