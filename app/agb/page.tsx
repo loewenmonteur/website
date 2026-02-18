@@ -44,7 +44,7 @@ export default function AGBPage() {
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Geschäftsbedingungen</span>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
-            AG<br /><span className="text-zinc-800">B.</span>
+            AGB
           </h1>
         </div>
 

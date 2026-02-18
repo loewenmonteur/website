@@ -21,7 +21,7 @@ export default function ImpressumPage() {
              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Rechtliches</span>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white leading-[0.8] sm:leading-none">
-            Impres<br /><span className="text-zinc-800">sum.</span>
+            Impressum
           </h1>
         </div>
 
@@ -46,7 +46,7 @@ export default function ImpressumPage() {
                  </h2>
                  <div className="text-zinc-400 text-lg font-bold leading-relaxed underline decoration-zinc-800 underline-offset-8">
                     E-Mail: management@loewenmonteur.de<br />
-                    Webseite: www.fitnessorkun.de
+                    Webseite: www.loewenmonteur.de
                  </div>
               </section>
            </div>
@@ -62,12 +62,12 @@ export default function ImpressumPage() {
                        <p className="text-white font-bold">Installateur- und Heizungsbauermeister</p>
                     </div>
                     <div>
-                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Aufsichtsbehörde</p>
-                        <p className="text-white font-bold">Handwerkskammer Düsseldorf</p>
+                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Handelsregister</p>
+                       <p className="text-white font-bold">HRB folgt</p>
                     </div>
                     <div>
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">USt-IdNr.</p>
-                        <p className="text-white font-bold">Wird auf Anfrage mitgeteilt (Kleinunternehmerregelung)</p>
+                        <p className="text-white font-bold">UmSt folgt</p>
                     </div>
                  </div>
               </section>
