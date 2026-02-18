@@ -37,8 +37,12 @@ export async function POST(req: Request) {
       }
     }
 
-    const session = await stripe.checkout.sessions.create({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const session = await (stripe.checkout.sessions.create as any)({
       mode: "payment",
+      automatic_payment_methods: {
+        enabled: true,
+      },
       shipping_address_collection: {
         allowed_countries: ["DE", "AT", "CH"],
       },
