@@ -21,7 +21,7 @@ export default function CheckoutPage() {
 
   const applyPromoCode = () => {
     setPromoError("");
-    if (promoCode.trim().toUpperCase() === "LOEWE") {
+    if (promoCode.trim().toUpperCase() === "LOEWE" || promoCode.trim() === "99") {
       setAppliedCode("LOEWE");
     } else if (promoCode.trim().toUpperCase() === "FREEORKUN2026") {
       setAppliedCode("FREEORKUN2026");
