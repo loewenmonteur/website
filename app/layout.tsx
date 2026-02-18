@@ -82,6 +82,10 @@ import { StripeProvider } from "@/components/StripeProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { InfoBar } from "@/components/InfoBar";
 
+import { ClientSecurity } from "@/components/ClientSecurity";
+
+// ... existing imports ...
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,6 +96,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} font-sans bg-background text-foreground antialiased selection:bg-yellow-500 selection:text-black`}
       >
+        <ClientSecurity />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
