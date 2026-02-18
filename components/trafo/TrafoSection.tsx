@@ -57,7 +57,7 @@ function Reveal({
 }
 
 /* ------------------------------------------------------------------ */
-/*  Hidden EARLYBIRD Hint                                              */
+/*  Hidden LOEWE Hint                                              */
 /* ------------------------------------------------------------------ */
 function EarlyHint({
   text,
@@ -173,7 +173,7 @@ export default function TrafoSection() {
           {/* 🔑 Hidden Hint #1 */}
           <div className="mt-8 flex justify-end">
             <EarlyHint
-              text="E•A•R•L•Y"
+              text="L•O•E•W•E"
               className="text-[9px] text-zinc-800 tracking-[0.5em]"
             />
           </div>
@@ -234,7 +234,7 @@ export default function TrafoSection() {
             <div className="mt-8 flex justify-center">
               <div className="px-4 py-2 rounded-lg bg-zinc-900/80 border border-zinc-800 backdrop-blur-md">
                 <span className="text-[10px] md:text-[11px] font-mono text-zinc-500 tracking-wider">
-                  ••• <span className="text-yellow-500/60 font-black animate-pulse">E • A • R • L • Y</span> •••
+                  ••• <span className="text-yellow-500/60 font-black animate-pulse">L • O • E • W • E</span> •••
                 </span>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default function TrafoSection() {
           <div className="mt-10 flex items-center gap-3 justify-center">
             <div className="h-px w-16 bg-zinc-800" />
             <EarlyHint
-              text="EARLYBIRD"
+              text="LOEWE"
               className="text-[7px] text-zinc-900 tracking-[0.6em] uppercase"
             />
             <div className="h-px w-16 bg-zinc-800" />
@@ -337,7 +337,7 @@ export default function TrafoSection() {
         {/* 🔑 Hidden Hint #4 — the final nudge */}
         <Reveal delay={0.8}>
           <p className="mt-10 text-[9px] text-zinc-800 italic max-w-xs mx-auto leading-relaxed">
-            Kennst du das Codewort? Die frühen Löwen wissen Bescheid.
+            Kennst du das Codewort? Die Löwen wissen Bescheid.
           </p>
         </Reveal>
       </section>

@@ -9,26 +9,26 @@ export async function POST(req: Request) {
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://loewentrafo.de";
 
-    // Apply EARLYBIRD discount via Stripe coupon
+    // Apply LOEWE discount via Stripe coupon
     let discounts: { coupon: string }[] | undefined;
 
-    if (promoCode?.toUpperCase() === "EARLYBIRD") {
+    if (promoCode?.toUpperCase() === "LOEWE") {
       try {
-        const coupon = await stripe.coupons.retrieve("EARLYBIRD");
+        await stripe.coupons.retrieve("LOEWE");
         // If coupon is valid, we use it. If it's restricted, Stripe Checkout will error,
         // which we catch in the main try/catch block.
-        discounts = [{ coupon: "EARLYBIRD" }];
+        discounts = [{ coupon: "LOEWE" }];
       } catch {
         // Create the coupon if it doesn't exist
         try {
           await stripe.coupons.create({
-            id: "EARLYBIRD",
+            id: "LOEWE",
             amount_off: 20000, // 200€ in cents
             currency: "eur",
             name: "Frühbucher-Rabatt",
             duration: "once",
           });
-          discounts = [{ coupon: "EARLYBIRD" }];
+          discounts = [{ coupon: "LOEWE" }];
         } catch (createErr) {
           console.error("Failed to create coupon:", createErr);
           // If coupon creation fails (e.g. already exists but restricted), 

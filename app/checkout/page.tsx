@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const REGULAR_PRICE = 29900; // 299€
-const EARLYBIRD_PRICE = 9900; // 99€
+const LOEWE_PRICE = 9900; // 99€
 
 export default function CheckoutPage() {
   const [promoCode, setPromoCode] = useState("");
@@ -15,14 +15,14 @@ export default function CheckoutPage() {
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [error, setError] = useState("");
 
-  const currentPrice = appliedCode === "EARLYBIRD" ? EARLYBIRD_PRICE : REGULAR_PRICE;
+  const currentPrice = appliedCode === "LOEWE" ? LOEWE_PRICE : REGULAR_PRICE;
   const discount = REGULAR_PRICE - currentPrice;
   const hasDiscount = discount > 0;
 
   const applyPromoCode = () => {
     setPromoError("");
-    if (promoCode.trim().toUpperCase() === "EARLYBIRD") {
-      setAppliedCode("EARLYBIRD");
+    if (promoCode.trim().toUpperCase() === "LOEWE") {
+      setAppliedCode("LOEWE");
     } else {
       setPromoError("Ungültiger Code");
     }
@@ -110,7 +110,7 @@ export default function CheckoutPage() {
               <div className="flex justify-between items-center text-green-400">
                 <span className="flex items-center gap-2 text-sm font-bold">
                   <Tag className="w-4 h-4" />
-                  EARLYBIRD Rabatt
+                  LOEWE Rabatt
                 </span>
                 <span className="font-black">
                   -{(discount / 100).toFixed(2).replace(".", ",")}€
