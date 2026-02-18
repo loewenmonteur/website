@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Trophy, 
   Dumbbell, 
@@ -42,8 +43,16 @@ export default async function DashboardLayout({
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 border-r border-zinc-900/50 bg-zinc-950 fixed h-full z-50">
         <div className="h-16 flex items-center px-6 border-b border-zinc-900/50">
-          <Link href="/dashboard" className="font-black text-xl tracking-tighter uppercase text-white hover:text-yellow-500 transition-colors">
-            Löwen<span className="text-yellow-500">trafo</span>
+          <Link href="/dashboard" className="flex items-center gap-2 font-black text-xl tracking-tighter uppercase text-white hover:text-yellow-500 transition-colors">
+            <div className="relative w-8 h-8">
+              <Image 
+                 src="/images/brand/lion_wrench_logo.png" 
+                 alt="Löwentrafo Logo" 
+                 fill
+                 className="object-contain"
+              />
+            </div>
+            <span>Löwen<span className="text-yellow-500">trafo</span></span>
           </Link>
         </div>
 

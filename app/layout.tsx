@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     images: [
       {
-        url: "/images/brand/logo.png",
+        url: "/images/brand/lion_wrench_logo.png",
         width: 1200,
         height: 630,
         alt: "LÖWENMONTEUR Brand Logo",
@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LÖWENMONTEUR",
     description: "Das System für echte Macher.",
-    images: ["/images/brand/logo.png"],
+    images: ["/images/brand/lion_wrench_logo.png"],
   },
   icons: {
-    icon: "/images/brand/logo.png",
-    shortcut: "/images/brand/logo.png",
-    apple: "/images/brand/logo.png",
+    icon: "/images/brand/lion_wrench_logo.png",
+    shortcut: "/images/brand/lion_wrench_logo.png",
+    apple: "/images/brand/lion_wrench_logo.png",
   },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
   "@type": "Organization",
   "name": "LÖWENTRAFO",
   "url": "https://www.loewentrafo.de",
-  "logo": "https://www.loewentrafo.de/images/brand/logo.png",
+  "logo": "https://www.loewentrafo.de/images/brand/lion_wrench_logo.png",
   "founder": {
     "@type": "Person",
     "name": "B. Arslanmekik"
