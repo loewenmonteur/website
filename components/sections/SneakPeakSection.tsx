@@ -3,6 +3,8 @@
 import Image from "next/image";
 
 
+import { Fingerprint, Dumbbell, Utensils, Crown } from "lucide-react";
+
 export default function SneakPeakSection() {
   return (
     <section className="py-24 md:py-48 px-6 bg-[radial-gradient(circle_at_0%_50%,#1a1a1e_0%,#09090b_100%)] overflow-hidden">
@@ -38,10 +40,24 @@ export default function SneakPeakSection() {
                  </p>
               </div>
 
-               <div className="space-y-8">
+                <div className="space-y-8">
+                   {/* Feature 0: Individuelle Transformation */}
+                   <div className="flex gap-6 group">
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors text-yellow-500">
+                          <Fingerprint className="w-6 h-6" />
+                       </div>
+                      <div className="space-y-2">
+                         <h4 className="text-xl font-black uppercase text-white tracking-wide">Individuelle Transformation</h4>
+                         <p className="text-zinc-500 font-medium leading-relaxed">
+                            1 Mensch = 1 Zugang. Die Löwen-Trafo ist kein Massenprodukt. Alle Trainings-, Ernährungs- und Strukturpläne werden individuell auf dich abgestimmt.
+                         </p>
+                      </div>
+                   </div>
+
                    {/* Feature 1: Training */}
                    <div className="flex gap-6 group">
-                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors text-zinc-400 group-hover:text-yellow-500">
+                          <Dumbbell className="w-6 h-6" />
                        </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Trainingspläne</h4>
@@ -53,7 +69,8 @@ export default function SneakPeakSection() {
  
                    {/* Feature 2: Ernährung */}
                    <div className="flex gap-6 group">
-                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors text-zinc-400 group-hover:text-yellow-500">
+                          <Utensils className="w-6 h-6" />
                        </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Ernährungspläne</h4>
@@ -65,7 +82,8 @@ export default function SneakPeakSection() {
  
                    {/* Feature 3: Mentoring */}
                    <div className="flex gap-6 group">
-                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors text-zinc-400 group-hover:text-yellow-500">
+                          <Crown className="w-6 h-6" />
                        </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Mentoring</h4>

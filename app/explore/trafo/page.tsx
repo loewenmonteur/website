@@ -106,6 +106,11 @@ export default function TrafoExplorePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                {[
                  {
+                   title: "Individuelle Transformation",
+                   desc: "1 Mensch = 1 Zugang. Die Löwen-Trafo ist kein Massenprodukt. Alle Pläne werden individuell abgestimmt.",
+                   features: ["Maßgeschneiderte Pläne", "Persönliches Setup", "1:1 Struktur"]
+                 },
+                 {
                    title: "Trainingspläne",
                    desc: "Kompromisslose Übungsvideos. Ein System, das Ergebnisse liefert, ohne Ausreden.",
                    features: ["Strukturierte Abläufe", "Video-Bibliothek", "Maximaler Fortschritt"]
