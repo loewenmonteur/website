@@ -41,9 +41,8 @@ export default function SneakPeakSection() {
                <div className="space-y-8">
                    {/* Feature 1: Training */}
                    <div className="flex gap-6 group">
-                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                         <span className="text-xl">⚔️</span>
-                      </div>
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Trainingspläne</h4>
                          <p className="text-zinc-500 font-medium leading-relaxed">
@@ -54,9 +53,8 @@ export default function SneakPeakSection() {
  
                    {/* Feature 2: Ernährung */}
                    <div className="flex gap-6 group">
-                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                         <span className="text-xl">🥩</span>
-                      </div>
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Ernährungspläne</h4>
                          <p className="text-zinc-500 font-medium leading-relaxed">
@@ -67,9 +65,8 @@ export default function SneakPeakSection() {
  
                    {/* Feature 3: Mentoring */}
                    <div className="flex gap-6 group">
-                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
-                         <span className="text-xl">🦁</span>
-                      </div>
+                       <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-yellow-500/50 transition-colors">
+                       </div>
                       <div className="space-y-2">
                          <h4 className="text-xl font-black uppercase text-white tracking-wide">Mentoring</h4>
                          <p className="text-zinc-500 font-medium leading-relaxed">

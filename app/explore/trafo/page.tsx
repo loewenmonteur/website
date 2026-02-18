@@ -106,17 +106,17 @@ export default function TrafoExplorePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                {[
                  {
-                   title: "⚔️ Trainingspläne",
+                   title: "Trainingspläne",
                    desc: "Kompromisslose Übungsvideos. Ein System, das Ergebnisse liefert, ohne Ausreden.",
                    features: ["Strukturierte Abläufe", "Video-Bibliothek", "Maximaler Fortschritt"]
                  },
                  {
-                   title: "🥩 Ernährungspläne",
+                   title: "Ernährungspläne",
                    desc: "Inklusive Kochbuch – kein Rätselraten mehr. Energie für den Job und das Gym.",
                    features: ["Individuelle Guides", "Einfache Rezepte", "Effizientes Meal Prep"]
                  },
                  {
-                   title: "🦁 Mentoring",
+                   title: "Mentoring",
                    desc: "Werde zum Löwen. Die Mentalität für Sport, Arbeit und dein ganzes Leben.",
                    features: ["Mindset-Strategien", "Community-Support", "Direktes Feedback"]
                  }
