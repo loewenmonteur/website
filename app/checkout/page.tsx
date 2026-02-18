@@ -15,7 +15,7 @@ export default function CheckoutPage() {
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [error, setError] = useState("");
 
-  const currentPrice = appliedCode === "LOEWE" ? LOEWE_PRICE : REGULAR_PRICE;
+  const currentPrice = appliedCode === "LOEWE" ? LOEWE_PRICE : (appliedCode === "FREEORKUN2026" ? 0 : REGULAR_PRICE);
   const discount = REGULAR_PRICE - currentPrice;
   const hasDiscount = discount > 0;
 
@@ -23,6 +23,8 @@ export default function CheckoutPage() {
     setPromoError("");
     if (promoCode.trim().toUpperCase() === "LOEWE") {
       setAppliedCode("LOEWE");
+    } else if (promoCode.trim().toUpperCase() === "FREEORKUN2026") {
+      setAppliedCode("FREEORKUN2026");
     } else {
       setPromoError("Ungültiger Code");
     }
@@ -145,7 +147,7 @@ export default function CheckoutPage() {
                     {appliedCode}
                   </p>
                   <p className="text-xs text-green-400/60">
-                    200€ Frühbucher-Rabatt aktiv
+                    {appliedCode === "FREEORKUN2026" ? "100% Test-Rabatt aktiv" : "200€ Frühbucher-Rabatt aktiv"}
                   </p>
                 </div>
               </div>

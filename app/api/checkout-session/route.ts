@@ -15,24 +15,37 @@ export async function POST(req: Request) {
     if (promoCode?.toUpperCase() === "LOEWE") {
       try {
         await stripe.coupons.retrieve("LOEWE");
-        // If coupon is valid, we use it. If it's restricted, Stripe Checkout will error,
-        // which we catch in the main try/catch block.
         discounts = [{ coupon: "LOEWE" }];
       } catch {
-        // Create the coupon if it doesn't exist
         try {
           await stripe.coupons.create({
             id: "LOEWE",
-            amount_off: 20000, // 200€ in cents
+            amount_off: 20000,
             currency: "eur",
             name: "Frühbucher-Rabatt",
             duration: "once",
           });
           discounts = [{ coupon: "LOEWE" }];
         } catch (createErr) {
-          console.error("Failed to create coupon:", createErr);
-          // If coupon creation fails (e.g. already exists but restricted), 
-          // we proceed without discount to keep the flow alive
+          console.error("Failed to create LOEWE coupon:", createErr);
+        }
+      }
+    } else if (promoCode?.toUpperCase() === "FREEORKUN2026") {
+      // Secret 100% test discount
+      try {
+        await stripe.coupons.retrieve("FREEORKUN2026");
+        discounts = [{ coupon: "FREEORKUN2026" }];
+      } catch {
+        try {
+          await stripe.coupons.create({
+            id: "FREEORKUN2026",
+            percent_off: 100,
+            name: "Test-Rabatt (100%)",
+            duration: "once",
+          });
+          discounts = [{ coupon: "FREEORKUN2026" }];
+        } catch (createErr) {
+          console.error("Failed to create FREEORKUN2026 coupon:", createErr);
         }
       }
     }
