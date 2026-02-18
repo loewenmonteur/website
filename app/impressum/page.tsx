@@ -68,10 +68,6 @@ export default function ImpressumPage() {
                        <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Umsatzsteuer-ID</p>
                         <p className="text-white font-bold">UmSt folgt</p>
                     </div>
-                    <div>
-                       <p className="text-[10px] font-black uppercase text-zinc-600 mb-1">Berufsbezeichnung</p>
-                        <p className="text-white font-bold text-sm">Orkun Arslanmekik: Installateur- und Heizungsbauermeister (verliehen in Deutschland, HWK Düsseldorf)</p>
-                    </div>
                  </div>
               </section>
 
