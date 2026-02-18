@@ -39,6 +39,9 @@ export async function POST(req: Request) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      shipping_address_collection: {
+        allowed_countries: ["DE", "AT", "CH"],
+      },
       line_items: [
         {
           price_data: {
@@ -52,6 +55,9 @@ export async function POST(req: Request) {
           quantity: 1,
         },
       ],
+      payment_intent_data: {
+        description: `Vielen Dank für deinen Kauf und dein Vertrauen. Dein Zugang zur Löwentransformation ist erfolgreich registriert. ✅ Die Löwentrafo erscheint im Mai 2026. Zum offiziellen Release erhältst du automatisch Zugriff auf alle Inhalte und Funktionen. Deine Membercard wird dir am Release-Tag zusätzlich per Post zugeschickt. Bis zum Start brauchst du nichts weiter zu tun. Alle weiteren Informationen erhältst du rechtzeitig per E-Mail. Bei Fragen erreichst du uns jederzeit unter management@loewenmonteur.de. Willkommen in der Löwentrafo. — LÖWE`,
+      },
       ...(discounts && { discounts }),
       success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/checkout`,
